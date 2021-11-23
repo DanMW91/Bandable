@@ -1,6 +1,4 @@
 class Band < ApplicationRecord
-
-
   # has_many_attached :photos
 
   validates :bio, length: { maximum: 1000 }
@@ -9,5 +7,4 @@ class Band < ApplicationRecord
   has_many :messages
   has_many :band_members
   has_many :users, through: :band_members
-
 end
