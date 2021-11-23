@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
   # user has the ability to join many bands and only has the ability to upload
   # one photo - the avatar
   # has_one_attached :photo
@@ -15,4 +16,9 @@ class User < ApplicationRecord
   validates :instruments, inclusion: { in: %w[Guitar Drums Piano Bass Vocals Violin Cello Flute] }
   validates :genres, inclusion: { in:
     ['Rock', 'Jazz', 'RnB', 'Hip-Hop', 'Heavy Metal', 'Country', 'Folk', 'Pop', 'Indie'] }
+
+
+  
+  has_many :bands, through: :band_members
+
 end
