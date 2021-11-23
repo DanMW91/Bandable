@@ -1,5 +1,6 @@
 .card img {
-  width: 150px;
+  width: 70px;
+  text-align: center;
 }
 
 .card p {
@@ -7,17 +8,18 @@
 }
 
 .card {
-  width: 200px;
+  width: 250px;
   border-radius: 3px;
-  color: $main;
-  box-shadow: 0 0 5px rgb(230,230,230);
+  box-shadow: 0 0 5px rgb(17, 5, 63);
+  background-color: $main;
+  color: white;
   text-align: center;
   padding: 20px;
-  border: 1px solid rgb(230,230,230);
 }
 
 .cards {
   display: flex;
   justify-content: space-between;
+  margin-top: 30px;
   margin-bottom: 30px;
 }
