@@ -1,14 +1,15 @@
-<h1>Bands#index</h1>
+
 
 <div class="banner" style="background-image: url('<%= image_path "banner.jpeg"%>')">
-    <div class="container">
-      <h1>Bandable</h1>
-      <h3>Central creativity hub for musicians around the world</p>
-    </div>
+  <div class="container">
+    <h1>Bandable</h1>
+    <p>Central creativity hub for musicians around the world</p>
   </div>
+</div>
 
-<div class="container">
-    <div class="cards" style='text-align:center;'>
+<% if user_signed_in? %>
+  <div class="container">
+    <div class="cards">
       <div class="card">
         <%= image_tag "find.png" %>
         <h4>Find</h4>
@@ -26,6 +27,7 @@
       </div>
     </div>
   </div>
+
 
   
 
@@ -50,3 +52,4 @@
 </figure>
 </div>
 </div>
+<% end %>

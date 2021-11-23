@@ -1,6 +1,7 @@
 .card img {
-  width: 70px;
+  width: 65px;
   text-align: center;
+  margin-top: 15px;
 }
 
 .card p {
@@ -8,10 +9,13 @@
 }
 
 .card {
-  width: 250px;
-  border-radius: 3px;
-  box-shadow: 0 0 5px rgb(17, 5, 63);
+  width: 270px;
+  height: 260px;
+  border-radius: 60px;
+  // box-shadow: 0 0 5px rgb(54, 54, 88);
   background-color: $main;
+  background: linear-gradient(
+  180deg, $main, $light-background);
   color: white;
   text-align: center;
   padding: 20px;
@@ -20,8 +24,8 @@
 .cards {
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .band-name {
