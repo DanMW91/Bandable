@@ -14,6 +14,8 @@
   border-radius: 60px;
   // box-shadow: 0 0 5px rgb(54, 54, 88);
   background-color: $main;
+  background: linear-gradient(
+  150deg, $main, $light-background 80%);
   color: white;
   text-align: center;
   padding: 20px;
