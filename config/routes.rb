@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :messages, only: [:index, :create]
   end
 
-  resources :musicians, only: [:show] do
+  resources :users, only: [:show, :index], as: 'musician', path: 'musicians' do
     get '/invitations', to: 'band_members#index'
     get '/invitations/new', to: 'band_members#new'
     post '/invitations', to: 'band_members#create'

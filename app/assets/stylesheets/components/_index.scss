@@ -2,4 +2,15 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
-@import "card";
+@import "cards";
+@import "container";
+@import "banner";
+
+body {
+  margin: 0;
+  background-color: $background;
+}
+
+.text-center {
+  text-align: center;
+}
