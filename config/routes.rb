@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, path: 'accounts'
+  devise_for :users
   root to: 'bands#index'
   resources :bands do
     resources :band_members, only: [:index]
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :messages, only: [:index, :create]
   end
 
-  resources :users, only: [:show] do
+  resources :musicians, only: [:show] do
     get '/invitations', to: 'band_members#index'
     get '/invitations/new', to: 'band_members#new'
     post '/invitations', to: 'band_members#create'
