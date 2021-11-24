@@ -17,6 +17,17 @@ $lg: new-breakpoint(min-width 1024px);
   outline: none;
 }
 
+.card-container {
+  width: 90%;
+  height: 700px;
+  margin: 5%;
+  background-color: rgba(35, 42, 77, 0.8);
+  border-radius: 5%;
+  // background: rgba($color: #000000, $alpha: 1.0);
+  // opacity: 0.8;
+
+}
+
 a {
   text-decoration: none;
   color: white;
@@ -33,6 +44,7 @@ figure {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
   overflow: hidden;
+  margin: 14px;
 
   &:hover {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -84,6 +96,8 @@ figure {
     color: white;
     line-height: 1;
     transition: 0.25s;
+    opacity: 1 !important;
+
 
     h3 {
       margin: 0 0 20px;
