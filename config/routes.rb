@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'band_members/create'
   get 'bands/index'
   devise_for :users
   root to: 'bands#index'

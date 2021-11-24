@@ -14,12 +14,10 @@ band_2 = Band.create!({ image_url: 'https://media.pitchfork.com/photos/5e46cb04a
 # band_3 = Band.create([{ name: 'Pantera', current_member_count: 4, location: 'America', genre: "Rock", bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor."}])
 
 
-
 user_1 = User.create!({ avatar_url: 'https://media.newyorker.com/photos/5ad514a5cd7220727ab349eb/master/pass/940425_ra505.jpg', email: 'test@test.com', password: '123123', first_name: 'Jeff', last_name: "Jeffer", location: 'America', genre: "Rock", bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor."})
 user_2 = User.create!({ avatar_url: 'https://media.newyorker.com/photos/5ad514a5cd7220727ab349eb/master/pass/940425_ra505.jpg', email: 'jeff@jeff.com', password: '123123', first_name: 'Harry', last_name: "Haroldson", location: 'Switzerland', genre: "Rock", bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.Curabitur tortor."})
 user_3 = User.create!({ avatar_url: 'https://media.newyorker.com/photos/5ad514a5cd7220727ab349eb/master/pass/940425_ra505.jpg', email: 'dan@dan.com', password: '123123', first_name: 'Dan', last_name: "Haroldson", location: 'Switzerland', genre: "Rock", bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.Curabitur tortor."})
 user_4 = User.create!({ avatar_url: 'https://media.newyorker.com/photos/5ad514a5cd7220727ab349eb/master/pass/940425_ra505.jpg', email: 'frank@frank.com', password: '123123', first_name: 'Frank', last_name: "Haroldson", location: 'Switzerland', genre: "Rock", bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.Curabitur tortor."})
-
 
 
 band_1.users << user_1
@@ -29,3 +27,10 @@ band_1.save
 band_2.users << user_1
 band_2.users << user_3
 band_2.users << user_4
+
+User.all.each do |user|
+  user.band_members.each do |member_record|
+    member_record.is_member = true
+    member_record.save!
+  end
+end
