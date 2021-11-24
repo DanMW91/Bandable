@@ -5,7 +5,7 @@
     </h1>
     <div class="auditions-list">
       <% if @band.band_members.where(is_audition: true).empty? %>
-        <h2 class="white-font pending-auditions-text">You have no pending auditions!</h2>
+        <h2 class="white-font pending-auditions-text mt-5">You have no pending auditions!</h2>
       <% end %>
 
         <% @band.band_members.where(is_audition: true).each do |audition| %>
