@@ -1,0 +1,28 @@
+<div class="auditions-main-container">
+  <div class="auditions-container">
+    <h1 class="d-flex justify-content-center white-font border-bottom">
+      Auditions
+    </h1>
+    <% @band.band_members.where(is_audition: true).each do |audition| %>
+      <div class="audition-item">
+        <%= link_to musician_path(audition.user), class: "card-links" do %>
+          <%= image_tag "#{audition.user.avatar_url}", class: "avatar audition-avatar mx-3" %>
+        <% end %>
+        <div class="audition-details white-font">
+          <p><%= audition.user.first_name %> wants to join your band!<p>
+          <p><i>- <%= audition.invitation_text %></i> </p>
+        </div>
+        <div class="audition-buttons">
+          <%= simple_form_for audition, url: band_update_audition_path(@band, audition) do |f| %>
+            <%= f.hidden_field :is_member, value: true %>
+            <%= f.submit 'Accept', class: 'btn btn-success mr-3' %>
+          <% end %>
+          <%= simple_form_for audition, url: band_update_audition_path(@band, audition)  do |f| %>
+            <%= f.hidden_field :is_member, value: false  %>
+            <%= f.submit 'Reject', class: 'btn btn-danger mr-3' %>
+          <% end %>
+        </div>
+      <div>
+    <% end %>
+  </div>
+</div>

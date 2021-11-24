@@ -27,29 +27,29 @@
       </div>
     </div>
   </div>
-
-
-
-
-<div class="container">
-  <div class="cards-container">
-    <figure class="image-block">
-    <h2><%= link_to @bands.first.name.capitalize, band_path(@bands.first)%></h2>
-      <%= image_tag @bands.first.image_url %>
-      <% @bands.first.users.each do |user| %>
-    <h6><i>Band member -<%= user.first_name  %> <%= user.last_name  %></i></h6>
-  <% end %>
-    <p><%= @bands.first.location %></p>
-	<figcaption>
-		<h3>
-			Bio
-		</h3>
-		<%# <p><%= @bands.first.bio %>
-		<button>
-			More Info
-		</button>
-	</figcaption>
-</figure>
-</div>
-</div>
 <% end %>
+
+
+<div class="card-container">
+  <div class="d-flex justify-content-center">
+    <% @bands.each do |band| %>
+      <figure class="image-block">
+        <%= image_tag band.image_url %>
+        <% band.users.each do |user| %>
+          <h6><i>Band member -<%= user.first_name  %> <%= user.last_name  %></i></h6>
+        <% end %>
+        <figcaption>
+          <h3>
+          <%= band.name.capitalize %>
+          </h3>
+          <p><%= band.bio[0..150].gsub(/\s\w+\s*$/, '...') %></p>
+          <p><%= band.location %></p>
+          <button>
+            <%= link_to "More Info", band_path(band) %>
+          </button>
+        </figcaption>
+      </figure>
+    <% end %>
+  </div>
+</div>
+
