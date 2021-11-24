@@ -45,7 +45,7 @@
           <p><%= band.bio[0..150].gsub(/\s\w+\s*$/, '...') %></p>
           <p><%= band.location %></p>
           <button>
-            More Info
+            <%= link_to "More Info", band_path(band) %>
           </button>
         </figcaption>
       </figure>
