@@ -1,0 +1,16 @@
+<div class="band-main-container">
+  <div class="band-content-container">
+    <h1 class="d-flex justify-content-center white-font border-bottom">
+      Band
+    </h1>
+    <div class="d-flex whole-container">    
+      <div>
+        <div class="band-image-container" style="height: 300px; width: 50%; background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<%= @band.image_url%>)">
+        </div>
+        <p><%= @band.bio[0..150].gsub(/\s\w+\s*$/, '...') %></p>
+      </div>
+  
+      
+    </div>
+  </div>
+</div>

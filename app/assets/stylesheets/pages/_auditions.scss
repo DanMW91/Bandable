@@ -1,5 +1,5 @@
 .auditions-main-container {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -22,8 +22,12 @@
 }
 
 .auditions-list {
+  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .audition-item {
@@ -35,6 +39,7 @@
   // border: 1px solid $accent;
   filter: drop-shadow(0px 0px 4px #000000);
   transition: all .2s ease-in-out;
+
   &:hover {
     transform: scale(1.02);
 
@@ -55,6 +60,7 @@
   display: flex;
   width: 50%;
   justify-content: flex-end;
+
   p {
     margin: 0px;
   }
