@@ -7,3 +7,17 @@
   opacity: 0.8;
 
 }
+
+
+.form-container {
+  width: 500px;
+  height: auto;
+  margin: 5%;
+  background-color: $light-background;
+  // background-color: #232a4d;
+  border-radius: 5%;
+  opacity: 0.8;
+  padding: 28px;
+  border: 1px solid $accent;
+  background: linear-gradient(19deg, black, transparent);
+}
