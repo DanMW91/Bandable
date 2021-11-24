@@ -1,25 +1,56 @@
-/* Your tabs CSS code here */
-.tabs {
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  margin-left: 150px;
+  width: 40%;
+  margin-top: 2%;
+  background-color: rgba(35, 42, 77, 0.8);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: 0.3s;
+  color: white;
+  background-color: transparent;
+  font-size: 15px;
   display: flex;
   align-items: center;
-}
-.tab {
+  margin-left: 7px;
+  margin-top: 10px;
+  outline: none;
   font-size: 18px;
-  padding: 10px;
-  opacity: 0.3;
-  border-bottom: 5px solid transparent;
-  text-decoration: none;
-  color:white;
 }
-.tab:hover {
-  opacity: 1;
-  text-decoration: none;
-}
-.tab.active {
-  opacity: 1;
-  color: white;
-  font-size: 18px;
-  text-decoration: none;
-  padding: 10px;
+
+/* Change background color of buttons on hover */
+.tab button:hover {
   border-bottom: 5px solid $accent;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  border-bottom: 5px solid $accent;
+}
+
+/* Style the tab content */
+.tabcontent {
+  // width: 90%;
+  // height: 700px;
+  // margin-bottom: 5%;
+  // margin-left: 5%;
+  // margin-right: 5%;
+  // background-color: rgba(35, 42, 77, 0.8);
+  // border-radius: 5%;
+  display: none;
+  padding: 10px 20px;
+  // border: 1px solid #ccc;
+  // border-top: none;
 }

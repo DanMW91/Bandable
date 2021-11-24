@@ -10,15 +10,36 @@
   </div>
 </div>
 
-
-<div class="band-container">
-<div class="tabs">
-        <a href="" class="tab active">Recent activity</a>
-        <a href="" class="tab">Suggestions</a>
-        <a href="" class="tab">Find designers</a>
-      </div>
+<!-- Tab links -->
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Band')">Band</button>
+  <button class="tablinks" onclick="openTab(event, 'Audition')">Audition</button>
+  <button class="tablinks" onclick="openTab(event, 'Chat')">Chat</button>
+  <button class="tablinks" onclick="openTab(event, 'The Rehearsal Room')">The Rehearsal Room</button>
 </div>
 
+<!-- Tab content -->
+<div class="band-container">
+  <div id="Band" class="tabcontent">
+    <h3>Band</h3>
+    <p>content</p>
+  </div>
+
+  <div id="Audition" class="tabcontent">
+    <h3>Audition</h3>
+    <p>content</p>
+  </div>
+
+  <div id="Chat" class="tabcontent">
+    <h3>Chat</h3>
+    <p>content</p>
+  </div>
+
+  <div id="The Rehearsal Room" class="tabcontent">
+    <h3>The Rehearsal Room</h3>
+    <p>content</p>
+  </div>
+</div>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
