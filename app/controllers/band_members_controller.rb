@@ -1,6 +1,5 @@
 class BandMembersController < ApplicationController
   def create
-
     if params[:commit] == "Submit Audition"
       band_id = params[:band_id]
       audition = BandMember.new(audition_params)
@@ -10,6 +9,7 @@ class BandMembersController < ApplicationController
       audition.band_id = band_id
       audition.save!
       redirect_to band_path(band_id)
+
     else
     end
   end
