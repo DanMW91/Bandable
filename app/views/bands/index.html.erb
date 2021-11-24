@@ -34,7 +34,7 @@
 <div class="container">
   <div class="cards-container">
     <figure class="image-block">
-	<h2><%= link_to @bands.first.name.capitalize, band_path(@bands.first)%></h2>
+	<h2><%= link_to @bands.name.capitalize, band_path(@bands.first)%></h2>
 	<%= image_tag @bands.first.image_url %>
   <% @bands.first.users.each do |user| %>
     <h6><i>Band member -<%= user.first_name  %> <%= user.last_name  %></i></h6>
@@ -44,7 +44,7 @@
 		<h3>
 			Bio
 		</h3>
-		<%# <p><%= @bands.first.bio %>
+		<p><%= @bands.first.bio%></p>
 		<button>
 			More Info
 		</button>
@@ -53,3 +53,4 @@
 </div>
 </div>
 <% end %>
+
