@@ -12,6 +12,10 @@
 body {
   margin: 0;
   background-color: $background;
+  background-image: url(rose-petals.svg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 }
 
 .text-center {
