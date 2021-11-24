@@ -34,19 +34,18 @@
   <div class="d-flex justify-content-center">
     <% @bands.each do |band| %>
       <figure class="image-block">
-        <h2><%= link_to band.name.capitalize, band_path(band)%></h2>
         <%= image_tag band.image_url %>
         <% band.users.each do |user| %>
           <h6><i>Band member -<%= user.first_name  %> <%= user.last_name  %></i></h6>
         <% end %>
         <figcaption>
           <h3>
-            Band Bio
+          <%= band.name.capitalize %>
           </h3>
           <p><%= band.bio[0..150].gsub(/\s\w+\s*$/, '...') %></p>
           <p><%= band.location %></p>
           <button>
-            More Info
+            <%= link_to "More Info", band_path(band) %>
           </button>
         </figcaption>
       </figure>
