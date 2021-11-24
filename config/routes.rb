@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'band_members/create'
   get 'bands/index'
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   root to: 'bands#index'
   resources :bands do
     resources :band_members, only: [:index]
