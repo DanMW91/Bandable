@@ -20,20 +20,13 @@
 
 <!-- Tab content -->
 <div class="band-container">
-<<<<<<< HEAD
-  <div class="inner-band-container">
-  </div>
-</div>
-=======
   <div id="Band" class="tabcontent">
-    <h3>Band</h3>
-    <p>content</p>
+    <%= render "shared/band_display", locals: { songs: @band } %>
   </div>
 
   <div id="Audition" class="tabcontent">
     <%= render "shared/auditions_display", locals: { songs: @band } %>
   </div>
->>>>>>> cb86c3ea7ccb571a938a5bb3708ed4604d8dc5f9
 
   <div id="Chat" class="tabcontent">
     <h3>Chat</h3>
