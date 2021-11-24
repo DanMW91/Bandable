@@ -32,8 +32,7 @@
 <!-- Tab content -->
 <div class="band-container">
   <div id="Band" class="tabcontent">
-    <h3>Band</h3>
-    <p>content</p>
+    <%= render "shared/band_display", locals: { songs: @band } %>
   </div>
 
   <div id="Audition" class="tabcontent">
