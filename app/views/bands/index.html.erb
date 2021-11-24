@@ -1,8 +1,8 @@
 
 
 <div class="banner" style="background-image: url('<%= image_path "banner.jpeg"%>')">
-  <div class="container">
-    <h1>Bandable</h1>
+  <div class="titles">
+    <h1 class="main-title">Bandable</h1>
     <p>Central creativity hub for musicians around the world</p>
   </div>
 </div>
@@ -29,14 +29,14 @@
   </div>
 
 
-  
+
 
 <div class="container">
   <div class="cards-container">
     <figure class="image-block">
-	<h2><%= link_to @bands.name.capitalize, band_path(@bands.first)%></h2>
-	<%= image_tag @bands.first.image_url %>
-  <% @bands.first.users.each do |user| %>
+    <h2><%= link_to @bands.first.name.capitalize, band_path(@bands.first)%></h2>
+      <%= image_tag @bands.first.image_url %>
+      <% @bands.first.users.each do |user| %>
     <h6><i>Band member -<%= user.first_name  %> <%= user.last_name  %></i></h6>
   <% end %>
     <p><%= @bands.first.location %></p>

@@ -11,3 +11,11 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.header-font {
+  font-family: 'Bebas Neue', cursive;;
+  letter-spacing: 2px;
+}
+.white-font {
+  color: white;
+}

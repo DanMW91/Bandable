@@ -1,4 +1,7 @@
+
+
 .banner {
+  position: relative;
   background-size: cover;
   background-position: center;
   padding: 200px 0;
@@ -7,10 +10,28 @@
 
 .banner h1 {
   color: white;
-  font-size: 60px;
+  // font-size: 60px;
 }
 
 .banner p {
   color: $accent;
   font-size: 20px;
+}
+
+.main-title {
+  font-family: 'Bebas Neue', cursive;;
+  letter-spacing: 2px;
+  font-size: 100px;
+}
+
+.main-title {
+  font-family: 'Bebas Neue', cursive;;
+  letter-spacing: 2px;
+  font-size: 60px;
+}
+
+.titles {
+  position: absolute;
+  top: 100px;
+  left: 200px;
 }
