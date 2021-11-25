@@ -3,15 +3,17 @@
     <h1 class="d-flex justify-content-center white-font border-bottom">
       Band
     </h1>
-    <div class="d-flex whole-container">    
-      <div>
-        <div class="band-image-container" style="height: 300px; width: 50%; background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<%= @band.image_url%>)">
-        </div>
-        <p><%= @band.bio[0..150].gsub(/\s\w+\s*$/, '...') %></p>
+    <div class="whole-container">
+      <div class="left-whole-container">
+        <%=image_tag @band.image_url, style: "height: 300px; width: 650px; background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1))"%>
+          <%@band.band_members.where(is_member: true).each do |record| %>
+            <p><%=record.user.first_name%><%=record.user.last_name%></p>
+            <% end %>
       </div>
-        <div>
-      
+        <div class="right-whole-container">
+          <p><%= @band.bio[0..150].gsub(/\s\w+\s*$/, '...') %></p>
         </div>
     </div>
   </div>
 </div>
+
