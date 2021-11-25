@@ -1,10 +1,12 @@
 <div class="navbar d-flex navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-brand band-logo" do %>
-    <%= image_tag "https://static.thenounproject.com/png/48990-200.png" %>
-  <% end %>
-  <%= link_to root_path, class: "navbar-brand band-logo" do %>
-  <h3 class="header-font white-font navbar-title">Bandable</h3>
-  <% end %>
+  <div class="d-flex align-items-center">
+    <%= link_to root_path, class: "navbar-brand band-logo" do %>
+      <%= image_tag "https://static.thenounproject.com/png/48990-200.png" %>
+    <% end %>
+    <%= link_to root_path do%>
+    <h3 class="header-font white-font navbar-title">Bandable</h3>
+    <% end %>
+  </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
   </button>
