@@ -1,7 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: $main;
-  padding: .5rem !important;
+  padding: 0px !important;
 }
 
 .band-logo {
@@ -36,10 +36,11 @@
   align-items: center;
   justify-content: center;
   color:white;
-  width: 100%;
-  padding: 10px;
+  height: 100%;
+  width: 160px;
+  padding: 13px;
   background: linear-gradient(
-  160deg, rgb(12, 24, 94), $light-background);
+  90deg, $main, $main);
   border-left: 2px solid $accent;
   &:hover {
     cursor: pointer;
@@ -49,6 +50,7 @@
 
 .band-dropdown-container {
   width: 150px;
+  height: 100%;
 
 }
 
@@ -70,6 +72,7 @@
   &:hover {
     transform: scale(1.02);
   }
+  padding:10px;
 }
 
 // .band-avatar {
@@ -79,6 +82,11 @@
 // }
 .hidden {
   display: none;
+}
+
+.nav-button-active {
+  background: linear-gradient(
+  180deg, $main, rgb(49, 49, 160));
 }
 
 .audition-dropdown-container {
@@ -120,11 +128,13 @@
   align-items: center;
   justify-content: center;
   color:white;
-  width: 100%;
-  padding: 10px;
+  width: 160px;
+  height:100%;
+  padding: 13px;
   background: linear-gradient(
-  160deg, rgb(12, 24, 94), $light-background);
+  90deg, $main, $main);
   border-left: 2px solid $accent;
+  border-right: 2px solid $accent;
   &:hover {
     cursor: pointer;
   }
