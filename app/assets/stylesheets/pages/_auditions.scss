@@ -1,0 +1,66 @@
+.auditions-main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+.auditions-container {
+  width: 90%;
+  height: 90%;
+  margin: 5%;
+  background-color: $light-background;
+  // background-color: #232a4d;
+  border-radius: 5%;
+  opacity: 0.8;
+  padding: 28px;
+  border: 1px solid $accent;
+  background: linear-gradient(19deg, black, transparent);
+  background-color: $main;
+}
+
+.auditions-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.audition-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(19deg, black, $light-background);
+  // border: 1px solid $accent;
+  filter: drop-shadow(0px 0px 4px #000000);
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+
+  }
+}
+
+.audition-details {
+  width: 50%;
+}
+
+.audition-avatar {
+  margin-left: 5px;
+  height: 60px;
+  width: 60px;
+}
+
+.audition-buttons {
+  display: flex;
+  width: 50%;
+  justify-content: flex-end;
+
+  p {
+    margin: 0px;
+  }
+}
