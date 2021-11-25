@@ -38,7 +38,7 @@
           <p><%= user.bio[0..150].gsub(/\s\w+\s*$/, '...') %></p>
           <p><%= user.location %></p>
           <button>
-            <%# <%= link_to "More Info", musician_path%>
+            <%= link_to "More Info", musician_path(user)%>
           </button>
         </figcaption>
       </figure>
