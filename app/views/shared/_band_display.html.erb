@@ -9,6 +9,11 @@
         </div>
           <div class="right-whole-container my-3">
             <p><%= @band.bio %></p>
+            <% if !@band.users.include?(current_user) %>
+              <button type="button" class="btn btn-danger w-100" data-toggle="modal" data-target="#exampleModal">
+                Audition
+              </button>
+          <% end %>
           </div>
       </div>
     <div class="band-members-container">
