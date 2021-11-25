@@ -7,31 +7,30 @@
   </div>
 </div>
 
-<% if user_signed_in? %>
-  <div class="container">
-    <div class="cards">
-      <div class="card">
-        <%= image_tag "find.png" %>
-        <h4>Find</h4>
-        <p>Find a band you want to join.</p>
-      </div>
-      <div class="card">
-        <%= image_tag "meet.png" %>
-        <h4>Meet</h4>
-        <p>Meet band members around the world.</p>
-      </div>
-      <div class="card">
-        <%= image_tag "note.png" %>
-        <h4>Collaborate</h4>
-        <p>Finally you will be able to bring your inspirations to life.</p>
-      </div>
+
+<div class="container">
+  <div class="cards">
+    <div class="card">
+      <%= image_tag "find.png" %>
+      <h4>Find</h4>
+      <p>Find a band you want to join.</p>
+    </div>
+    <div class="card">
+      <%= image_tag "meet.png" %>
+      <h4>Meet</h4>
+      <p>Meet band members around the world.</p>
+    </div>
+    <div class="card">
+      <%= image_tag "note.png" %>
+      <h4>Collaborate</h4>
+      <p>Finally you will be able to bring your inspirations to life.</p>
     </div>
   </div>
-<% end %>
+</div>
 
 
-<div class="card-container">
-  <div class="d-flex justify-content-center">
+
+<div class="index-card-container">
     <% @bands.each do |band| %>
       <figure class="image-block">
         <%= image_tag band.image_url %>
@@ -48,5 +47,4 @@
         </figcaption>
       </figure>
     <% end %>
-  </div>
 </div>

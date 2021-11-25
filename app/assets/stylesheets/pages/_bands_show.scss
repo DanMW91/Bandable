@@ -5,9 +5,11 @@
   margin-top: 24px;
 }
 
-.card-container {
+.index-card-container {
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
   width: 90%;
-  height: 700px;
   margin: 5%;
   background-color: rgba(35, 42, 77, 0.8);
   border-radius: 5%;
