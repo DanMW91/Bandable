@@ -15,7 +15,7 @@ class User < ApplicationRecord
   validates :bio, length: { maximum: 1000 }
   # validates :instruments, inclusion: { in: %w[Guitar Drums Piano Bass Vocals Violin Cello Flute] }
   validates :genre, inclusion: { in:
-    ['Rock', 'Jazz', 'RnB', 'Hip-Hop', 'Heavy Metal', 'Country', 'Folk', 'Pop', 'Indie'] }
+    ['Rock', 'Jazz', 'Alternative', 'RnB', 'Hip-Hop', 'Heavy Metal', 'Country', 'Folk', 'Pop', 'Indie'] }
 
 
   has_many :band_members

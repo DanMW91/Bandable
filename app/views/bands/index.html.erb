@@ -7,49 +7,44 @@
   </div>
 </div>
 
-<% if user_signed_in? %>
-  <div class="container">
-    <div class="cards">
-      <div class="card">
-        <%= image_tag "find.png" %>
-        <h4>Find</h4>
-        <p>Find a band you want to join.</p>
-      </div>
-      <div class="card">
-        <%= image_tag "meet.png" %>
-        <h4>Meet</h4>
-        <p>Meet band members around the world.</p>
-      </div>
-      <div class="card">
-        <%= image_tag "note.png" %>
-        <h4>Collaborate</h4>
-        <p>Finally you will be able to bring your inspirations to life.</p>
-      </div>
+
+<div class="container">
+  <div class="cards">
+    <div class="card">
+      <%= image_tag "find.png" %>
+      <h4>Find</h4>
+      <p>Find a band you want to join.</p>
+    </div>
+    <div class="card">
+      <%= image_tag "meet.png" %>
+      <h4>Meet</h4>
+      <p>Meet band members around the world.</p>
+    </div>
+    <div class="card">
+      <%= image_tag "note.png" %>
+      <h4>Collaborate</h4>
+      <p>Finally you will be able to bring your inspirations to life.</p>
     </div>
   </div>
-<% end %>
+</div>
 
 
-<div class="card-container">
-  <div class="d-flex justify-content-center">
+
+<div class="index-card-container">
     <% @bands.each do |band| %>
       <figure class="image-block">
         <%= image_tag band.image_url %>
-        <% band.users.each do |user| %>
-          <h6><i>Band member -<%= user.first_name  %> <%= user.last_name  %></i></h6>
-        <% end %>
         <figcaption>
           <h3>
-          <%= band.name.capitalize %>
+          <%= band.name.upcase %>
           </h3>
           <p><%= band.bio[0..150].gsub(/\s\w+\s*$/, '...') %></p>
           <p><%= band.location %></p>
+          <p><%= band.genre %></p>
           <button>
             <%= link_to "More Info", band_path(band) %>
           </button>
         </figcaption>
       </figure>
     <% end %>
-  </div>
 </div>
-

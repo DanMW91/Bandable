@@ -2,7 +2,8 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @band.image_url %> ); background-position: top;">
   <div class="container">
     <h1 class="band-main-title"><strong> <%= @band.name %> </strong></h1>
-    <p>Heavy Rocking Since 1999</p>
+    <p class="white-font"> <%= @band.location%></p>
+    <%# <p>Heavy Rocking Since 1999</p> %>
     <% if !@band.users.include?(current_user) %>
       <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
         Audition
@@ -23,19 +24,18 @@
 
   <div class="tab" <% if !@is_band_member %>style="display:none;"<% end %>>
     <button class="tablinks">Band</button>
-    <button class="tablinks">Audition</button>
+    <button class="tablinks">Auditions</button>
     <button class="tablinks">Chat</button>
     <button class="tablinks">The Rehearsal Room</button>
   </div>
 
-
 <!-- Tab content -->
 <div class="band-container">
   <div id="Band" class="tabcontent">
-    <%= render "shared/band_display", locals: { songs: @band } %>
+    <%= render "shared/band_display", locals: { band: @band } %>
   </div>
 
-  <div id="Audition" class="tabcontent">
+  <div id="Auditions" class="tabcontent">
     <%= render "shared/auditions_display", locals: { songs: @band } %>
   </div>
 
@@ -61,12 +61,14 @@
       <div class="modal-body">
         <%= simple_form_for ([@band, @band_member]), url: band_auditions_path(@band) do|f| %>
         <%= f.input :invitation_text,  label: 'Why do you want to join?:' %>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= f.submit "Submit Audition", class: "btn btn-primary" %>
+          <% end %>
+        </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <%= f.submit "Submit Audition", class: "btn btn-primary" %>
-        <% end %>
-      </div>
+
     </div>
   </div>
 </div>
