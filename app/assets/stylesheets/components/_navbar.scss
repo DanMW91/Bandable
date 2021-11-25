@@ -44,8 +44,6 @@
   border-left: 2px solid $accent;
   &:hover {
     cursor: pointer;
-    background: linear-gradient(
-  180deg, $main, rgb(49, 49, 160));
   }
 
 }
@@ -138,8 +136,6 @@
   border-left: 2px solid $accent;
   border-right: 2px solid $accent;
   &:hover {
-    background: linear-gradient(
-    180deg, $main, rgb(49, 49, 160));
     cursor: pointer;
   }
 
