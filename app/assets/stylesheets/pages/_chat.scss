@@ -17,14 +17,14 @@
   border: 1px solid $accent;
   background: linear-gradient(19deg, black, transparent);
   background-color: $main;
-}
-
-img {max-width: 100%;}
+  img {max-width: 100%;}
 		.inbox_msg {
 		  border: 1px solid #c4c4c4;
 		  clear: both;
 		  overflow: hidden;
 		}
+}
+
 
 		.incoming_msg_img {
 		  display: inline-block;
