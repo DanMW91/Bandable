@@ -23,7 +23,7 @@
 
   <div class="tab" <% if !@is_band_member %>style="display:none;"<% end %>>
     <button class="tablinks">Band</button>
-    <button class="tablinks">Audition</button>
+    <button class="tablinks">Auditions</button>
     <button class="tablinks">Chat</button>
     <button class="tablinks">The Rehearsal Room</button>
   </div>
@@ -35,7 +35,7 @@
     <%= render "shared/band_display", locals: { band: @band } %>
   </div>
 
-  <div id="Audition" class="tabcontent">
+  <div id="Auditions" class="tabcontent">
     <%= render "shared/auditions_display", locals: { songs: @band } %>
   </div>
 
