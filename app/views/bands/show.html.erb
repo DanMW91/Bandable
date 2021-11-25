@@ -32,7 +32,7 @@
 <!-- Tab content -->
 <div class="band-container">
   <div id="Band" class="tabcontent">
-    <%= render "shared/band_display", locals: { songs: @band } %>
+    <%= render "shared/band_display", locals: { band: @band } %>
   </div>
 
   <div id="Audition" class="tabcontent">
@@ -62,12 +62,14 @@
       <div class="modal-body">
         <%= simple_form_for ([@band, @band_member]), url: band_auditions_path(@band) do|f| %>
         <%= f.input :invitation_text,  label: 'Why do you want to join?:' %>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= f.submit "Submit Audition", class: "btn btn-primary" %>
+          <% end %>
+        </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <%= f.submit "Submit Audition", class: "btn btn-primary" %>
-        <% end %>
-      </div>
+
     </div>
   </div>
 </div>

@@ -9,9 +9,11 @@ BandMember.destroy_all
 Band.destroy_all
 User.destroy_all
 
+
 crumb = Band.create!({ image_url: 'https://images.complex.com/complex/images/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/dm07rs3emmj5waybj1wt/crumb?fimg-client-default', name: 'Crumb', current_member_count: 4, location: 'Brooklyn', genre: "Rock", bio: "Crumb is an American indie rock band. The group is a collaboration of Brooklyn-based musicians Lila Ramani (guitar, vocals), Jesse Brotter (bass, vocals), Bri Aronow[2] (synthesizers, keyboard, saxophone), and Jonathan Gilad (drums), who met while attending Tufts University."})
 bachelor = Band.create!({ image_url: 'https://images.complex.com/complex/images/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/lxbsfs9dtczsfdy495yd/bachelor?fimg-client-default', name: 'Bachelor', current_member_count: 2, location: 'Los Angeles', genre: "Alternative", bio: "Last year, the minds behind Jay Som (Melina Duterte) and Palehound (Ellen Kempner) rented a house in the California canyons. Topanga Canyon, to be precise—a winding, weaving little hippie hideout with a long creative history."})
 drug_store_romeos = Band.create!({ image_url: 'https://images.complex.com/complex/images/c_crop,h_3189,w_4251,x_25,y_1053/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/tyrcjgymy4ph8vgu8sb4/drug-store-reomeos?fimg-client-default', name: 'Drug Store Romeos', current_member_count: 3, location: 'London', genre: "Alternative", bio: "Drug Store Romeos formed at college in nearby Farnborough when childhood friends Jonny and Charlie pinned an ad about finding a bassist for their new band to the school's notice board – fate played its part with Sarah replying and quickly proving herself a better vocalist than either of them."})
+
 
 # crumb band
 lila = User.create!({ avatar_url: 'https://cdn2.pitchfork.com/longform/914/crumb2.jpg', email: 'lila@lila.com', password: '123123', first_name: 'Lila', last_name: "Ramani", location: 'Brooklyn', genre: "Rock", bio: "Lead singer and guitarist of Crumb."})
@@ -22,6 +24,7 @@ jonathan = User.create!({ avatar_url: 'https://static.wixstatic.com/media/b47582
   crumb.users << member
 end
 crumb.save
+
 
 # bachelor band
 melina = User.create!({ avatar_url: 'https://static01.nyt.com/images/2017/03/26/arts/26GUIDE1/26GUIDE1-superJumbo.jpg', email: 'melina@melina.com', password: '123123', first_name: 'Melina', last_name: "Duterte", location: 'Los Angeles', genre: "Alternative", bio: "American, Los Angeles-based, DIY and bedroom-pop singer, songwriter, multi-instrumentalist and producer."})
@@ -39,6 +42,7 @@ sarah = User.create!({ avatar_url: 'https://i.ytimg.com/vi/2HNe6j-JbG8/maxresdef
   drug_store_romeos.users << member
 end
 drug_store_romeos.save
+
 
 # next band
 
