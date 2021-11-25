@@ -63,21 +63,20 @@
   align-items: center;
   width: 100%;
   height: 70px;
-  background: linear-gradient(19deg, black, $light-background);
+  background: linear-gradient(19deg, rgba(0, 0, 0, 0.80), rgba(42, 50, 83, 0.8));
   // border: 1px solid $accent;
   filter: drop-shadow(0px 0px 4px #000000);
   transition: all .2s ease-in-out;
   &:hover {
     transform: scale(1.02);
   }
-  opacity: .85;
 }
 
-.band-avatar {
-  margin-left: 5px;
-  height: 60px;
-  width: 60px;
-}
+// .band-avatar {
+//   margin-left: 5px;
+//   height: 60px;
+//   width: 60px;
+// }
 .hidden {
   display: none;
 }
@@ -91,7 +90,6 @@
 .audition-dropdown-list {
   position:absolute;
   z-index: 500;
-
 }
 
 .audition-item {
@@ -99,20 +97,20 @@
   align-items: center;
   width: 100%;
   height: 70px;
-  background: linear-gradient(19deg, black, $light-background);
+  background: linear-gradient(19deg, rgba(0, 0, 0, 0.85), rgba(29, 35, 58, 0.85));
   // border: 1px solid $accent;
   filter: drop-shadow(0px 0px 4px #000000);
   transition: all .2s ease-in-out;
   &:hover {
     transform: scale(1.02);
   }
-  opacity: .85;
 }
 
 .band-avatar {
   margin-left: 5px;
   height: 60px;
   width: 60px;
+  opacity: 1 !important;
 }
 
 

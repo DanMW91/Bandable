@@ -35,9 +35,6 @@
     <% @bands.each do |band| %>
       <figure class="image-block">
         <%= image_tag band.image_url %>
-        <% band.users.each do |user| %>
-          <h6><i>Band member -<%= user.first_name  %> <%= user.last_name  %></i></h6>
-        <% end %>
         <figcaption>
           <h3>
           <%= band.name.capitalize %>

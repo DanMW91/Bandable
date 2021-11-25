@@ -13,7 +13,9 @@ User.destroy_all
 crumb = Band.create!({ image_url: 'https://images.complex.com/complex/images/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/dm07rs3emmj5waybj1wt/crumb?fimg-client-default', name: 'Crumb', current_member_count: 4, location: 'Brooklyn', genre: "Rock", bio: "Crumb is an American indie rock band. The group is a collaboration of Brooklyn-based musicians Lila Ramani (guitar, vocals), Jesse Brotter (bass, vocals), Bri Aronow[2] (synthesizers, keyboard, saxophone), and Jonathan Gilad (drums), who met while attending Tufts University."})
 bachelor = Band.create!({ image_url: 'https://images.complex.com/complex/images/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/lxbsfs9dtczsfdy495yd/bachelor?fimg-client-default', name: 'Bachelor', current_member_count: 2, location: 'Los Angeles', genre: "Alternative", bio: "Last year, the minds behind Jay Som (Melina Duterte) and Palehound (Ellen Kempner) rented a house in the California canyons. Topanga Canyon, to be precise—a winding, weaving little hippie hideout with a long creative history."})
 drug_store_romeos = Band.create!({ image_url: 'https://images.complex.com/complex/images/c_crop,h_3189,w_4251,x_25,y_1053/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/tyrcjgymy4ph8vgu8sb4/drug-store-reomeos?fimg-client-default', name: 'Drug Store Romeos', current_member_count: 3, location: 'London', genre: "Alternative", bio: "Drug Store Romeos formed at college in nearby Farnborough when childhood friends Jonny and Charlie pinned an ad about finding a bassist for their new band to the school's notice board – fate played its part with Sarah replying and quickly proving herself a better vocalist than either of them."})
-
+chai = Band.create!({ image_url: 'https://images.complex.com/complex/images/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/wuyrrirv74khybhwutot/chai?fimg-client-default', name: 'Chai', current_member_count: 4, location: 'Nagoya', genre: "Rock", bio: "Chai are a Japanese rock band from Nagoya. The group consists of four women—Mana, Kana, Yuuki and Yuna. Formed in 2012, the band released their debut studio album Pink in 2017"})
+babygirl = Band.create!({ image_url: 'https://images.complex.com/complex/images/c_crop,h_887,w_1183,x_11,y_500/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/zhm0svamkntqcjsmeimk/babygirl?fimg-client-default', name: 'Babygirl', current_member_count: 2, location: 'Toronto', genre: "Alternative", bio: "Babygirl was born into a life of music. Kirsten “Kiki” Frances started writing song at nine, and Cameron “Bright” Breithaupt grew up in a household of professional musicians. They first met in college, bonded over a shared love of Lil Wayne, and started creating seriously catchy songs."})
+just_wondering = Band.create!({ image_url: 'https://images.complex.com/complex/images/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/t0km2k0f9ahlksxvcekf/just-wondering?fimg-client-default', name: 'Just Wondering', current_member_count: 3, location: 'Dublin', genre: "Rock", bio: "A trio made up of Wale Akande, Jack O’Shaughnessy and Adam Redmond, Just Wondering have formally released their debut single, an impressive track that melds modern synth pop melodies, soul vibes, guitar licks, electronic textures and processed vocals."})
 
 # crumb band
 lila = User.create!({ avatar_url: 'https://cdn2.pitchfork.com/longform/914/crumb2.jpg', email: 'lila@lila.com', password: '123123', first_name: 'Lila', last_name: "Ramani", location: 'Brooklyn', genre: "Rock", bio: "Lead singer and guitarist of Crumb."})
@@ -24,7 +26,6 @@ jonathan = User.create!({ avatar_url: 'https://static.wixstatic.com/media/b47582
   crumb.users << member
 end
 crumb.save
-
 
 # bachelor band
 melina = User.create!({ avatar_url: 'https://static01.nyt.com/images/2017/03/26/arts/26GUIDE1/26GUIDE1-superJumbo.jpg', email: 'melina@melina.com', password: '123123', first_name: 'Melina', last_name: "Duterte", location: 'Los Angeles', genre: "Alternative", bio: "American, Los Angeles-based, DIY and bedroom-pop singer, songwriter, multi-instrumentalist and producer."})
@@ -43,8 +44,32 @@ sarah = User.create!({ avatar_url: 'https://i.ytimg.com/vi/2HNe6j-JbG8/maxresdef
 end
 drug_store_romeos.save
 
+# chai band
+mana = User.create!({ avatar_url: 'https://chai-band.com/global/resource/images/img-main-mana.png', email: 'mana@mana.com', password: '123123', first_name: 'Mana', last_name: "S", location: 'Nagoya', genre: "Rock", bio: "Twinning with Kana. Bringing back girl power."})
+kana = User.create!({ avatar_url: 'https://chai-band.com/global/resource/images/img-main-kana-sp.png', email: 'kana@kana.com', password: '123123', first_name: 'Kana', last_name: "S", location: 'Nagoya', genre: "Rock", bio: "Older twin so therefore the more cynical one. Rock on."})
+yuna = User.create!({ avatar_url: 'https://chai-band.com/global/resource/images/img-main-yuna.png', email: 'yuna@yuna.com', password: '123123', first_name: 'Yuna', last_name: "T", location: 'Nagoya', genre: "Rock", bio: "I'm Yina. Love all sorts of music. Happy to see J-pop taking over the world."})
+yuuki = User.create!({ avatar_url: 'https://chai-band.com/global/resource/images/img-main-yuuki.png', email: 'yuuki@yuuki.com', password: '123123', first_name: 'Yuuki', last_name: "J", location: 'Nagoya', genre: "Rock", bio: "I love to draw while playing the bass. If you like what you see on our albums, thank my brain. If you don't kiss my ass :)"})
+[mana, kana, yuna, yuuki].each do |member|
+  chai.users << member
+end
+chai.save
 
-# next band
+# babygirl band
+kiki = User.create!({ avatar_url: 'https://cloudimages.broadwayworld.com/columnpiccloud/1250-9b3034dd4d5f6c238518f413132c8890.jpg', email: 'kiki@kiki.com', password: '123123', first_name: 'Kiki', last_name: "Frances", location: 'Toronto', genre: "Alternative", bio: "American, Los Angeles-based, DIY and bedroom-pop singer, songwriter, multi-instrumentalist and producer."})
+cameron = User.create!({ avatar_url: 'https://eyecandy.earmilk.com/wp-content/uploads/2017/11/aMTuISoG-babygirljpg.jpg', email: 'cameron@cameron.com', password: '123123', first_name: 'Cameron', last_name: "Breithaupt", location: 'Toronto', genre: "Alternative", bio: "I grew up surrounded by music as the child of two full-time professional musicians. What else was I gonna be, a doctor?"})
+[kiki, cameron].each do |member|
+  babygirl.users << member
+end
+babygirl.save
+
+# just wondering band
+wale = User.create!({ avatar_url: 'https://www.clashmusic.com/sites/default/files/field/image/BICYCLES%20PRESS%20SHOT.jpg', email: 'wale@wale.com', password: '123123', first_name: 'Wale', last_name: "Akande", location: 'Dublin', genre: "Alternative", bio: "I love what I do. That's all there is to say really. Anything else you wanna know just ask me ✌🏾"})
+jack = User.create!({ avatar_url: 'https://www.clashmusic.com/sites/default/files/field/image/unnamed-17_4.jpg', email: 'jack@jack.com', password: '123123', first_name: 'Jack', last_name: "O'Shaughnessy", location: 'Dublin', genre: "Alternative", bio: "F*** that out now on all streaming platforms #dublinsfinest"})
+adam = User.create!({ avatar_url: 'https://uploads.nialler9.com/wp-content/uploads/2019/02/14165308/50874079_469091780292962_8501528466942853120_o-1.jpg', email: 'adam@adam.com', password: '123123', first_name: 'Adam', last_name: "Redmond", location: 'Dublin', genre: "Alternative", bio: "Look ma I made it!"})
+[wale, jack, adam].each do |member|
+  just_wondering.users << member
+end
+just_wondering.save
 
 User.all.each do |user|
   user.band_members.each do |member_record|
