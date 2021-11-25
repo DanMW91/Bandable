@@ -2,7 +2,8 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @band.image_url %> ); background-position: top;">
   <div class="container">
     <h1 class="band-main-title"><strong> <%= @band.name %> </strong></h1>
-    <p>Heavy Rocking Since 1999</p>
+    <p class="white-font"> <%= @band.location%></p>
+    <%# <p>Heavy Rocking Since 1999</p> %>
     <% if !@band.users.include?(current_user) %>
       <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
         Audition
@@ -27,7 +28,6 @@
     <button class="tablinks">Chat</button>
     <button class="tablinks">The Rehearsal Room</button>
   </div>
-
 
 <!-- Tab content -->
 <div class="band-container">
