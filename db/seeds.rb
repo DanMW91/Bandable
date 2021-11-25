@@ -13,7 +13,7 @@ User.destroy_all
 crumb = Band.create!({ image_url: 'https://images.complex.com/complex/images/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/dm07rs3emmj5waybj1wt/crumb?fimg-client-default', name: 'Crumb', current_member_count: 4, location: 'Brooklyn', genre: "Rock", bio: "Crumb is an American indie rock band. The group is a collaboration of Brooklyn-based musicians Lila Ramani (guitar, vocals), Jesse Brotter (bass, vocals), Bri Aronow[2] (synthesizers, keyboard, saxophone), and Jonathan Gilad (drums), who met while attending Tufts University."})
 bachelor = Band.create!({ image_url: 'https://images.complex.com/complex/images/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/lxbsfs9dtczsfdy495yd/bachelor?fimg-client-default', name: 'Bachelor', current_member_count: 2, location: 'Los Angeles', genre: "Alternative", bio: "Last year, the minds behind Jay Som (Melina Duterte) and Palehound (Ellen Kempner) rented a house in the California canyons. Topanga Canyon, to be precise—a winding, weaving little hippie hideout with a long creative history."})
 drug_store_romeos = Band.create!({ image_url: 'https://images.complex.com/complex/images/c_crop,h_3189,w_4251,x_25,y_1053/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/tyrcjgymy4ph8vgu8sb4/drug-store-reomeos?fimg-client-default', name: 'Drug Store Romeos', current_member_count: 3, location: 'London', genre: "Alternative", bio: "Drug Store Romeos formed at college in nearby Farnborough when childhood friends Jonny and Charlie pinned an ad about finding a bassist for their new band to the school's notice board – fate played its part with Sarah replying and quickly proving herself a better vocalist than either of them."})
-
+chai = Band.create!({ image_url: 'https://images.complex.com/complex/images/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/wuyrrirv74khybhwutot/chai?fimg-client-default', name: 'Chai', current_member_count: 4, location: 'Nagoya', genre: "Rock", bio: "Chai are a Japanese rock band from Nagoya. The group consists of four women—Mana, Kana, Yuuki and Yuna. Formed in 2012, the band released their debut studio album Pink in 2017"})
 
 # crumb band
 lila = User.create!({ avatar_url: 'https://cdn2.pitchfork.com/longform/914/crumb2.jpg', email: 'lila@lila.com', password: '123123', first_name: 'Lila', last_name: "Ramani", location: 'Brooklyn', genre: "Rock", bio: "Lead singer and guitarist of Crumb."})
@@ -43,6 +43,15 @@ sarah = User.create!({ avatar_url: 'https://i.ytimg.com/vi/2HNe6j-JbG8/maxresdef
 end
 drug_store_romeos.save
 
+# chai band
+mana = User.create!({ avatar_url: 'https://chai-band.com/global/resource/images/img-main-mana.png', email: 'mana@mana.com', password: '123123', first_name: 'Mana', last_name: "S", location: 'Nagoya', genre: "Rock", bio: "Twinning with Kana. Bringing back girl power."})
+kana = User.create!({ avatar_url: 'https://chai-band.com/global/resource/images/img-main-kana-sp.png', email: 'kana@kana.com', password: '123123', first_name: 'Kana', last_name: "S", location: 'Nagoya', genre: "Rock", bio: "Older twin so therefore the more cynical one. Rock on."})
+yuna = User.create!({ avatar_url: 'https://chai-band.com/global/resource/images/img-main-yuna.png', email: 'yuna@yuna.com', password: '123123', first_name: 'Yuna', last_name: "T", location: 'Nagoya', genre: "Rock", bio: "I'm Yina. Love all sorts of music. Happy to see J-pop taking over the world."})
+yuuki = User.create!({ avatar_url: 'https://chai-band.com/global/resource/images/img-main-yuuki.png', email: 'yuuki@yuuki.com', password: '123123', first_name: 'Yuuki', last_name: "J", location: 'Nagoya', genre: "Rock", bio: "I love to draw while playing the bass. If you like what you see on our albums, thank my brain. If you don't kiss my ass :)"})
+[mana, kana, yuna, yuuki].each do |member|
+  chai.users << member
+end
+chai.save
 
 # next band
 
