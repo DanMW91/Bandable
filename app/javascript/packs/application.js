@@ -43,12 +43,11 @@ document.addEventListener('turbolinks:load', () => {
           openTab(e, tabName)
       })
     })
+
     const bandContent = document.querySelector('.tabcontent')
     const bandTab = tabs[0]
     bandTab.classList.add('active')
     bandContent.style.display = "block";
-    console.log(bandTab)
-    console.log(bandContent)
   }
 
 
