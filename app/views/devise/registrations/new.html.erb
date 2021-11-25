@@ -18,9 +18,10 @@
             input_html: { autocomplete: "new-password" } %>
             <%= f.input :first_name  %>
             <%= f.input :last_name  %>
-            <%= f.input :genre, :collection => ['Rock', 'Jazz', 'RnB', 'Hip-Hop', 'Heavy Metal', 'Country', 'Folk', 'Pop', 'Indie']  %>
+            <%= f.input :genre, :collection => ['Rock', 'Jazz', 'Alternative', 'RnB', 'Hip-Hop', 'Heavy Metal', 'Country', 'Folk', 'Pop', 'Indie']  %>
             <%= f.input :location %>
-            <%#= f.input :photo, as: :file %>
+            <%= f.input :bio %>
+            <%= f.input :avatar_url %>
           </div>
 
           <div class="form-actions d-flex justify-content-center">
