@@ -1,14 +1,14 @@
 <div class="band-main-container">
     <div class="band-content-container">
       <h1 class="d-flex justify-content-center white-font border-bottom">
-        Band
+        <%= @band.name %>
       </h1>
       <div class="whole-container">
         <div class="left-whole-container">
-          <%=image_tag @band.image_url, style: "height: 300px; width: 650px; background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1))"%>
+          <%=image_tag @band.image_url, class: 'my-3', style: "height: 400px;"%>
         </div>
-          <div class="right-whole-container">
-            <p><%= @band.bio[0..150].gsub(/\s\w+\s*$/, '...') %></p>
+          <div class="right-whole-container my-3">
+            <p><%= @band.bio %></p>
           </div>
       </div>
     <div class="band-members-container">
