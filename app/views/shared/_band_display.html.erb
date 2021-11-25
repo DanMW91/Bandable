@@ -13,8 +13,8 @@
       </div>
     <div class="band-members-container">
       <%@band.band_members.where(is_member: true).each do |record| %>
-         <%= image_tag "#{record.user.avatar_url}", class: "avatar audition-avatar mx-3" %>
-          <p> <%= record.user.first_name %> </p>
+         <%= image_tag "#{record.user.avatar_url}", class: "avatar audition-avatar" %>
+          <div class='ml-1'>- <%= record.user.first_name %> </div>
       <% end %>
     </div>
   </div>
