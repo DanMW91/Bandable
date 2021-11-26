@@ -45,11 +45,13 @@
 
 .video-bg-div {
   background-color: black;
+  height: 600px;
 }
 .header-video {
   height: 600px;
   width: 100%;
   object-fit:cover;
+  // border-top: 5px solid black;
 
   opacity: .8;
 }
