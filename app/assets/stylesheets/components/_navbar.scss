@@ -4,6 +4,16 @@
   padding: 0px !important;
 }
 
+.nav-avatar {
+  &:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 10px $accent;
+    &:active {
+    box-shadow: 0px 0px 2px $accent;
+    }
+  }
+}
+
 .band-logo {
   display: flex;
   justify-content: center;
@@ -37,13 +47,16 @@
   justify-content: center;
   color:white;
   height: 100%;
-  width: 160px;
   padding: 13px;
   background: linear-gradient(
   90deg, $main, $main);
   border-left: 2px solid $accent;
   &:hover {
     cursor: pointer;
+    box-shadow: 0px 0px 10px $accent;
+  }
+  &:active {
+    box-shadow: 0px 0px 2px $accent;
   }
 
 }
@@ -95,6 +108,10 @@
 
 }
 
+.dropdown-list {
+  top: 66px;
+}
+
 .audition-dropdown-list {
   position:absolute;
   z-index: 500;
@@ -137,6 +154,10 @@
   border-right: 2px solid $accent;
   &:hover {
     cursor: pointer;
+    box-shadow: 0px 0px 10px $accent;
+  }
+  &:active {
+    box-shadow: 0px 0px 2px $accent;
   }
 
 }
