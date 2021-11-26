@@ -21,6 +21,9 @@ import "bootstrap"
 
 document.addEventListener('turbolinks:load', () => {
 
+
+  // TABS ON BAND PAGE
+
   if (document.querySelector('.tablinks')) {
     function openTab(evt, tabName) {
           var i, tabcontent, tablinks;
@@ -50,13 +53,28 @@ document.addEventListener('turbolinks:load', () => {
     bandContent.style.display = "block";
   }
 
+  // DROPDOWN STUFFS
+  const auditionDropdownList = document.querySelector('.audition-dropdown-list');
+  const bandDropdownList = document.querySelector('.band-dropdown-list')
+
+  window.addEventListener('click', (e) => {
+    if (!e.target.matches('.btn-audition-dropdown')) {
+      if (!auditionDropdownList.classList.contains('hidden')) {
+        auditionDropdownList.classList.add('hidden')
+      }
+    }
+    if (!e.target.matches('.btn-band-dropdown')) {
+      if (!bandDropdownList.classList.contains('hidden')) {
+        bandDropdownList.classList.add('hidden')
+      }
+    }
+  });
 
   if (document.querySelector('.band-dropdown-container')) {
     const bandButton = document.querySelector('.btn-band-dropdown ');
     const bandDropdownList = document.querySelector('.band-dropdown-list ');
 
     bandButton.addEventListener('click', () => {
-
       bandDropdownList.classList.toggle('hidden')
     })
   }
@@ -66,7 +84,6 @@ document.addEventListener('turbolinks:load', () => {
     const auditionDropdownList = document.querySelector('.audition-dropdown-list ');
 
     auditionButton.addEventListener('click', () => {
-
       auditionDropdownList.classList.toggle('hidden')
     })
   }
