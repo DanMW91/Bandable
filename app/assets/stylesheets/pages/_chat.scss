@@ -18,11 +18,11 @@
   background: linear-gradient(19deg, black, transparent);
   background-color: $main;
   img {max-width: 100%;}
-		.inbox_msg {
-		  border: 1px solid #c4c4c4;
-		  clear: both;
-		  overflow: hidden;
-		}
+      .inbox_msg {
+        border: 1px solid #c4c4c4;
+        clear: both;
+        overflow: hidden;
+      }
 }
 
 
@@ -69,7 +69,6 @@
 		  padding: 5px 10px 5px 12px;
 		  width:100%;
 		}
-
 
     .outgoing_msg{
       overflow:hidden;
