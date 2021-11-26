@@ -19,80 +19,81 @@
 }
 
 
-		.incoming_msg_img {
-		  display: inline-block;
-		  // width: 6%;
+  .incoming_msg_img {
+    display: inline-block;
+    // width: 6%;
 
-		}
+  }
 
     .incoming_msg {
       // display:flex;
       // align-items: center;
+
       margin: 10px;
     }
 
-		.received_msg {
-		  display: inline-block;
-		  padding: 0 0 0 10px;
-		  vertical-align: top;
-      max-width: 50%;
-		  // width: 92%;
-		 }
-		 .received_withd_msg p {
-		  background: #e4e8fb none repeat scroll 0 0;
-		  border-radius: 3px;
-		  color: #646464;
-		  font-size: 14px;
-		  margin: 0;
-		  padding: 5px 10px 5px 12px;
-		  width: 100%;
-		}
-		.time_date {
-		  color: white;
-		  display: block;
-		  font-size: 10px;
-		  margin: 3px 0 0;
-		}
-		.received_withd_msg {
+  .received_msg {
+    display: inline-block;
+    padding: 0 0 0 10px;
+    vertical-align: top;
+    max-width: 50%;
+    // width: 92%;
+    }
+    .received_withd_msg p {
+    background: #e4e8fb none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #646464;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px 10px 5px 12px;
+    width: 100%;
+  }
+  .time_date {
+    color: white;
+    display: block;
+    font-size: 10px;
+    margin: 3px 0 0;
+  }
+  .received_withd_msg {
 
     }
 
-		.mesgs {
-		  padding: 20px;
-      flex-direction: column;
-      display: flex;
-		}
-
-		.sent_msg p {
-		  background: $text none repeat scroll 0 0;
-		  border-radius: 3px;
-		  font-size: 14px;
-		  margin: 0; color:#fff;
-		  padding: 5px 10px 5px 12px;
-		  width:100%;
-		}
+  .mesgs {
+    padding: 20px;
+    flex-direction: column;
+    display: flex;
+  }
 
 
-    .outgoing_msg{
-      overflow:hidden;
-      margin: 10px;
-      display: flex;
-      justify-content: flex-end;
-      // width: 100%;
-    }
+	.sent_msg p {
+    background: $text none repeat scroll 0 0;
+    border-radius: 3px;
+    font-size: 14px;
+    margin: 0; color:#fff;
+    padding: 5px 10px 5px 12px;
+    width:100%;
+	}
 
-		.sent_msg {
-      float: right;
-		  // width: 70%;
-      max-width: 50%;
-      text-align: right;
-		}
+  .outgoing_msg{
+    overflow:hidden;
+    margin: 10px;
+    display: flex;
+    justify-content: flex-end;
+    // width: 100%;
+  }
 
-    .outgoing_msg_img {
-      float: right;
-      text-align: right;
-      padding: 0 0 0 10px;
-    }
+  .sent_msg {
+    float: right;
+    // width: 70%;
+    max-width: 50%;
+    text-align: right;
+  }
+
+  .outgoing_msg_img {
+    float: right;
+    text-align: right;
+    padding: 0 0 0 10px;
+  }
 
 		// .input_msg_write input {
 		//   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
