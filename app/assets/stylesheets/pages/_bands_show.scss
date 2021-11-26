@@ -6,7 +6,7 @@
 }
 
 .index-card-container {
-  display:flex;
+  display: flex;
   justify-content: center;
   flex-wrap: wrap;
   width: 90%;
@@ -28,6 +28,9 @@
   justify-content: center;
   // margin: 80px auto;
   background: rgba(35, 42, 77, 0.8);
+
+
+
 }
 
 .list-inline {
@@ -46,3 +49,4 @@
 .list-inline i:hover {
   color: $accent;
 }
+
