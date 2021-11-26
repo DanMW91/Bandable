@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'messages/create'
   get 'band_members/create'
   get 'bands/index'
   devise_for :users
