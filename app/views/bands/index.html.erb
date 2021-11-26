@@ -34,20 +34,23 @@
 
 
 <div class="index-card-container">
-    <% @bands.each do |band| %>
-      <figure class="image-block">
-        <%= image_tag band.image_url %>
-        <figcaption>
-          <h3>
-          <%= band.name.upcase %>
-          </h3>
-          <p> <%= band.bio[0..150].gsub(/\s\w+\s*$/, '...') %></p>
-          <p><%= band.location %></p>
-          <p><%= band.genre %></p>
-          <button>
-            <%= link_to "More Info", band_path(band) %>
-          </button>
-        </figcaption>
-      </figure>
-    <% end %>
+  <div class="card-container-header w-100">
+    <h1>Featured Bands:</h1>
+  </div>
+  <% @bands.each do |band| %>
+    <figure class="image-block">
+      <%= image_tag band.image_url %>
+      <figcaption>
+        <h3>
+        <%= band.name.upcase %>
+        </h3>
+        <p> <%= band.bio[0..150].gsub(/\s\w+\s*$/, '...') %></p>
+        <p><%= band.location %></p>
+        <p><%= band.genre %></p>
+        <button>
+          <%= link_to "More Info", band_path(band) %>
+        </button>
+      </figcaption>
+    </figure>
+  <% end %>
 </div>

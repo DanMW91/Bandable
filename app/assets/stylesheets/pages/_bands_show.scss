@@ -5,6 +5,19 @@
   margin-top: 24px;
 }
 
+.card-container-header {
+  margin-top: 30px;
+  color: white;
+  padding-left: 105px;
+  padding-right: 105px;
+  // border-bottom: 1px solid white;
+  h1 {
+    font-size: 60px;
+    border-bottom:1px solid white;
+  }
+
+}
+
 .index-card-container {
   display:flex;
   justify-content: center;
