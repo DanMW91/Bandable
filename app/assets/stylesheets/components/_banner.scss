@@ -27,11 +27,29 @@
 .main-title {
   font-family: 'Bebas Neue', cursive;;
   letter-spacing: 2px;
-  font-size: 60px;
+  margin-top: 80px;
+  font-size: 80px;
+  text-shadow: 2px 2px $accent;
+}
+
+.sub-title {
+  color: $accent;
 }
 
 .titles {
   position: absolute;
   top: 100px;
   left: 200px;
+  font-size: 30px;
+}
+
+.video-bg-div {
+  background-color: black;
+}
+.header-video {
+  height: 600px;
+  width: 100%;
+  object-fit:cover;
+
+  opacity: .8;
 }

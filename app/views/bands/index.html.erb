@@ -1,9 +1,14 @@
 
 
-<div class="banner" style="background-image: url('<%= image_path "banner.jpeg"%>')">
+<%# <div class="banner" style="background-image: url('https://dice-media.imgix.net/homepage/hero-video-desktop.mp4')"> %>
+<div class="video-bg-div">
+  <video class="header-video" muted autoplay loop>
+      <source src="https://dice-media.imgix.net/homepage/hero-video-desktop.mp4" type="video/mp4">
+  </video>
+</div>
   <div class="titles">
-    <h1 class="main-title">Bandable</h1>
-    <p>Central creativity hub for musicians around the world</p>
+    <h1 class="main-title white-font">Connect - Compose - Perform</h1>
+    <div class="sub-title">Central creativity hub for musicians around the world</div>
   </div>
 </div>
 
@@ -38,7 +43,7 @@
           <h3>
           <%= band.name.upcase %>
           </h3>
-          <p><%= band.bio[0..150].gsub(/\s\w+\s*$/, '...') %></p>
+          <p> <%= band.bio[0..150].gsub(/\s\w+\s*$/, '...') %></p>
           <p><%= band.location %></p>
           <p><%= band.genre %></p>
           <button>
