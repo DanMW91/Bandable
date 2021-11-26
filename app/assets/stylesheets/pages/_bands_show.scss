@@ -29,3 +29,20 @@
   // margin: 80px auto;
   background: rgba(35, 42, 77, 0.8);
 }
+
+.list-inline {
+  list-style: none;
+  text-align: center;
+}
+
+.list-inline li {
+  display: inline;
+  padding: 15px;
+}
+.list-inline i {
+  font-size: 37px;
+  color: rgb(230, 230, 230);
+}
+.list-inline i:hover {
+  color: $accent;
+}
