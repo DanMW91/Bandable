@@ -6,12 +6,25 @@ User.destroy_all
 
 
 
+
+
+
+black_sabbath = Band.create!({spotify_embed_url: 'https://open.spotify.com/embed/artist/5M52tdBnJaKSvOpJGz8mfZ', image_url: 'https://media.pitchfork.com/photos/5e46cb04af0b890008c986d5', name: 'Black Sabbath', current_member_count: 4, location: 'London, England', genre: "Heavy Metal", bio: "Black Sabbath is credited with creating heavy metal. The success of their first two albums - Black Sabbath and Paranoid - marked a paradigm shift in the world of rock. Not until Black Sabbath upended the music scene did the term “heavy metal” enter the popular vocabulary to describe the denser, more thunderous offshoot of rock over which they presided."})
 crumb = Band.create!({ spotify_embed_url: 'https://open.spotify.com/embed/artist/4kSGbjWGxTchKpIxXPJv0B', image_url: 'https://images.complex.com/complex/images/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/dm07rs3emmj5waybj1wt/crumb?fimg-client-default', name: 'Crumb', current_member_count: 4, location: 'Brooklyn, USA', genre: "Rock", bio: "Crumb is an American indie rock band. The group is a collaboration of Brooklyn-based musicians Lila Ramani (guitar, vocals), Jesse Brotter (bass, vocals), Bri Aronow[2] (synthesizers, keyboard, saxophone), and Jonathan Gilad (drums), who met while attending Tufts University."})
 bachelor = Band.create!({ spotify_embed_url: 'https://open.spotify.com/embed/artist/7B1OPA8Ttxfv3XBDCkw24E', image_url: 'https://images.complex.com/complex/images/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/lxbsfs9dtczsfdy495yd/bachelor?fimg-client-default', name: 'Bachelor', current_member_count: 2, location: 'Los Angeles, USA', genre: "Alternative", bio: "Last year, the minds behind Jay Som (Melina Duterte) and Palehound (Ellen Kempner) rented a house in the California canyons. Topanga Canyon, to be precise—a winding, weaving little hippie hideout with a long creative history."})
 drug_store_romeos = Band.create!({ spotify_embed_url: 'https://open.spotify.com/embed/artist/7MMjkDVrjxW9iObeZeeejh', image_url: 'https://images.complex.com/complex/images/c_crop,h_3189,w_4251,x_25,y_1053/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/tyrcjgymy4ph8vgu8sb4/drug-store-reomeos?fimg-client-default', name: 'Drug Store Romeos', current_member_count: 3, location: 'London, United Kingdom', genre: "Alternative", bio: "Drug Store Romeos formed at college in nearby Farnborough when childhood friends Jonny and Charlie pinned an ad about finding a bassist for their new band to the school's notice board – fate played its part with Sarah replying and quickly proving herself a better vocalist than either of them."})
 chai = Band.create!({ spotify_embed_url: 'https://open.spotify.com/embed/artist/0NZsNnETGPWLKJj2Y0vpBx',image_url: 'https://images.complex.com/complex/images/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/wuyrrirv74khybhwutot/chai?fimg-client-default', name: 'Chai', current_member_count: 4, location: 'Nagoya, Japan', genre: "Rock", bio: "Chai are a Japanese rock band from Nagoya. The group consists of four women—Mana, Kana, Yuuki and Yuna. Formed in 2012, the band released their debut studio album Pink in 2017"})
 babygirl = Band.create!({ spotify_embed_url: 'https://open.spotify.com/embed/artist/6Y2m4AEOS9JFrsK2goyg7T',image_url: 'https://images.complex.com/complex/images/c_crop,h_887,w_1183,x_11,y_500/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/zhm0svamkntqcjsmeimk/babygirl?fimg-client-default', name: 'Babygirl', current_member_count: 2, location: 'Toronto, Canada', genre: "Alternative", bio: "Babygirl was born into a life of music. Kirsten “Kiki” Frances started writing song at nine, and Cameron “Bright” Breithaupt grew up in a household of professional musicians. They first met in college, bonded over a shared love of Lil Wayne, and started creating seriously catchy songs."})
 just_wondering = Band.create!({ spotify_embed_url: 'https://open.spotify.com/embed/artist/3cYJRMfmmDpWgSolJyNVwV' ,image_url: 'https://images.complex.com/complex/images/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/t0km2k0f9ahlksxvcekf/just-wondering?fimg-client-default', name: 'Just Wondering', current_member_count: 3, location: 'Dublin, Ireland', genre: "Rock", bio: "A trio made up of Wale Akande, Jack O’Shaughnessy and Adam Redmond, Just Wondering have formally released their debut single, an impressive track that melds modern synth pop melodies, soul vibes, guitar licks, electronic textures and processed vocals."})
+
+#black sabbath
+ozzy = User.create!({ avatar_url: 'https://media-cldnry.s-nbcnews.com/image/upload/t_fit-2000w,f_auto,q_auto:best/newscms/2020_04/3195301/200121-ozzy_osbourne-mc-13202.jpg', email: 'ozzy@ozzy.com', password: '123123', first_name: 'Ozzy', last_name: 'Osbourne', Location: 'London', genre: 'Heavy Metal', bio: 'Lead singer of Black Sabbath, the Prince of Darkness'})
+bill = User.create!({ avatar_url: 'https://en.wikipedia.org/wiki/Bill_Ward_(musician)#/media/File:Black_Sabbath_(1970)_(cropped).jpg', email: 'bill@bill.com', password: '123123', first_name: 'Bill', last_name: 'Ward', Location: 'London', genre: 'Heavy Metal', bio: 'Drummer extraordinaire for Black Sabbath'})
+tony = User.create!({ avatar_url: 'https://ichef.bbci.co.uk/news/976/cpsprodpb/183CF/production/_111697299_tony.jpg', email: 'tony@tony.com', password: '123123', first_name: 'Tony', last_name: 'Iommi', Location: 'London', genre: 'Heavy Metal', bio: 'Guitarist extraordinaire for Black Sabbath'})
+[ozzy, bill, tony].each do |member|
+  black_sabbath.users << member
+end
+black_sabbath.save
 
 # crumb band
 lila = User.create!({ avatar_url: 'https://cdn2.pitchfork.com/longform/914/crumb2.jpg', email: 'lila@lila.com', password: '123123', first_name: 'Lila', last_name: "Ramani", location: 'Brooklyn', genre: "Rock", bio: "Lead singer and guitarist of Crumb."})
@@ -91,6 +104,26 @@ message_bri.band = crumb
 message_lila.save!
 message_jesse.save!
 message_bri.save!
+
+message_tony = Message.new(content: "Yo what's up Ozzy, you haven't been turning up to rehearsals!")
+message_bill = Message.new(content: "Yeah what's the deal bro?")
+
+message_tony.user = tony
+message_bill.user = bill
+
+message_tony.save!
+message_bill.save!
+
+
+message_kiki = Message.new(content: 'Welcome Ozzy! \m/')
+message_cameron = Message.new(content: 'Yeah, welcome dude')
+
+message_kiki.user = kiki
+message_cameron.user = cameron
+
+message_kiki.save!
+message_cameron.save!
+
 
 
 
