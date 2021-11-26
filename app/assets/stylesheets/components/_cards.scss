@@ -1,0 +1,41 @@
+.card img {
+  width: 65px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.card p {
+  opacity: .5;
+}
+
+.card {
+  width: 270px;
+  height: 260px;
+  border-radius: 30px;
+  // box-shadow: 0 0 5px rgb(54, 54, 88);
+  background-color: $main;
+  background: linear-gradient(
+  180deg, $main, $light-background);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.band-name {
+  background-size: cover;
+  width: 350px;
+  height: 400px;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 5px, 10px;
+  color: white;
+  text-decoration: none;
+  padding: 20px;
+}

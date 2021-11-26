@@ -1,0 +1,46 @@
+<div class="banner" style="background-image: url('<%= image_path "banner.jpg"%>')">
+  <div class="titles">
+    <h1 class="main-title">Bandable</h1>
+    <p>Central creativity hub for musicians around the world</p>
+  </div>
+</div>
+
+<% if user_signed_in? %>
+  <div class="container">
+    <div class="cards">
+      <div class="card">
+        <%= image_tag "find.png" %>
+        <h4>Find</h4>
+        <p>Find a band you want to join.</p>
+      </div>
+      <div class="card">
+        <%= image_tag "meet.png" %>
+        <h4>Meet</h4>
+        <p>Meet band members around the world.</p>
+      </div>
+      <div class="card">
+        <%= image_tag "note.png" %>
+        <h4>Collaborate</h4>
+        <p>Finally you will be able to bring your inspirations to life.</p>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div class="index-card-container">
+    <% @users.each do |user| %>
+      <figure class="image-block">
+        <%= image_tag user.avatar_url %>
+        <figcaption>
+          <h3>
+          <%= user.first_name.capitalize %>
+          </h3>
+          <p><%= user.bio[0..150].gsub(/\s\w+\s*$/, '...') %></p>
+          <p><%= user.location %></p>
+          <button>
+            <%= link_to "More Info", musician_path(user)%>
+          </button>
+        </figcaption>
+      </figure>
+    <% end %>
+</div>

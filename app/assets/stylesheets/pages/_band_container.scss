@@ -1,0 +1,26 @@
+.band-container {
+  width: 90%;
+  height: auto;
+  // margin: 5%;
+  background-color: rgba(35, 42, 77, 0.8);
+  padding: 40px;
+  margin-bottom: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 5%;
+
+}
+
+
+.form-container {
+  width: 500px;
+  height: auto;
+  margin: 5%;
+  background-color: $light-background;
+  // background-color: #232a4d;
+  border-radius: 5%;
+
+  padding: 28px;
+  border: 1px solid $accent;
+  background: linear-gradient(19deg, black, transparent);
+}

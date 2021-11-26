@@ -1,0 +1,31 @@
+.band-info {
+  width: 500px;
+  height: 500px;
+  background-color: lightgray;
+  margin-top: 24px;
+}
+
+.index-card-container {
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 5%;
+  background-color: rgba(35, 42, 77, 0.8);
+  border-radius: 5%;
+  // background: rgba($color: #000000, $alpha: 1.0);
+  // opacity: 0.8;
+  filter: drop-shadow(0px 0px 18px $accent);
+
+}
+
+.inner-band-container {
+  border: 2px solid $accent;
+  width: 1400px;
+  height: 550px;
+  border-radius: 70px;
+  display: flex;
+  justify-content: center;
+  // margin: 80px auto;
+  background: rgba(35, 42, 77, 0.8);
+}

@@ -1,0 +1,53 @@
+
+
+<%# <div class="banner" style="background-image: url('https://dice-media.imgix.net/homepage/hero-video-desktop.mp4')"> %>
+<div class="video-bg-div">
+  <%= video_tag "homepage_vid.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "header-video" %>
+</div>
+  <div class="titles">
+    <h1 class="main-title white-font">Connect - Compose - Perform</h1>
+    <div class="sub-title">Central creativity hub for musicians around the world</div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="cards">
+    <div class="card">
+      <%= image_tag "find.png" %>
+      <h4>Find</h4>
+      <p>Find a band you want to join.</p>
+    </div>
+    <div class="card">
+      <%= image_tag "meet.png" %>
+      <h4>Meet</h4>
+      <p>Meet band members around the world.</p>
+    </div>
+    <div class="card">
+      <%= image_tag "note.png" %>
+      <h4>Collaborate</h4>
+      <p>Finally you will be able to bring your inspirations to life.</p>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="index-card-container">
+    <% @bands.each do |band| %>
+      <figure class="image-block">
+        <%= image_tag band.image_url %>
+        <figcaption>
+          <h3>
+          <%= band.name.upcase %>
+          </h3>
+          <p> <%= band.bio[0..150].gsub(/\s\w+\s*$/, '...') %></p>
+          <p><%= band.location %></p>
+          <p><%= band.genre %></p>
+          <button>
+            <%= link_to "More Info", band_path(band) %>
+          </button>
+        </figcaption>
+      </figure>
+    <% end %>
+</div>

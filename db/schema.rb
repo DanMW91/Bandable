@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_22_175744) do
+ActiveRecord::Schema.define(version: 2021_11_25_152746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "band_members", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "band_id", null: false
+    t.boolean "is_member"
+    t.boolean "is_admin"
+    t.boolean "is_audition"
+    t.string "invitation_text"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["band_id"], name: "index_band_members_on_band_id"
+    t.index ["user_id"], name: "index_band_members_on_user_id"
+  end
 
   create_table "bands", force: :cascade do |t|
     t.string "name"
@@ -22,6 +35,19 @@ ActiveRecord::Schema.define(version: 2021_11_22_175744) do
     t.string "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "genre"
+    t.string "image_url"
+    t.string "spotify_embed_url"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "user_id", null: false
+    t.bigint "band_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["band_id"], name: "index_messages_on_band_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -36,8 +62,16 @@ ActiveRecord::Schema.define(version: 2021_11_22_175744) do
     t.string "last_name"
     t.string "location"
     t.string "bio"
+    t.string "genre"
+    t.string "avatar_url"
+    t.string "provider"
+    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "band_members", "bands"
+  add_foreign_key "band_members", "users"
+  add_foreign_key "messages", "bands"
+  add_foreign_key "messages", "users"
 end

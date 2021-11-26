@@ -1,6 +1,31 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $main;
+  padding: 0px !important;
+}
+
+.nav-avatar {
+  &:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 10px $accent;
+    &:active {
+    box-shadow: 0px 0px 2px $accent;
+    }
+  }
+}
+
+.band-logo {
+  display: flex;
+  justify-content: center;
+  background-color: $text;
+  border: 1px solid $accent;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.navbar-title {
+  margin:0;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +34,130 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.nav-word {
+  color: $text !important;
+}
+
+.btn-band-dropdown {
+  position: relative;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  color:white;
+  height: 100%;
+  padding: 13px;
+  background: linear-gradient(
+  90deg, $main, $main);
+  border-left: 2px solid $accent;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px $accent;
+  }
+  &:active {
+    box-shadow: 0px 0px 2px $accent;
+  }
+
+}
+
+.band-dropdown-container {
+  width: 150px;
+  height: 100%;
+
+}
+
+.band-dropdown-list {
+  position:absolute;
+  z-index: 500;
+
+}
+
+.band-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(19deg, rgba(0, 0, 0, 0.80), rgba(42, 50, 83, 0.8));
+  // border: 1px solid $accent;
+  filter: drop-shadow(0px 0px 4px #000000);
+  transition: all .2s ease-in-out;
+  &:hover {
+    transform: scale(1.02);
+  }
+  padding:10px;
+}
+
+// .band-avatar {
+//   margin-left: 5px;
+//   height: 60px;
+//   width: 60px;
+// }
+.hidden {
+  display: none;
+}
+
+.nav-button-active {
+  background: linear-gradient(
+  180deg, $main, rgb(49, 49, 160));
+}
+
+.audition-dropdown-container {
+  margin-right: 70px;
+  width: 150px;
+
+}
+
+.dropdown-list {
+  top: 66px;
+}
+
+.audition-dropdown-list {
+  position:absolute;
+  z-index: 500;
+}
+
+.audition-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(19deg, rgba(0, 0, 0, 0.85), rgba(29, 35, 58, 0.85));
+  // border: 1px solid $accent;
+  filter: drop-shadow(0px 0px 4px #000000);
+  transition: all .2s ease-in-out;
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.band-avatar {
+  margin-left: 5px;
+  height: 60px;
+  width: 60px;
+  opacity: 1 !important;
+}
+
+
+.btn-audition-dropdown {
+  position: relative;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  color:white;
+  width: 160px;
+  height:100%;
+  padding: 13px;
+  background: linear-gradient(
+  90deg, $main, $main);
+  border-left: 2px solid $accent;
+  border-right: 2px solid $accent;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px $accent;
+  }
+  &:active {
+    box-shadow: 0px 0px 2px $accent;
+  }
+
 }

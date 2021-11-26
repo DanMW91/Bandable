@@ -1,0 +1,57 @@
+
+
+.banner {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding: 200px 0;
+  height: 100px;
+}
+
+.banner h1 {
+  color: white;
+  // font-size: 60px;
+}
+
+.banner p {
+  color: white;
+  font-size: 20px;
+}
+
+.main-title {
+  font-family: 'Bebas Neue', cursive;;
+  letter-spacing: 2px;
+  font-size: 100px;
+}
+
+.main-title {
+  font-family: 'Bebas Neue', cursive;;
+  letter-spacing: 2px;
+  margin-top: 80px;
+  font-size: 80px;
+  text-shadow: 2px 2px $accent;
+}
+
+.sub-title {
+  color: $accent;
+}
+
+.titles {
+  position: absolute;
+  top: 100px;
+  left: 200px;
+  font-size: 30px;
+}
+
+.video-bg-div {
+  background-color: black;
+  height: 600px;
+}
+.header-video {
+  height: 600px;
+  width: 100%;
+  object-fit:cover;
+  // border-top: 5px solid black;
+
+  opacity: .8;
+}
