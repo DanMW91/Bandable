@@ -6,7 +6,7 @@ class BandsController < ApplicationController
   def show
     @band = Band.find(params[:id])
     @band_member = BandMember.new
-    @messages = Message.all
+    @message = Message.new
   end
 
   private
