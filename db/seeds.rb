@@ -1,13 +1,9 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+Message.destroy_all
 BandMember.destroy_all
 Band.destroy_all
 User.destroy_all
+
 
 
 crumb = Band.create!({ spotify_embed_url: 'https://open.spotify.com/embed/artist/4kSGbjWGxTchKpIxXPJv0B', image_url: 'https://images.complex.com/complex/images/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/dm07rs3emmj5waybj1wt/crumb?fimg-client-default', name: 'Crumb', current_member_count: 4, location: 'Brooklyn, USA', genre: "Rock", bio: "Crumb is an American indie rock band. The group is a collaboration of Brooklyn-based musicians Lila Ramani (guitar, vocals), Jesse Brotter (bass, vocals), Bri Aronow[2] (synthesizers, keyboard, saxophone), and Jonathan Gilad (drums), who met while attending Tufts University."})
@@ -77,5 +73,25 @@ User.all.each do |user|
     member_record.save!
   end
 end
+
+# MESSAGES
+
+message_lila = Message.new(content: 'hey guys got that gig tomorrow!')
+message_jesse = Message.new(content: "Oh yeah, can't wait!")
+message_bri = Message.new(content: "Prepare to ROCK!")
+
+message_lila.user = lila
+message_jesse.user = jesse
+message_bri.user = bri
+
+message_lila.band = crumb
+message_jesse.band = crumb
+message_bri.band = crumb
+
+message_lila.save!
+message_jesse.save!
+message_bri.save!
+
+
 
 tester = User.create!({ avatar_url: 'https://www.digitalmusicnews.com/wp-content/uploads/2020/10/musician-guitar-urban-750.jpg', email: 'test@test.com', password: '123123', first_name: 'Test', last_name: "Testerson", location: 'Munich', genre: "Rock", bio: "Been testing since before testing was cool."})
