@@ -2,9 +2,7 @@
 
 <%# <div class="banner" style="background-image: url('https://dice-media.imgix.net/homepage/hero-video-desktop.mp4')"> %>
 <div class="video-bg-div">
-  <video class="header-video" muted autoplay loop>
-      <source src="https://dice-media.imgix.net/homepage/hero-video-desktop.mp4" type="video/mp4">
-  </video>
+  <%= video_tag "homepage_vid.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "header-video" %>
 </div>
   <div class="titles">
     <h1 class="main-title white-font">Connect - Compose - Perform</h1>
