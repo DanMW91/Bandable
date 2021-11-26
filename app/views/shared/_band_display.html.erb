@@ -6,25 +6,26 @@
       <div class="whole-container">
         <div class="left-whole-container">
           <%=image_tag @band.image_url, class: 'my-3', style: "height: 400px;"%>
-<ul class="list-inline">
-        <li>
-          <a href="https://github.com/chillkang" target="_blank">
-            <i class="fab fa-github-square"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://twitter.com/SeulkeeJenny" target="_blank">
-            <i class="fab fa-twitter-square"></i>
-          </a>
-        </li>
-        <li>
-          <a href="www.instagram.com/__foraseason/" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </li>
-      </ul>
-
-
+          <div>
+            <br /><h3 class="text-center">Follow <%= @band.name %></h3>
+            <ul class="list-inline">
+              <li>
+                <a href="https://github.com/chillkang" target="_blank">
+                  <i class="fab fa-github-square"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/SeulkeeJenny" target="_blank">
+                  <i class="fab fa-twitter-square"></i>
+                </a>
+              </li>
+              <li>
+                <a href="www.instagram.com/__foraseason/" target="_blank">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </li>
+            </ul>
+            </div>
         </div>
           <div class="right-whole-container my-3">
             <p><%= @band.bio %></p>
