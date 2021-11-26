@@ -29,7 +29,7 @@
               <% if message.user == current_user %>
                 <div class="outgoing_msg">
                   <div class="sent_msg">
-                     <span class="white-font"> <%= message.user.first_name %> </span>
+                    <span class="white-font"> <%= message.user.first_name %> </span>
                     <p><%= message.content %></p>
                     <span class="time_date"> <% message.created_at %>|    June 9</span>
                   </div>
@@ -41,11 +41,14 @@
             <% end %>
           <% end %>
         </div>
-
-          <form class="msger-inputarea">
+            <%= simple_form_for ([@band, @message]), html: { class: 'msger-inputarea' } do|f| %>
+              <%= f.input_field :content, class: "msger-input", placeholder: 'Enter your message...',  label: false %>
+              <%= f.submit "Send", class: "msger-send-btn" %>
+            <% end %>
+          <%# <form class="msger-inputarea">
             <input type="text" class="msger-input" placeholder="Enter your message...">
             <button type="submit" class="msger-send-btn">Send</button>
-          </form>
+          </form> %>
 
       </div>
 
