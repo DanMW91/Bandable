@@ -10,7 +10,6 @@
 .chat-container {
     height: 700px;
     width: 90%;
-    margin: 5%;
     border-radius: 5%;
     opacity: 0.8;
     padding: 28px;
@@ -26,7 +25,10 @@
 
   }
 
-      .incoming_msg {
+
+    .incoming_msg {
+      // display:flex;
+      // align-items: center;
       margin: 10px;
     }
 
@@ -117,15 +119,16 @@
 		// }
 
     .msg_history {
-      background: linear-gradient(19deg, $text, transparent);
+    background-image: linear-gradient(to bottom right, rgba(22, 22, 22, 0.95), rgba(22, 22, 22, 0.98)), url('music-notes-bg.jpg');
+    // background: linear-gradient(19deg, $text, transparent);
     border: 1px solid $text;
     padding: 10px;
     justify-content: flex-end;
     height: 500px;
-    flex-grow: 1;
+    // flex-grow: 1;
     overflow-y: scroll;
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
 
     }
 
