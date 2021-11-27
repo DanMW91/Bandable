@@ -4,8 +4,12 @@ class MessagesController < ApplicationController
     band_id = params[:band_id]
     message.band_id = band_id
     message.user = current_user
-    message.save!
-    redirect_to band_path(band_id)
+    if message.save
+      redirect_to band_path(band_id, anchor: "chat")
+    else
+      render "chatrooms/show"
+    end
+
   end
 
   private

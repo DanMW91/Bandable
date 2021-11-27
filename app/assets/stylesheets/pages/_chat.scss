@@ -26,10 +26,10 @@
   }
 
     .incoming_msg {
-      // display:flex;
-      // align-items: center;
+      display:flex;
+      align-items: center;
 
-      margin: 10px;
+      margin: 20px;
     }
 
   .received_msg {
@@ -79,6 +79,7 @@
     margin: 10px;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     // width: 100%;
   }
 
