@@ -22,10 +22,13 @@ import { navFadeHandler } from './nav_fade';
 import { navButtonsHandler } from './nav_buttons'
 import { bandShowTabsHandler } from './band_show_tabs'
 import { searchScroll} from './search_scroll'
+import { songsListTabs } from './songs_list'
 
 document.addEventListener('turbolinks:load', () => {
   navButtonsHandler()
   bandShowTabsHandler()
   navFadeHandler()
   searchScroll()
+  songsListTabs()
+
 });

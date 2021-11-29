@@ -9,9 +9,10 @@ class BandMembersController < ApplicationController
       audition.band_id = band_id
       audition.save!
       redirect_to band_path(band_id)
-
-    else
     end
+
+
+
   end
 
   def update
@@ -24,7 +25,6 @@ class BandMembersController < ApplicationController
       audition.is_admin = false
       audition.save!
       redirect_to band_path(params[:band_id])
-    else
     end
   end
 

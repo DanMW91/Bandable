@@ -4,19 +4,26 @@
       The Rehearsal Room
     </h1>
     <div class="song-container">
-      <div class="songs">
-        <h2 class="songs-title">Songs:</h2>
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#songModal">
-          + New Song
-        </button>
-        <div class="song-list">
-          <% @band.songs.each do |song| %>
-            <div class="song-item">
-              <%= song.name %>
-            </div>
-          <% end %>
+        <div class="songs">
+          <h2 class="songs-title">Songs:</h2>
+          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#songModal">
+            + New Song
+          </button>
+          <div class="song-list">
+            <% @band.songs.each do |song| %>
+              <div class="song-item">
+                <%= song.name %>
+              </div>
+            <% end %>
+          </div>
+          <div class='buffer'></div>
         </div>
-        <div class='buffer'></div>
+      <div class="song-content-container">
+        <% @band.songs.each do |song| %>
+          <div class="song-content hidden" id="<%= song.name.split(" ").join('-') %>-song">
+            <%= render "shared/song_display", song: song %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
