@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -6,8 +7,9 @@ class User < ApplicationRecord
 
   # user has the ability to join many bands and only has the ability to upload
   # one photo - the avatar
+
   has_one_attached :photo
-  has_many :genres, through: :user_genres
+  # has_many :genres, through: :user_genres
   # has_many :instruments, through: :user_instruments
 
   validates :first_name, :last_name, :location, :bio, presence: true
@@ -20,4 +22,12 @@ class User < ApplicationRecord
 
   has_many :band_members
   has_many :bands, through: :band_members
+
+  # PG search
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [ :first_name, :last_name, :genre, :location ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
