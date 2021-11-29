@@ -48,26 +48,26 @@
   </div>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content modal-audition ">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Sending Audition to <%= @band.name %> </h5>
-        <button type="button" class="close close-modal-audition" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= simple_form_for ([@band, @band_member]), url: band_auditions_path(@band) do|f| %>
-        <%= f.input :invitation_text,  label: 'Why do you want to join?:' %>
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <%= f.submit "Submit Audition", class: "btn btn-primary" %>
-          <% end %>
+<% if @is_band_member == false %>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content modal-audition ">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Sending Audition to <%= @band.name %> </h5>
+          <button type="button" class="close close-modal-audition" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for ([@band, @band_member]), url: band_auditions_path(@band) do|f| %>
+          <%= f.input :invitation_text,  label: 'Why do you want to join?:' %>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <%= f.submit "Submit Audition", class: "btn btn-primary" %>
+            <% end %>
+          </div>
         </div>
       </div>
-
     </div>
   </div>
-</div>
+<% end %>

@@ -11,6 +11,7 @@ class BandsController < ApplicationController
     @band = Band.find(params[:id])
     @band_member = BandMember.new
     @message = Message.new
+    @song = Song.new
   end
 
   private

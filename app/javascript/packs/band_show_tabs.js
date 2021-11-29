@@ -87,6 +87,11 @@ export const bandShowTabsHandler = () => {
     auditionsTab.classList.add('active')
     auditionsTabContent.style.display = "block";
     }
+    if (window.location.href.indexOf('#the%2520rehearsal%2520room') >= 1 || window.location.href.indexOf('#the%20rehearsal%20room') >= 1) {
+
+    rehearsalRoomTab.classList.add('active')
+    rehearsalRoomTabContent.style.display = "block";
+    }
     if (window.location.href.indexOf('#') === -1 || window.location.href.indexOf('#band') >= 1) {
     bandTab.classList.add('active')
     bandTabContent.style.display = "block";
