@@ -48,9 +48,8 @@
   </div>
   <% @bands.each do |band| %>
     <figure class="image-block">
-      <% if band.image_url %>
-        <%= image_tag band.image_url %>
-      <% end %>
+      <%= cl_image_tag band.photo.key %>
+
       <figcaption>
         <h3>
         <%= band.name.upcase %>
