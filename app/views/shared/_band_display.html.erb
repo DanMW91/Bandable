@@ -47,9 +47,11 @@
         <% end %>
         <div class='ml-1'>- <%= record.user.first_name %> </div>
       <% end %>
-      <div class="d-flex">
-      <%= link_to "edit", edit_band_path(@band), class: "btn btn-danger" %>
-      </div>
     </div>
+      <% if @band.user_is_member?(current_user) %>
+        <div class="text-right">
+        <%= link_to "edit", edit_band_path(@band), class: "btn btn-danger float-end" %>
+        </div>
+      <% end %>
   </div>
 </div>
