@@ -5,8 +5,21 @@
   margin-top: 24px;
 }
 
+.card-container-header {
+  margin-top: 30px;
+  color: white;
+  padding-left: 105px;
+  padding-right: 105px;
+  // border-bottom: 1px solid white;
+  h1 {
+    font-size: 60px;
+    border-bottom:1px solid white;
+  }
+
+}
+
 .index-card-container {
-  display:flex;
+  display: flex;
   justify-content: center;
   flex-wrap: wrap;
   width: 90%;
@@ -28,4 +41,25 @@
   justify-content: center;
   // margin: 80px auto;
   background: rgba(35, 42, 77, 0.8);
+
+
+
 }
+
+.list-inline {
+  list-style: none;
+  text-align: center;
+}
+
+.list-inline li {
+  display: inline;
+  padding: 15px;
+}
+.list-inline i {
+  font-size: 37px;
+  color: rgb(230, 230, 230);
+}
+.list-inline i:hover {
+  color: $accent;
+}
+

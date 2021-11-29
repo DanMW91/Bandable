@@ -37,21 +37,23 @@
 .right-whole-container {
   padding: 20px auto;
 }
+
 .band-members-container {
   display: flex;
   color: white;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   border-top: 1px solid $accent;
   width: 100%;
   padding-top: 40px;
-  padding-bottom:15px;
+  padding-bottom: 15px;
   // height: 150px;
 }
+
 .band-member-item {
-  display:flex;
+  display: flex;
   justify-content: space-around;
-  align-items:center;
+  align-items: center;
 }
 
 .band-image-main {
