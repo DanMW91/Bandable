@@ -9,7 +9,7 @@
         <%= f.input :genre, :collection => %w[Rock Jazz Alternative RnB Hip-Hop Heavy Metal Country Folk Pop Indie] %>
         <%= f.input :location %>
         <%= f.input :current_member_count %>
-        <%# <%= f.input :photo, as: :file %>
+        <%= f.input :photo, as: :file %>
 
         <div class="col text-center"><%= f.submit "Submit", class: "btn btn-primary" %></div><br />
       <% end %>
