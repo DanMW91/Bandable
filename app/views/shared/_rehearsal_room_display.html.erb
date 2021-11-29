@@ -21,7 +21,7 @@
       <div class="song-content-container">
         <% @band.songs.each do |song| %>
           <div class="song-content hidden" id="<%= song.name.split(" ").join('-') %>-song">
-            <%= render "shared/song_display", song: song %>
+            <%= render "shared/song_display", song: song, band: @band %>
           </div>
         <% end %>
       </div>
@@ -34,7 +34,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content modal-audition ">
       <div class="modal-header">
-        <h5 class="modal-title" id="songModalLabel">Sending Audition to <%= @band.name %> </h5>
+        <h5 class="modal-title" id="songModalLabel">Creating new song for <%= @band.name %> </h5>
         <button type="button" class="close close-modal-audition" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

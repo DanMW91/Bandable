@@ -12,6 +12,7 @@ class BandsController < ApplicationController
     @band_member = BandMember.new
     @message = Message.new
     @song = Song.new
+    @song_file = SongFile.new
   end
 
   def new
