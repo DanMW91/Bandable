@@ -1,10 +1,30 @@
 class BandsController < ApplicationController
   def index
+    @bands = Band.order(name: :genre)
+    if params[:query].present?
+      @bands = @bands.where('title ILIKE ?', "%#{params[:query]}%")
+    end
+
     if params[:query].present?
       @bands = Band.global_search(params[:query])
     else
       @bands = Band.all
     end
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'list.html', locals: { bands: @bands } }
+    end
+
+  update() {
+    const url = `${this.formTarget.action}?
+  query=${this.searchInputTarget.value}`
+    fetch(url, { headers: { 'Accept': 'text/plain' } })
+      .then(response => response.text())
+      .then((data) => {
+        this.listTarget.outerHTML = data;
+      })
+  }
   end
 
   def show
