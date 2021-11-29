@@ -1,6 +1,10 @@
 class BandsController < ApplicationController
   def index
-    @bands = Band.all
+    if params[:query].present?
+      @bands = Band.global_search(params[:query])
+    else
+      @bands = Band.all
+    end
   end
 
   def show
