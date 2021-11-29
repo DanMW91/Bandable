@@ -13,9 +13,41 @@ class BandsController < ApplicationController
     @message = Message.new
   end
 
+  def new
+    @band = Band.new
+  end
+
+  def create
+    @band = Band.new(band_params)
+    @band.band_members.build(user: current_user, is_member: true)
+    if @band.save!
+      redirect_to band_path(@band)
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @band = Band.find(params[:id])
+  end
+
+  def update
+    @band = Band.find(params[:id])
+    @band.update(band_params)
+    if @band.save!
+      redirect_to band_path(@band)
+    end
+  end
+
+  def destroy
+    @band = Band.find(params[:id])
+    @band.destroy
+    redirect_to bands_path
+  end
+
   private
 
   def band_params
-    params.require(:power).permit(:photo, :name, :current_member_count, :location, :bio, :genre)
+    params.require(:band).permit(:name, :current_member_count, :location, :bio, :genre)
   end
 end
