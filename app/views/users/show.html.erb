@@ -18,7 +18,7 @@
           </h1>
         <div class="whole-container-user">
           <div class="left-whole-container">
-            <%=image_tag @user.avatar_url, class: 'my-3', style: "height: 400px;"%>
+            <%=cl_image_tag @user.photo.key, class: 'my-3', style: "height: 400px;"%>
           </div>
           <div class="right-whole-container my-3">
             <p><%= @user.bio %></p>

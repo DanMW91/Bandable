@@ -11,7 +11,7 @@
         <% @band.band_members.where(is_audition: true).each do |audition| %>
           <div class="audition-item">
             <%= link_to musician_path(audition.user), class: "card-links" do %>
-              <%= image_tag "#{audition.user.avatar_url}", class: "avatar audition-avatar mx-3" %>
+              <%= cl_image_tag "#{audition.user.photo.key}", class: "avatar audition-avatar mx-3" %>
             <% end %>
             <div class="audition-details white-font">
               <p><%= audition.user.first_name %> wants to join your band!<p>

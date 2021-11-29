@@ -1,5 +1,5 @@
 class Band < ApplicationRecord
-  # has_many_attached :photos
+  has_one_attached :photo
 
   validates :bio, length: { maximum: 1000 }
   validates :name, :location, :bio, :current_member_count, presence: true
