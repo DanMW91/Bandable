@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+    <br /><h2 class="text-center white-font">Change your band</h2><br />
+
+      <%= simple_form_for(@band, html: { class: "white-font" }) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :bio %>
+        <%= f.input :genre, :collection => %w[Rock Jazz Alternative RnB Hip-Hop Heavy Metal Country Folk Pop Indie] %>
+        <%= f.input :location %>
+        <%= f.input :current_member_count %>
+        <%= f.input :photo, as: :file %>
+
+        <div class="col text-center"><%= f.submit "Confirm", class: "btn btn-danger" %></div><br />
+      <% end %>
+    </div>
+  </div>
+</div>

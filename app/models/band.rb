@@ -3,6 +3,8 @@ class Band < ApplicationRecord
 
   validates :bio, length: { maximum: 1000 }
   validates :name, :location, :bio, :current_member_count, presence: true
+  validates :genre, inclusion: { in:
+    ['Rock', 'Jazz', 'Alternative', 'RnB', 'Hip-Hop', 'Heavy Metal', 'Country', 'Folk', 'Pop', 'Indie'] }
 
   has_many :messages
   has_many :band_members
