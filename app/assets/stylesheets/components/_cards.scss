@@ -2,6 +2,7 @@
   width: 65px;
   text-align: center;
   margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .card p {
@@ -9,6 +10,9 @@
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 270px;
   height: 260px;
   border-radius: 30px;

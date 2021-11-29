@@ -11,7 +11,7 @@
 </div>
 
 
-<div class="container">
+<div class="container landing-cards-container">
   <div class="cards">
     <div class="card">
       <%= image_tag "find.png" %>
@@ -34,20 +34,25 @@
 
 
 <div class="index-card-container">
-    <% @bands.each do |band| %>
-      <figure class="image-block">
-        <%= image_tag band.image_url %>
-        <figcaption>
-          <h3>
-          <%= band.name.upcase %>
-          </h3>
-          <p> <%= band.bio[0..150].gsub(/\s\w+\s*$/, '...') %></p>
-          <p><%= band.location %></p>
-          <p><%= band.genre %></p>
+  <div class="card-container-header w-100">
+    <h1>Featured Bands:</h1>
+  </div>
+  <% @bands.each do |band| %>
+    <figure class="image-block">
+      <%= image_tag band.image_url %>
+      <figcaption>
+        <h3>
+        <%= band.name.upcase %>
+        </h3>
+        <p> <%= band.bio[0..150].gsub(/\s\w+\s*$/, '...') %></p>
+        <p><%= band.location %></p>
+        <p><%= band.genre %></p>
+        <%= link_to band_path(band) do %>
           <button>
-            <%= link_to "More Info", band_path(band) %>
+            More Info
           </button>
-        </figcaption>
-      </figure>
-    <% end %>
+        <% end %>
+      </figcaption>
+    </figure>
+  <% end %>
 </div>
