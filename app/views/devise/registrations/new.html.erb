@@ -4,24 +4,42 @@
       <br /><h3 class="text-center white-font"><strong>Sign up</strong></h3>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "white-font" }) do |f| %>
       <%= f.error_notification %>
-        <div class="form-inputs">
+        <div  class="form-inputs">
           <%= f.input :email,
             required: true,
             autofocus: true,
             input_html: { autocomplete: "email" }%>
+            <div class="row">
+            <div class="col-6">
             <%= f.input :password,
             required: true,
             hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
             input_html: { autocomplete: "new-password" } %>
+            </div>
+            <div class="col-6">
             <%= f.input :password_confirmation,
             required: true,
             input_html: { autocomplete: "new-password" } %>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-6">
             <%= f.input :first_name  %>
+            </div>
+            <div class="col-6">
             <%= f.input :last_name  %>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-6">
             <%= f.input :genre, :collection => ['Rock', 'Jazz', 'Alternative', 'RnB', 'Hip-Hop', 'Heavy Metal', 'Country', 'Folk', 'Pop', 'Indie']  %>
+            </div>
+            <div class="col-6">
             <%= f.input :instrument, :collection => ['Guitar', 'Drums', 'Piano', 'Bass', 'Vocals', 'Violin', 'Cello', 'Flute'] %>
+            </div>
+            </div>
             <%= f.input :location %>
-            <%= f.input :bio %>
+            <%= f.input :bio, as: :text, input_html: { class: "bio-box" } %>
             <%= f.input :avatar_url %>
             <%= f.input :photo, as: :file %>
           </div>
