@@ -7,4 +7,12 @@ class Band < ApplicationRecord
   has_many :messages
   has_many :band_members
   has_many :users, through: :band_members
+
+  # pg search
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [ :name, :location, :genre ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end

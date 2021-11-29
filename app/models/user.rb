@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -20,4 +21,12 @@ class User < ApplicationRecord
 
   has_many :band_members
   has_many :bands, through: :band_members
+
+  # PG search
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [ :first_name, :last_name, :genre, :location ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
