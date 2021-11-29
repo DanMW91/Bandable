@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_11_29_114127) do
-=======
-ActiveRecord::Schema.define(version: 2021_11_26_132008) do
->>>>>>> 14d1d558f60674de4f4fe3c73b6f1d4bd73c3a19
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,10 +38,7 @@ ActiveRecord::Schema.define(version: 2021_11_26_132008) do
     t.string "genre"
     t.string "image_url"
     t.string "spotify_embed_url"
-<<<<<<< HEAD
     t.boolean "looking_for_member"
-=======
->>>>>>> 14d1d558f60674de4f4fe3c73b6f1d4bd73c3a19
   end
 
   create_table "messages", force: :cascade do |t|
@@ -58,7 +51,6 @@ ActiveRecord::Schema.define(version: 2021_11_26_132008) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
-<<<<<<< HEAD
   create_table "song_files", force: :cascade do |t|
     t.string "text_content"
     t.bigint "song_id", null: false
@@ -73,15 +65,6 @@ ActiveRecord::Schema.define(version: 2021_11_26_132008) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["band_id"], name: "index_songs_on_band_id"
-=======
-  create_table "pg_search_documents", force: :cascade do |t|
-    t.text "content"
-    t.string "searchable_type"
-    t.bigint "searchable_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
->>>>>>> 14d1d558f60674de4f4fe3c73b6f1d4bd73c3a19
   end
 
   create_table "users", force: :cascade do |t|
@@ -98,11 +81,6 @@ ActiveRecord::Schema.define(version: 2021_11_26_132008) do
     t.string "bio"
     t.string "genre"
     t.string "avatar_url"
-<<<<<<< HEAD
-=======
-    t.string "provider"
-    t.string "uid"
->>>>>>> 14d1d558f60674de4f4fe3c73b6f1d4bd73c3a19
     t.string "instrument"
     t.boolean "looking_for_band", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -113,9 +91,6 @@ ActiveRecord::Schema.define(version: 2021_11_26_132008) do
   add_foreign_key "band_members", "users"
   add_foreign_key "messages", "bands"
   add_foreign_key "messages", "users"
-<<<<<<< HEAD
   add_foreign_key "song_files", "songs"
   add_foreign_key "songs", "bands"
-=======
->>>>>>> 14d1d558f60674de4f4fe3c73b6f1d4bd73c3a19
 end

@@ -33,8 +33,28 @@
   height: 90%
 }
 
-.song-list {
+.songs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 25%;
   height: 100%;
-  background: white;
+  background: rgba(146, 108, 108, 0);
+  border-radius: 15px;
+  border: 1px solid $accent;
+}
+
+.songs-title {
+  height: 10%;
+  width:100%;
+  text-align: center;
+  color: white;
+  border-bottom: 1px solid white;
+  margin: 10px;
+}
+
+.song-list {
+  height: 90%;
+  width: 100%;
+
 }
