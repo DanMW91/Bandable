@@ -30613,3 +30613,1398 @@ Processing by BandsController#new as HTML
 Completed 200 OK in 87ms (Views: 78.4ms | ActiveRecord: 7.2ms | Allocations: 36663)
 
 
+Started GET "/bands/77" for ::1 at 2021-11-29 16:29:13 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"77"}
+  [1m[36mBand Load (0.8ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `show'
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 205], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 77], ["id", 205], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mBandMember Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 77], ["user_id", 205], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 77], ["user_id", 205]]
+  ↳ app/views/bands/show.html.erb:16
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 77], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:9
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:9
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 77], ["id", 205], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:36
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 77], ["is_member", true]]
+  ↳ app/views/shared/_band_display.html.erb:44
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 205], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 205], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 206], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 89], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mBandMember Load (0.6ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2 AND "band_members"."user_id" = $3 LIMIT $4[0m  [["band_id", 77], ["is_member", true], ["user_id", 205], ["LIMIT", 1]]
+  ↳ app/models/band.rb:15:in `user_is_member?'
+  Rendered shared/_band_display.html.erb (Duration: 43.8ms | Allocations: 11111)
+  [1m[36mBandMember Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 77], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 77], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  Rendered shared/_auditions_display.html.erb (Duration: 7.4ms | Allocations: 1935)
+  [1m[36mMessage Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 77], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 77]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 205], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 205], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:23
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:23
+  Rendered messages/_message.html.erb (Duration: 12.8ms | Allocations: 3703)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 206], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 89], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 7.0ms | Allocations: 2676)
+  Rendered shared/_chat_display.html.erb (Duration: 36.7ms | Allocations: 12717)
+  Rendered bands/show.html.erb within layouts/application (Duration: 116.5ms | Allocations: 34204)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 205], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:29
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1[0m  [["user_id", 205]]
+  ↳ app/views/shared/_navbar.html.erb:36
+  [1m[36mCACHE BandMember Load (0.1ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2 AND "band_members"."user_id" = $3 LIMIT $4[0m  [["band_id", 77], ["is_member", true], ["user_id", 205], ["LIMIT", 1]]
+  ↳ app/models/band.rb:15:in `user_is_member?'
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 77], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:40
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:40
+  [1m[36mCACHE BandMember Load (0.0ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 77], ["user_id", 205]]
+  ↳ app/views/shared/_navbar.html.erb:57
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 205], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  Rendered shared/_navbar.html.erb (Duration: 23.8ms | Allocations: 8242)
+  Rendered shared/_flashes.html.erb (Duration: 0.8ms | Allocations: 177)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 85)
+Completed 200 OK in 188ms (Views: 148.8ms | ActiveRecord: 19.3ms | Allocations: 61517)
+
+
+Started GET "/bands/77" for ::1 at 2021-11-29 16:29:13 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"77"}
+  [1m[36mBand Load (1.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+Started GET "/cable" for ::1 at 2021-11-29 16:29:13 +0000
+  ↳ app/controllers/bands_controller.rb:11:in `show'
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 205], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mUser Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 77], ["id", 205], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mBandMember Exists? (4.2ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 77], ["user_id", 205], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+  [1m[36mBandMember Load (1.6ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 77], ["user_id", 205]]
+  ↳ app/views/bands/show.html.erb:16
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-29 16:29:13 +0000
+  [1m[36mActiveStorage::Attachment Load (18.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 77], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  ↳ app/views/shared/_band_display.html.erb:9
+  [1m[36mActiveStorage::Blob Load (1.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:9
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 77], ["id", 205], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:36
+  [1m[36mBand Load (2.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/channels/band_chat_channel.rb:3:in `subscribed'
+  [1m[36mBandMember Load (3.1ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 77], ["is_member", true]]
+  ↳ app/views/shared/_band_display.html.erb:44
+BandChatChannel is transmitting the subscription confirmation
+BandChatChannel is streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNzc
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 205], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (2.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 205], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (2.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 206], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 89], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mBandMember Load (0.7ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2 AND "band_members"."user_id" = $3 LIMIT $4[0m  [["band_id", 77], ["is_member", true], ["user_id", 205], ["LIMIT", 1]]
+  ↳ app/models/band.rb:15:in `user_is_member?'
+  Rendered shared/_band_display.html.erb (Duration: 125.0ms | Allocations: 17993)
+  [1m[36mBandMember Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 77], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 77], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  Rendered shared/_auditions_display.html.erb (Duration: 15.3ms | Allocations: 1526)
+  [1m[36mMessage Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 77], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (2.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 77]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 205], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 205], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:23
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:23
+  Rendered messages/_message.html.erb (Duration: 20.6ms | Allocations: 2676)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 206], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 206], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 89], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 5.8ms | Allocations: 2676)
+  Rendered shared/_chat_display.html.erb (Duration: 49.0ms | Allocations: 9845)
+  Rendered bands/show.html.erb within layouts/application (Duration: 254.0ms | Allocations: 38213)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 205], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:29
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1[0m  [["user_id", 205]]
+  ↳ app/views/shared/_navbar.html.erb:36
+  [1m[36mCACHE BandMember Load (0.0ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2 AND "band_members"."user_id" = $3 LIMIT $4[0m  [["band_id", 77], ["is_member", true], ["user_id", 205], ["LIMIT", 1]]
+  ↳ app/models/band.rb:15:in `user_is_member?'
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 77], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:40
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:40
+  [1m[36mCACHE BandMember Load (0.0ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 77], ["user_id", 205]]
+  ↳ app/views/shared/_navbar.html.erb:57
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 205], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  Rendered shared/_navbar.html.erb (Duration: 18.6ms | Allocations: 7489)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 296ms (Views: 240.6ms | ActiveRecord: 50.1ms | Allocations: 58412)
+
+
+Started GET "/" for ::1 at 2021-11-29 16:29:39 +0000
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:49
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 72], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 73], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 74], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 67], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 75], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 68], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 76], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 77], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 78], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  Rendered bands/index.html.erb within layouts/application (Duration: 63.4ms | Allocations: 18011)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 205], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:28
+  [1m[36mBand Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 205], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:29
+  [1m[36mBand Load (0.8ms)[0m  [1m[34mSELECT "bands".* FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1[0m  [["user_id", 205]]
+  ↳ app/views/shared/_navbar.html.erb:36
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2 AND "band_members"."user_id" = $3 LIMIT $4[0m  [["band_id", 77], ["is_member", true], ["user_id", 205], ["LIMIT", 1]]
+  ↳ app/models/band.rb:15:in `user_is_member?'
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 77], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:40
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:40
+  [1m[36mBandMember Load (0.7ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 77], ["user_id", 205]]
+  ↳ app/views/shared/_navbar.html.erb:57
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 205], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  Rendered shared/_navbar.html.erb (Duration: 31.2ms | Allocations: 8787)
+  Rendered shared/_flashes.html.erb (Duration: 0.2ms | Allocations: 25)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 120ms (Views: 106.1ms | ActiveRecord: 12.5ms | Allocations: 37817)
+
+
+Unsubscribing from channel: {"channel":"BandChatChannel","id":77}
+BandChatChannel stopped streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNzc
+Started DELETE "/users/sign_out" for ::1 at 2021-11-29 16:38:23 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"S4ygX4jIvnQALCSrXRcryFNNfa35zwlSKV2J8yTRY4taSsI2AShWY5icZqUwOjXb2c3pmotBkgfFCUK6TpL/lQ=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 205], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 28ms (ActiveRecord: 1.5ms | Allocations: 5031)
+
+
+Started GET "/" for ::1 at 2021-11-29 16:38:23 +0000
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:49
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 72], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (3.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 73], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 74], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 67], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 75], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 68], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 76], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 77], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 78], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  Rendered bands/index.html.erb within layouts/application (Duration: 70.6ms | Allocations: 17604)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 298)
+  Rendered shared/_flashes.html.erb (Duration: 0.2ms | Allocations: 29)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 88ms (Views: 77.4ms | ActiveRecord: 9.6ms | Allocations: 29127)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-29 16:38:23 +0000
+Started GET "/users/sign_in" for ::1 at 2021-11-29 16:41:30 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 533)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 17.8ms | Allocations: 9616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 287)
+  Rendered shared/_flashes.html.erb (Duration: 0.6ms | Allocations: 25)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 5)
+Completed 200 OK in 77ms (Views: 45.3ms | ActiveRecord: 8.7ms | Allocations: 29925)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-11-29 16:42:11 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"bp9e8pwrPhlAda0mZFbAU2m0xFd7yLsR93PfDldO5gamUoS4trqRkodZJl9pjWm4kJ/1fFEtEHuIxo8S0hYxsw==", "user"=>{"email"=>"ozzy@ozzy.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ozzy@ozzy.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 267ms (ActiveRecord: 1.7ms | Allocations: 4063)
+
+
+Started GET "/" for ::1 at 2021-11-29 16:42:12 +0000
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:49
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 72], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 73], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 74], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 67], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 75], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 68], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 76], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 77], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 78], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  Rendered bands/index.html.erb within layouts/application (Duration: 101.1ms | Allocations: 33480)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 189], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:28
+  [1m[36mBand Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 189], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:29
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1[0m  [["user_id", 189]]
+  ↳ app/views/shared/_navbar.html.erb:36
+  [1m[36mBandMember Load (0.5ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2 AND "band_members"."user_id" = $3 LIMIT $4[0m  [["band_id", 72], ["is_member", true], ["user_id", 189], ["LIMIT", 1]]
+  ↳ app/models/band.rb:15:in `user_is_member?'
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 72], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:40
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:40
+  [1m[36mBandMember Load (0.3ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 72], ["user_id", 189]]
+  ↳ app/views/shared/_navbar.html.erb:57
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 189], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  Rendered shared/_navbar.html.erb (Duration: 50.6ms | Allocations: 17069)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 30)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 174ms (Views: 143.0ms | ActiveRecord: 24.8ms | Allocations: 64091)
+
+
+Started GET "/bands/73" for ::1 at 2021-11-29 16:42:23 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"73"}
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `show'
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 189], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 73], ["id", 189], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mBandMember Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 73], ["user_id", 189], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 73], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:9
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:9
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 73], ["id", 189], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:36
+  [1m[36mBandMember Load (0.5ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 73], ["is_member", true]]
+  ↳ app/views/shared/_band_display.html.erb:44
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 193], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 193], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 194], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 194], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 195], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 195], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (2.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 192], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 192], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mBandMember Load (0.5ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2 AND "band_members"."user_id" = $3 LIMIT $4[0m  [["band_id", 73], ["is_member", true], ["user_id", 189], ["LIMIT", 1]]
+  ↳ app/models/band.rb:15:in `user_is_member?'
+  Rendered shared/_band_display.html.erb (Duration: 84.7ms | Allocations: 16233)
+  [1m[36mBandMember Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 73], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 73], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  Rendered shared/_auditions_display.html.erb (Duration: 6.7ms | Allocations: 1530)
+  [1m[36mMessage Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 73], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 73]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 192], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 192], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 7.5ms | Allocations: 3382)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 193], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 193], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 7.2ms | Allocations: 2617)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 194], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 194], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 9.9ms | Allocations: 2617)
+  Rendered shared/_chat_display.html.erb (Duration: 39.5ms | Allocations: 14651)
+  Rendered bands/show.html.erb within layouts/application (Duration: 152.6ms | Allocations: 39132)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 189], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:29
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1[0m  [["user_id", 189]]
+  ↳ app/views/shared/_navbar.html.erb:36
+  [1m[36mBandMember Load (0.5ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2 AND "band_members"."user_id" = $3 LIMIT $4[0m  [["band_id", 72], ["is_member", true], ["user_id", 189], ["LIMIT", 1]]
+  ↳ app/models/band.rb:15:in `user_is_member?'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 72], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:40
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:40
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 72], ["user_id", 189]]
+  ↳ app/views/shared/_navbar.html.erb:57
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 189], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  Rendered shared/_navbar.html.erb (Duration: 26.7ms | Allocations: 7923)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 237ms (Views: 196.8ms | ActiveRecord: 23.4ms | Allocations: 62562)
+
+
+Started GET "/bands/73" for ::1 at 2021-11-29 16:42:23 +0000
+Started GET "/cable" for ::1 at 2021-11-29 16:42:23 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"73"}
+  [1m[36mBand Load (5.9ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-29 16:42:23 +0000
+  ↳ app/controllers/bands_controller.rb:11:in `show'
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 189], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 73], ["id", 189], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mBandMember Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 73], ["user_id", 189], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (1.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 73], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:9
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:9
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 73], ["id", 189], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:36
+  [1m[36mBand Load (3.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  [1m[36mBandMember Load (2.1ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 73], ["is_member", true]]
+  ↳ app/channels/band_chat_channel.rb:3:in `subscribed'
+  ↳ app/views/shared/_band_display.html.erb:44
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 193], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+BandChatChannel is transmitting the subscription confirmation
+BandChatChannel is streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNzM
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 193], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 194], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 194], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 195], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 195], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 192], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 192], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mBandMember Load (0.6ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2 AND "band_members"."user_id" = $3 LIMIT $4[0m  [["band_id", 73], ["is_member", true], ["user_id", 189], ["LIMIT", 1]]
+  ↳ app/models/band.rb:15:in `user_is_member?'
+  Rendered shared/_band_display.html.erb (Duration: 101.4ms | Allocations: 19130)
+  [1m[36mBandMember Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 73], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (0.7ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 73], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  Rendered shared/_auditions_display.html.erb (Duration: 7.3ms | Allocations: 1526)
+  [1m[36mMessage Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 73], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 73]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 192], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 192], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 8.2ms | Allocations: 2618)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 193], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 193], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 8.4ms | Allocations: 2617)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 194], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 194], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 14.7ms | Allocations: 2617)
+  Rendered shared/_chat_display.html.erb (Duration: 59.1ms | Allocations: 12417)
+  Rendered bands/show.html.erb within layouts/application (Duration: 210.2ms | Allocations: 40495)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 189], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:29
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1[0m  [["user_id", 189]]
+  ↳ app/views/shared/_navbar.html.erb:36
+  [1m[36mBandMember Load (0.6ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2 AND "band_members"."user_id" = $3 LIMIT $4[0m  [["band_id", 72], ["is_member", true], ["user_id", 189], ["LIMIT", 1]]
+  ↳ app/models/band.rb:15:in `user_is_member?'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 72], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:40
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:40
+  [1m[36mBandMember Load (0.8ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 72], ["user_id", 189]]
+  ↳ app/views/shared/_navbar.html.erb:57
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 189], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  Rendered shared/_navbar.html.erb (Duration: 28.3ms | Allocations: 7914)
+  Rendered shared/_flashes.html.erb (Duration: 0.2ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 290ms (Views: 246.8ms | ActiveRecord: 31.4ms | Allocations: 62023)
+
+
+Started POST "/bands/73/auditions" for ::1 at 2021-11-29 16:44:07 +0000
+Processing by BandMembersController#create as HTML
+  Parameters: {"authenticity_token"=>"WY0X0P1rVF/yelfkqnPaW1sMov2btjNcHyrtfkoPiQ1n2wJ1yq6nGtRsKvEbyrDRW2VTyrvFAkO7xkB825cL6Q==", "band_member"=>{"invitation_text"=>"y"}, "commit"=>"Submit Audition", "band_id"=>"73"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 189], ["LIMIT", 1]]
+  ↳ app/controllers/band_members_controller.rb:8:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/band_members_controller.rb:10:in `create'
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/band_members_controller.rb:10:in `create'
+  [1m[36mBandMember Create (5.0ms)[0m  [1m[32mINSERT INTO "band_members" ("user_id", "band_id", "is_member", "is_audition", "invitation_text", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 189], ["band_id", 73], ["is_member", false], ["is_audition", true], ["invitation_text", "y"], ["created_at", "2021-11-29 16:44:07.930619"], ["updated_at", "2021-11-29 16:44:07.930619"]]
+  ↳ app/controllers/band_members_controller.rb:10:in `create'
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/band_members_controller.rb:10:in `create'
+Redirected to http://localhost:3000/bands/73
+Completed 302 Found in 38ms (ActiveRecord: 11.6ms | Allocations: 5290)
+
+
+Started GET "/bands/73" for ::1 at 2021-11-29 16:44:07 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"73"}
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `show'
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 189], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 73], ["id", 189], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mBandMember Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 73], ["user_id", 189], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+  [1m[36mBandMember Load (0.6ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 73], ["user_id", 189]]
+  ↳ app/views/bands/show.html.erb:16
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 73], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:9
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:9
+  [1m[36mCACHE User Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 73], ["id", 189], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:36
+  [1m[36mBandMember Load (1.0ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 73], ["is_member", true]]
+  ↳ app/views/shared/_band_display.html.erb:44
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 193], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 193], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 194], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 194], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 195], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 195], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 192], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 192], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mBandMember Load (0.3ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2 AND "band_members"."user_id" = $3 LIMIT $4[0m  [["band_id", 73], ["is_member", true], ["user_id", 189], ["LIMIT", 1]]
+  ↳ app/models/band.rb:15:in `user_is_member?'
+  Rendered shared/_band_display.html.erb (Duration: 74.8ms | Allocations: 16019)
+  [1m[36mBandMember Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 73], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (0.5ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 73], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 189], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 189], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:14
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:14
+  Rendered shared/_auditions_display.html.erb (Duration: 17.0ms | Allocations: 5048)
+  [1m[36mMessage Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 73], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 73]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 192], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 192], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 7.4ms | Allocations: 2618)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 193], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 193], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 8.3ms | Allocations: 2617)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 194], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 194], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 7.7ms | Allocations: 2617)
+  Rendered shared/_chat_display.html.erb (Duration: 35.7ms | Allocations: 12418)
+  Rendered bands/show.html.erb within layouts/application (Duration: 148.1ms | Allocations: 40141)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 189], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:29
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1[0m  [["user_id", 189]]
+  ↳ app/views/shared/_navbar.html.erb:36
+  [1m[36mBandMember Load (0.5ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2 AND "band_members"."user_id" = $3 LIMIT $4[0m  [["band_id", 72], ["is_member", true], ["user_id", 189], ["LIMIT", 1]]
+  ↳ app/models/band.rb:15:in `user_is_member?'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 72], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:40
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:40
+  [1m[36mCACHE BandMember Load (0.0ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2 AND "band_members"."user_id" = $3 LIMIT $4[0m  [["band_id", 73], ["is_member", true], ["user_id", 189], ["LIMIT", 1]]
+  ↳ app/models/band.rb:15:in `user_is_member?'
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 72], ["user_id", 189]]
+  ↳ app/views/shared/_navbar.html.erb:57
+  [1m[36mCACHE BandMember Load (0.0ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 73], ["user_id", 189]]
+  ↳ app/views/shared/_navbar.html.erb:57
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 189], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  Rendered shared/_navbar.html.erb (Duration: 32.0ms | Allocations: 9504)
+  Rendered shared/_flashes.html.erb (Duration: 0.2ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 200ms (Views: 178.9ms | ActiveRecord: 16.7ms | Allocations: 61484)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-29 16:44:08 +0000
+BandChatChannel stopped streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNzM
+Started GET "/cable" for ::1 at 2021-11-29 16:44:08 +0000
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-29 16:44:08 +0000
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/bands/73" for ::1 at 2021-11-29 16:44:08 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"73"}
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `show'
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 189], ["LIMIT", 1]]
+  [1m[36mBand Load (1.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  ↳ app/channels/band_chat_channel.rb:3:in `subscribed'
+  [1m[36mUser Exists? (5.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 73], ["id", 189], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+BandChatChannel is transmitting the subscription confirmation
+BandChatChannel is streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNzM
+  [1m[36mBandMember Exists? (2.9ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 73], ["user_id", 189], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+  [1m[36mBandMember Load (3.8ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 73], ["user_id", 189]]
+  ↳ app/views/bands/show.html.erb:16
+  [1m[36mActiveStorage::Attachment Load (2.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 73], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:9
+  [1m[36mActiveStorage::Blob Load (3.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:9
+  [1m[36mCACHE User Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 73], ["id", 189], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:36
+  [1m[36mBandMember Load (3.1ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 73], ["is_member", true]]
+  ↳ app/views/shared/_band_display.html.erb:44
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 193], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 193], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (3.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 194], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (1.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 194], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 195], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 195], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (1.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 192], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 192], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mBandMember Load (2.8ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2 AND "band_members"."user_id" = $3 LIMIT $4[0m  [["band_id", 73], ["is_member", true], ["user_id", 189], ["LIMIT", 1]]
+  ↳ app/models/band.rb:15:in `user_is_member?'
+  Rendered shared/_band_display.html.erb (Duration: 237.9ms | Allocations: 16019)
+  [1m[36mBandMember Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 73], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (1.1ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 73], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 189], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 189], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:14
+  [1m[36mActiveStorage::Blob Load (3.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:14
+  Rendered shared/_auditions_display.html.erb (Duration: 96.6ms | Allocations: 4990)
+  [1m[36mMessage Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 73], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (5.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 73]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 192], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 192], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 34.4ms | Allocations: 2618)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 193], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 193], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 19.5ms | Allocations: 2617)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 194], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 194], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 12.9ms | Allocations: 2617)
+  Rendered shared/_chat_display.html.erb (Duration: 108.7ms | Allocations: 12411)
+  Rendered bands/show.html.erb within layouts/application (Duration: 513.6ms | Allocations: 40814)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 189], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:29
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1[0m  [["user_id", 189]]
+  ↳ app/views/shared/_navbar.html.erb:36
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2 AND "band_members"."user_id" = $3 LIMIT $4[0m  [["band_id", 72], ["is_member", true], ["user_id", 189], ["LIMIT", 1]]
+  ↳ app/models/band.rb:15:in `user_is_member?'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 72], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:40
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:40
+  [1m[36mCACHE BandMember Load (0.0ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2 AND "band_members"."user_id" = $3 LIMIT $4[0m  [["band_id", 73], ["is_member", true], ["user_id", 189], ["LIMIT", 1]]
+  ↳ app/models/band.rb:15:in `user_is_member?'
+  [1m[36mBandMember Load (0.5ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 72], ["user_id", 189]]
+  ↳ app/views/shared/_navbar.html.erb:57
+  [1m[36mCACHE BandMember Load (0.0ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 73], ["user_id", 189]]
+  ↳ app/views/shared/_navbar.html.erb:57
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 189], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  Rendered shared/_navbar.html.erb (Duration: 38.2ms | Allocations: 9504)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 612ms (Views: 545.5ms | ActiveRecord: 58.9ms | Allocations: 62347)
+
+
+Started GET "/bands/73" for ::1 at 2021-11-29 16:44:12 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"73"}
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `show'
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 189], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 73], ["id", 189], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mBandMember Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 73], ["user_id", 189], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+  [1m[36mBandMember Load (0.3ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 73], ["user_id", 189]]
+  ↳ app/views/bands/show.html.erb:16
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 73], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:9
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:9
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 73], ["id", 189], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:36
+  [1m[36mBandMember Load (0.5ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 73], ["is_member", true]]
+  ↳ app/views/shared/_band_display.html.erb:44
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 193], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 193], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 194], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 194], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 195], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 195], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 192], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 192], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mBandMember Load (0.5ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2 AND "band_members"."user_id" = $3 LIMIT $4[0m  [["band_id", 73], ["is_member", true], ["user_id", 189], ["LIMIT", 1]]
+  ↳ app/models/band.rb:15:in `user_is_member?'
+  Rendered shared/_band_display.html.erb (Duration: 49.0ms | Allocations: 16020)
+  [1m[36mBandMember Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 73], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 73], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 189], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 189], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:14
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:14
+  Rendered shared/_auditions_display.html.erb (Duration: 13.6ms | Allocations: 4990)
+  [1m[36mMessage Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 73], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 73]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 192], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 192], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 6.0ms | Allocations: 2618)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 193], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 193], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 10.5ms | Allocations: 2617)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 194], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 194], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 6.7ms | Allocations: 2617)
+  Rendered shared/_chat_display.html.erb (Duration: 33.4ms | Allocations: 12425)
+  Rendered bands/show.html.erb within layouts/application (Duration: 115.4ms | Allocations: 40095)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 189], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:29
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1[0m  [["user_id", 189]]
+  ↳ app/views/shared/_navbar.html.erb:36
+  [1m[36mBandMember Load (0.3ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2 AND "band_members"."user_id" = $3 LIMIT $4[0m  [["band_id", 72], ["is_member", true], ["user_id", 189], ["LIMIT", 1]]
+  ↳ app/models/band.rb:15:in `user_is_member?'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 72], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:40
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:40
+  [1m[36mCACHE BandMember Load (0.0ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2 AND "band_members"."user_id" = $3 LIMIT $4[0m  [["band_id", 73], ["is_member", true], ["user_id", 189], ["LIMIT", 1]]
+  ↳ app/models/band.rb:15:in `user_is_member?'
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 72], ["user_id", 189]]
+  ↳ app/views/shared/_navbar.html.erb:57
+  [1m[36mCACHE BandMember Load (0.0ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 73], ["user_id", 189]]
+  ↳ app/views/shared/_navbar.html.erb:57
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 189], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  Rendered shared/_navbar.html.erb (Duration: 24.9ms | Allocations: 9504)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 161ms (Views: 140.7ms | ActiveRecord: 15.3ms | Allocations: 61424)
+
+
+Unsubscribing from channel: {"channel":"BandChatChannel","id":73}
+BandChatChannel stopped streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNzM
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/channels/band_chat_channel.rb:3:in `subscribed'
+BandChatChannel is transmitting the subscription confirmation
+BandChatChannel is streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNzM
+Unsubscribing from channel: {"channel":"BandChatChannel","id":73}
+BandChatChannel stopped streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNzM
+Started GET "/bands/73" for ::1 at 2021-11-29 16:44:15 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"73"}
+  [1m[36mBand Load (1.1ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `show'
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 189], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 73], ["id", 189], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mBandMember Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 73], ["user_id", 189], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+  [1m[36mBandMember Load (0.6ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 73], ["user_id", 189]]
+  ↳ app/views/bands/show.html.erb:16
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 73], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:9
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:9
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 73], ["id", 189], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:36
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 73], ["is_member", true]]
+  ↳ app/views/shared/_band_display.html.erb:44
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 193], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 193], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 194], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 194], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 195], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 195], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 192], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 192], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mBandMember Load (0.5ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2 AND "band_members"."user_id" = $3 LIMIT $4[0m  [["band_id", 73], ["is_member", true], ["user_id", 189], ["LIMIT", 1]]
+  ↳ app/models/band.rb:15:in `user_is_member?'
+  Rendered shared/_band_display.html.erb (Duration: 75.4ms | Allocations: 16019)
+  [1m[36mBandMember Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 73], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (0.6ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 73], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 189], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 189], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:14
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:14
+  Rendered shared/_auditions_display.html.erb (Duration: 22.3ms | Allocations: 4990)
+  [1m[36mMessage Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 73], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 73]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 192], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 192], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 11.5ms | Allocations: 2618)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 193], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 193], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 5.7ms | Allocations: 2617)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 194], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 194], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 5.9ms | Allocations: 2617)
+  Rendered shared/_chat_display.html.erb (Duration: 36.6ms | Allocations: 12413)
+  Rendered bands/show.html.erb within layouts/application (Duration: 173.9ms | Allocations: 40119)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 189], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:29
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1[0m  [["user_id", 189]]
+  ↳ app/views/shared/_navbar.html.erb:36
+  [1m[36mBandMember Load (0.3ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2 AND "band_members"."user_id" = $3 LIMIT $4[0m  [["band_id", 72], ["is_member", true], ["user_id", 189], ["LIMIT", 1]]
+  ↳ app/models/band.rb:15:in `user_is_member?'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 72], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:40
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:40
+  [1m[36mCACHE BandMember Load (0.0ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2 AND "band_members"."user_id" = $3 LIMIT $4[0m  [["band_id", 73], ["is_member", true], ["user_id", 189], ["LIMIT", 1]]
+  ↳ app/models/band.rb:15:in `user_is_member?'
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 72], ["user_id", 189]]
+  ↳ app/views/shared/_navbar.html.erb:57
+  [1m[36mCACHE BandMember Load (0.0ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 73], ["user_id", 189]]
+  ↳ app/views/shared/_navbar.html.erb:57
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 189], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  Rendered shared/_navbar.html.erb (Duration: 26.3ms | Allocations: 9506)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 241ms (Views: 212.3ms | ActiveRecord: 22.4ms | Allocations: 61464)
+
+
+Unsubscribing from channel: {"channel":"BandChatChannel","id":73}
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/channels/band_chat_channel.rb:3:in `subscribed'
+BandChatChannel is transmitting the subscription confirmation
+BandChatChannel is streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNzM
+Started DELETE "/users/sign_out" for ::1 at 2021-11-29 16:44:24 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"lwnDIhP2WJcb+GcWrNB0x1fktCpQGBUhxJoGT6B7zqjNyVYsL38PO0omJ85vQIK8d0s8bc7cZVwbzY4RS0jlbA=="}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 189], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 1.7ms | Allocations: 2492)
+
+
+Started GET "/" for ::1 at 2021-11-29 16:44:24 +0000
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:49
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 72], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 73], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 74], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 67], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 75], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 68], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 76], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 77], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 78], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  Rendered bands/index.html.erb within layouts/application (Duration: 53.6ms | Allocations: 17128)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 298)
+  Rendered shared/_flashes.html.erb (Duration: 0.3ms | Allocations: 29)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 73ms (Views: 65.7ms | ActiveRecord: 6.1ms | Allocations: 28457)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-29 16:44:24 +0000
+Started GET "/users/sign_in" for ::1 at 2021-11-29 16:44:27 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 139)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 15.6ms | Allocations: 8846)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 273)
+  Rendered shared/_flashes.html.erb (Duration: 0.2ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 40ms (Views: 37.7ms | ActiveRecord: 0.0ms | Allocations: 20233)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-11-29 16:44:33 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"keC2iXZwMBtu5lKkIlLWaVqPxrF4A2rD48o+EQ1CxblNrQ5FC9+23dmgCJV8CGJ2dcw8fT9+/fx3bBa4Dq74Lw==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 253ms (ActiveRecord: 0.5ms | Allocations: 2797)
+
+
+Started GET "/" for ::1 at 2021-11-29 16:44:33 +0000
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (1.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:49
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 72], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 73], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 74], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 67], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 75], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 68], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 76], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 77], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 78], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/views/bands/index.html.erb:51
+  Rendered bands/index.html.erb within layouts/application (Duration: 49.4ms | Allocations: 17126)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 210], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:28
+  [1m[36mBand Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 210], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:29
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 210], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 93], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  Rendered shared/_navbar.html.erb (Duration: 14.9ms | Allocations: 4208)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 82ms (Views: 72.6ms | ActiveRecord: 8.7ms | Allocations: 32573)
+
+
+Started GET "/bands/73" for ::1 at 2021-11-29 16:44:41 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"73"}
+  [1m[36mBand Load (1.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `show'
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 210], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 73], ["id", 210], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mBandMember Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 73], ["user_id", 210], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 73], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:9
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:9
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 73], ["id", 210], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:36
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 73], ["is_member", true]]
+  ↳ app/views/shared/_band_display.html.erb:44
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 193], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 193], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 194], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 194], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 195], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 195], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 192], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 192], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mBandMember Load (0.7ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2 AND "band_members"."user_id" = $3 LIMIT $4[0m  [["band_id", 73], ["is_member", true], ["user_id", 210], ["LIMIT", 1]]
+  ↳ app/models/band.rb:15:in `user_is_member?'
+  Rendered shared/_band_display.html.erb (Duration: 61.0ms | Allocations: 16022)
+  [1m[36mBandMember Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 73], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (0.6ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 73], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 189], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 189], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:14
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:14
+  Rendered shared/_auditions_display.html.erb (Duration: 16.1ms | Allocations: 4993)
+  [1m[36mMessage Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 73], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 73]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 192], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 192], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 5.5ms | Allocations: 2618)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 193], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 193], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 12.2ms | Allocations: 2617)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 194], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 194], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 7.9ms | Allocations: 2617)
+  Rendered shared/_chat_display.html.erb (Duration: 37.5ms | Allocations: 12428)
+  Rendered bands/show.html.erb within layouts/application (Duration: 134.2ms | Allocations: 39307)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 210], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:29
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 210], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 93], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  Rendered shared/_navbar.html.erb (Duration: 7.9ms | Allocations: 3268)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 171ms (Views: 142.9ms | ActiveRecord: 15.1ms | Allocations: 54394)
+
+
+Started GET "/bands/73" for ::1 at 2021-11-29 16:44:41 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"73"}
+Started GET "/cable" for ::1 at 2021-11-29 16:44:41 +0000
+  [1m[36mBand Load (4.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11:in `show'
+  Rendering bands/show.html.erb within layouts/application
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-29 16:44:41 +0000
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 210], ["LIMIT", 1]]
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mUser Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 73], ["id", 210], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mBand Load (3.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/channels/band_chat_channel.rb:3:in `subscribed'
+  [1m[36mBandMember Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 73], ["user_id", 210], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+BandChatChannel is transmitting the subscription confirmation
+BandChatChannel is streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNzM
+  [1m[36mActiveStorage::Attachment Load (1.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 73], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:9
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:9
+  [1m[36mCACHE User Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 73], ["id", 210], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:36
+  [1m[36mBandMember Load (1.2ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 73], ["is_member", true]]
+  ↳ app/views/shared/_band_display.html.erb:44
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 193], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 193], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 194], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 194], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 195], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 195], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 192], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 192], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:46
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2 AND "band_members"."user_id" = $3 LIMIT $4[0m  [["band_id", 73], ["is_member", true], ["user_id", 210], ["LIMIT", 1]]
+  ↳ app/models/band.rb:15:in `user_is_member?'
+  Rendered shared/_band_display.html.erb (Duration: 105.9ms | Allocations: 16867)
+  [1m[36mBandMember Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 73], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (0.5ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 73], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 189], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 189], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:14
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:14
+  Rendered shared/_auditions_display.html.erb (Duration: 23.0ms | Allocations: 4990)
+  [1m[36mMessage Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 73], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 73]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 192], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 192], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 8.3ms | Allocations: 2618)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 193], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 193], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 9.2ms | Allocations: 2617)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 194], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 194], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered messages/_message.html.erb (Duration: 18.8ms | Allocations: 2617)
+  Rendered shared/_chat_display.html.erb (Duration: 68.6ms | Allocations: 12418)
+  Rendered bands/show.html.erb within layouts/application (Duration: 261.6ms | Allocations: 42916)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 210], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:29
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 210], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 93], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:73
+  Rendered shared/_navbar.html.erb (Duration: 47.2ms | Allocations: 3328)
+  Rendered shared/_flashes.html.erb (Duration: 0.2ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 396ms (Views: 344.5ms | ActiveRecord: 33.8ms | Allocations: 58797)
+
+
