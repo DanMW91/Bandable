@@ -11,6 +11,18 @@
   <span class="navbar-toggler-icon"></span>
   </button>
 
+  <div class="hidden nav-search d-flex">
+    <%= form_tag bands_path, method: :get do %>
+      <div class="search-inputs">
+      <%#= submit_tag "Let's Go", class: "search-form-input btn btn-danger" %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "search..."
+      %>
+      </div>
+    <% end %>
+  </div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <% if user_signed_in? %>
@@ -68,10 +80,15 @@
             </div>
           </li>
         <% else %>
+          <div class="nav-reg">
           <li class="nav-item">
-            <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
+            <strong><em><%= link_to "Log in", new_user_session_path, class: "nav-link" %></strong></em>
           </li>
-      <% end %>
+          <li>
+            <strong><em><%= link_to "Sign up", new_user_session_path, class: "nav-link" %></strong></em>
+          </li>
+          </div>
+        <% end %>
     </ul>
   </div>
 </div>
