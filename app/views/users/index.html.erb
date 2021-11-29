@@ -5,6 +5,8 @@
   </div>
 </div>
 
+<%= cl_image_tag current_user.photo.key, class: "avatar band-avatar mx-3" %>
+
 <% if user_signed_in? %>
   <div class="container">
     <div class="cards">

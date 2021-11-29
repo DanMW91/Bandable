@@ -1,0 +1,54 @@
+{
+  "application.js": "/packs/js/application-fba1a7d8ee2427a5e469.js",
+  "application.js.map": "/packs/js/application-fba1a7d8ee2427a5e469.js.map",
+  "band_show_tabs.js": "/packs/js/band_show_tabs-52d804a33061d6b115fa.js",
+  "band_show_tabs.js.map": "/packs/js/band_show_tabs-52d804a33061d6b115fa.js.map",
+  "chat.js": "/packs/js/chat-96512f73b46fb457019e.js",
+  "chat.js.map": "/packs/js/chat-96512f73b46fb457019e.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-fba1a7d8ee2427a5e469.js"
+      ],
+      "js.map": [
+        "/packs/js/application-fba1a7d8ee2427a5e469.js.map"
+      ]
+    },
+    "band_show_tabs": {
+      "js": [
+        "/packs/js/band_show_tabs-52d804a33061d6b115fa.js"
+      ],
+      "js.map": [
+        "/packs/js/band_show_tabs-52d804a33061d6b115fa.js.map"
+      ]
+    },
+    "chat": {
+      "js": [
+        "/packs/js/chat-96512f73b46fb457019e.js"
+      ],
+      "js.map": [
+        "/packs/js/chat-96512f73b46fb457019e.js.map"
+      ]
+    },
+    "nav_buttons": {
+      "js": [
+        "/packs/js/nav_buttons-d4a96073b9e84502fc19.js"
+      ],
+      "js.map": [
+        "/packs/js/nav_buttons-d4a96073b9e84502fc19.js.map"
+      ]
+    },
+    "nav_fade": {
+      "js": [
+        "/packs/js/nav_fade-a3b262aee446efa23504.js"
+      ],
+      "js.map": [
+        "/packs/js/nav_fade-a3b262aee446efa23504.js.map"
+      ]
+    }
+  },
+  "nav_buttons.js": "/packs/js/nav_buttons-d4a96073b9e84502fc19.js",
+  "nav_buttons.js.map": "/packs/js/nav_buttons-d4a96073b9e84502fc19.js.map",
+  "nav_fade.js": "/packs/js/nav_fade-a3b262aee446efa23504.js",
+  "nav_fade.js.map": "/packs/js/nav_fade-a3b262aee446efa23504.js.map"
+}

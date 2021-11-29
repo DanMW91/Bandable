@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   # user has the ability to join many bands and only has the ability to upload
   # one photo - the avatar
-  # has_one_attached :photo
+  has_one_attached :photo
   has_many :genres, through: :user_genres
   # has_many :instruments, through: :user_instruments
 
