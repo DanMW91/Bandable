@@ -189,4 +189,6 @@ message_cameron.save!
 
 
 
-tester = User.create!({ avatar_url: 'https://www.digitalmusicnews.com/wp-content/uploads/2020/10/musician-guitar-urban-750.jpg', email: 'test@test.com', password: '123123', first_name: 'Test', last_name: "Testerson", location: 'Munich', genre: "Rock", bio: "Been testing since before testing was cool."})
+tester = User.create!({ email: 'test@test.com', password: '123123', first_name: 'Test', last_name: "Testerson", location: 'Munich', genre: "Rock", bio: "Been testing since before testing was cool."})
+tester_photo = URI.open('https://www.digitalmusicnews.com/wp-content/uploads/2020/10/musician-guitar-urban-750.jpg')
+tester.photo.attach(io: tester_photo, filename: "#{User.last.first_name}.jpeg", content_type: 'image/png')
