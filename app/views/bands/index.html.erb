@@ -11,7 +11,7 @@
 </div>
 
 
-<div class="container">
+<div class="container landing-cards-container">
   <div class="cards">
     <div class="card">
       <%= image_tag "find.png" %>
@@ -47,9 +47,11 @@
         <p> <%= band.bio[0..150].gsub(/\s\w+\s*$/, '...') %></p>
         <p><%= band.location %></p>
         <p><%= band.genre %></p>
-        <button>
-          <%= link_to "More Info", band_path(band) %>
-        </button>
+        <%= link_to band_path(band) do %>
+          <button>
+            More Info
+          </button>
+        <% end %>
       </figcaption>
     </figure>
   <% end %>

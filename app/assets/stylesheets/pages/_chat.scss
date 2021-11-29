@@ -26,10 +26,10 @@
   }
 
     .incoming_msg {
-      // display:flex;
-      // align-items: center;
+      display:flex;
+      align-items: center;
 
-      margin: 10px;
+      margin: 20px;
     }
 
   .received_msg {
@@ -39,7 +39,7 @@
     max-width: 50%;
     // width: 92%;
     }
-    .received_withd_msg p {
+    .received_msg p {
     background: #e4e8fb none repeat scroll 0 0;
     border-radius: 3px;
     color: #646464;
@@ -72,6 +72,7 @@
     margin: 0; color:#fff;
     padding: 5px 10px 5px 12px;
     width:100%;
+    text-align: left;
 	}
 
   .outgoing_msg{
@@ -79,6 +80,7 @@
     margin: 10px;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     // width: 100%;
   }
 
