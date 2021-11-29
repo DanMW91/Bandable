@@ -44,8 +44,7 @@
   </div>
 
   <div id="The Rehearsal Room" class="tabcontent">
-    <h3>The Rehearsal Room</h3>
-    <p>content</p>
+    <%= render "shared/rehearsal_room_display", locals: { band: @band, songs: @band.songs } %>
   </div>
 </div>
 

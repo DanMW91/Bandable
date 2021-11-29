@@ -6,24 +6,30 @@
       <p class="white-font"> <%= @user.location%></p>
       <%# <p>Heavy Rocking Since 1999</p> %>
     </div>
-  
+
 </div>
 
 <div class="m-5"></div>
   <div class="user-container">
     <div class="user-main-container">
       <div class="user-content-container">
-          <h1 class="d-flex justify-content-center white-font border-bottom">
-            <%= @user.first_name %>
-          </h1>
-        <div class="whole-container-user">
-          <div class="left-whole-container">
-            <%=image_tag @user.avatar_url, class: 'my-3', style: "height: 400px;"%>
+        <h1 class="d-flex justify-content-center white-font border-bottom">
+          <%= @user.first_name %>
+        </h1>
+        <% if @user == current_user %>
+          <div class="custom-control custom-switch band-toggle">
+            <input type="checkbox" class="custom-control-input" id="customSwitch1" checked="<%=@user.looking_for_band%>">
+            <label class="custom-control-label" for="customSwitch1">Looking for Band</label>
           </div>
-          <div class="right-whole-container my-3">
-            <p><%= @user.bio %></p>
-          </div>
+        <% end %>
+      <div class="whole-container-user">
+        <div class="left-whole-container">
+          <%=image_tag @user.avatar_url, class: 'my-3', style: "height: 400px;"%>
+        </div>
+        <div class="right-whole-container my-3">
+          <p><%= @user.bio %></p>
         </div>
       </div>
     </div>
   </div>
+</div>
