@@ -7,4 +7,7 @@ class Band < ApplicationRecord
   has_many :messages
   has_many :band_members
   has_many :users, through: :band_members
+
+  include PgSearch::Model
+  multisearchable against: [:name, :location, :genre]
 end

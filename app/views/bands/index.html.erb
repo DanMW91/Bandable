@@ -6,7 +6,15 @@
 </div>
   <div class="titles">
     <h1 class="main-title white-font">Connect - Compose - Perform</h1>
-    <div class="sub-title">Central creativity hub for musicians around the world</div>
+    <div class="sub-title white-font">Central creativity hub for musicians around the world</div>
+    <%= form_tag bands_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "search..."
+      %>
+      <%= submit_tag "Let's Go", class: "btn btn-danger" %>
+    <% end %>
   </div>
 </div>
 

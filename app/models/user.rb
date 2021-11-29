@@ -20,4 +20,15 @@ class User < ApplicationRecord
 
   has_many :band_members
   has_many :bands, through: :band_members
+
+  belongs_to :director
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [ :name, :location ],
+    associated_against: {
+      director: [ :first_name, :last_name ]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
 end
