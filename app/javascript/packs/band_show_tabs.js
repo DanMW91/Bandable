@@ -45,6 +45,7 @@ export const bandShowTabsHandler = () => {
     const chatForm = document.querySelector('.msger-inputarea');
 
     const messageHistory = document.querySelector('.msg_history');
+    const messageInput =  document.querySelector('.msger-input');
 
     tabs.forEach(tab => {
       tab.addEventListener('click', (e) => {
@@ -57,10 +58,9 @@ export const bandShowTabsHandler = () => {
       messageHistory.scrollTop = messageHistory.scrollHeight;
     })
 
-    messageHistory.addEventListener('DOMNodeInserted', () => {
-      console.log('init')
-    })
-
+    new MutationObserver(() => {
+      messageHistory.scrollTop = messageHistory.scrollHeight;;
+    }).observe(messageHistory, { childList: true });
 
     chatForm.addEventListener('submit', () => {
        // set scroll window position of user on submission of chat message
@@ -74,6 +74,7 @@ export const bandShowTabsHandler = () => {
 
       // scroll to window position of user on submission of chat message
       window.scrollTo(0, scrollY);
+      messageInput.focus()
       //scroll to bottom of chat div
       messageHistory.scrollTop = messageHistory.scrollHeight;
     }

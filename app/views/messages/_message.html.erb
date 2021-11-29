@@ -1,0 +1,26 @@
+<% if message.user != current_user %>
+  <div class="incoming_msg">
+    <div class="incoming_msg_img">
+      <img class="avatar" src="<%=message.user.avatar_url%>" alt="">
+    </div>
+      <div class="received_msg">
+
+          <span class="white-font"> <%= message.user.first_name %> </span>
+          <p> <%= message.content %> </p>
+          <span class="time_date"> <%= message.created_at.strftime("%a %b %e at %l:%M %p") %> |    June 9</span>
+
+      </div>
+  </div>
+<% end %>
+<% if message.user == current_user %>
+  <div class="outgoing_msg">
+    <div class="sent_msg">
+      <span class="white-font"> <%= message.user.first_name %> </span>
+      <p><%= message.content %></p>
+      <span class="time_date"> <%= message.created_at.strftime("%a %b %e at %l:%M %p") %>|    June 9</span>
+    </div>
+    <div class="outgoing_msg_img ">
+      <img class="avatar" src="<%= message.user.avatar_url %>" alt="">
+    </div>
+  </div>
+<% end %>
