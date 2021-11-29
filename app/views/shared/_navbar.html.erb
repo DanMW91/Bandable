@@ -22,7 +22,7 @@
             </div>
             <div class="band-dropdown-list dropdown-list hidden">
               <% current_user.bands.each do |band| %>
-                <% if band.band_members.where(user: current_user)[0].is_member %>
+                <% if band.user_is_member?(current_user) %>
                   <%= link_to band_path(band), class: "card-links" do %>
                     <div class="band-item">
                       <%= image_tag "#{band.image_url}", class: "avatar band-avatar mx-3" %>

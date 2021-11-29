@@ -9,4 +9,16 @@ class Band < ApplicationRecord
   has_many :messages
   has_many :band_members
   has_many :users, through: :band_members
+
+  def user_is_member?(user)
+    band_members.where(is_member: true).find_by(user: user).present?
+  end
+
+  def user_is_auditioning?(user)
+    band_members.where(is_member: false).find_by(user: user).present?
+  end
+
+  def user_status(user)
+    band_members.find_by(user: user).is_member? ? "member" : "auditioning"
+  end
 end

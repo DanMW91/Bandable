@@ -15,9 +15,9 @@ class BandsController < ApplicationController
 
   def create
     @band = Band.new(band_params)
-    @band.user = current_user
+    @band.band_members.build(user: current_user, is_member: true)
     if @band.save!
-      redirect_to band_path(band_id)
+      redirect_to band_path(@band)
     else
       render :new
     end
@@ -31,7 +31,7 @@ class BandsController < ApplicationController
     @band = Band.find(params[:id])
     @band.update(band_params)
     if @band.save!
-      redirect_to band_path(band_id)
+      redirect_to band_path(@band)
     end
   end
 
