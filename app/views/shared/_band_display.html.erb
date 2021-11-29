@@ -5,7 +5,7 @@
       </h1>
       <div class="whole-container">
         <div class="left-whole-container">
-          <%=image_tag @band.image_url, class: 'my-3', style: "height: 400px;"%>
+          <%=cl_image_tag @band.photo.key, class: 'my-3', style: "height: 400px;"%>
           <div>
             <br /><h3 class="text-center">Follow <%= @band.name %></h3>
             <ul class="list-inline">
@@ -41,7 +41,7 @@
     <div class="band-members-container">
       <%@band.band_members.where(is_member: true).each do |record| %>
         <%= link_to musician_path(record.user), class: "avatar-links" do %>
-         <%= image_tag "#{record.user.avatar_url}", class: "avatar audition-avatar" %>
+         <%= cl_image_tag "#{record.user.photo.key}", class: "avatar audition-avatar" %>
         <% end %>
         <div class='ml-1'>- <%= record.user.first_name %> </div>
       <% end %>
