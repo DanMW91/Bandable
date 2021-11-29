@@ -46,7 +46,7 @@
                 <% if band.band_members.where(user: current_user)[0].is_audition %>
                   <%= link_to band_path(band), class: "card-links" do %>
                     <div class="band-item">
-                      <%= image_tag "#{band.image_url}", class: "avatar band-avatar mx-3" %>
+                      <%= image_tag "#{band.photo.key}", class: "avatar band-avatar mx-3" %>
                       <div class="audition-details white-font">
                         <div class="mr-3"><%= band.name %></div>
                       </div>
@@ -60,10 +60,10 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item nav-word dropdown">
             <% if current_user.photo.attached? %>
-                        <%= cl_image_tag current_user.photo.key, class: "avatar band-avatar mx-3" %>
-                      <% else  %>
-                        <%= image_tag "#{band.image_url}", class: "avatar band-avatar mx-3" %>
-                      <% end %>
+                <%= cl_image_tag current_user.photo.key, class: "avatar nav-avatar dropdown-toggle m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% else  %>
+                <%= image_tag "#{band.image_url}", class: "avatar band-avatar mx-3" %>
+            <% end %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
               <%= link_to "Another action", "#", class: "dropdown-item" %>

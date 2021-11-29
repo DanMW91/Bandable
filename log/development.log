@@ -21269,3 +21269,1388 @@ Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrad
   ↳ app/channels/band_chat_channel.rb:3:in `subscribed'
 BandChatChannel is transmitting the subscription confirmation
 BandChatChannel is streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNDQ
+Started GET "/" for ::1 at 2021-11-29 11:11:31 +0000
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (1.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:40
+  Rendered bands/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 3740)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 144], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:16
+  [1m[36mBand Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 144], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 144], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:63
+  Rendered shared/_navbar.html.erb (Duration: 15.7ms | Allocations: 4207)
+  Rendered shared/_flashes.html.erb (Duration: 0.2ms | Allocations: 25)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 42ms (Views: 33.9ms | ActiveRecord: 4.9ms | Allocations: 18872)
+
+
+Unsubscribing from channel: {"channel":"BandChatChannel","id":44}
+BandChatChannel stopped streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNDQ
+Started GET "/" for ::1 at 2021-11-29 11:14:42 +0000
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:40
+  Rendered bands/index.html.erb within layouts/application (Duration: 22.9ms | Allocations: 8924)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 144], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:16
+  [1m[36mBand Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 144], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 144], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:63
+  Rendered shared/_navbar.html.erb (Duration: 83.8ms | Allocations: 26797)
+  Rendered shared/_flashes.html.erb (Duration: 0.7ms | Allocations: 177)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 85)
+Completed 200 OK in 137ms (Views: 104.9ms | ActiveRecord: 23.3ms | Allocations: 50644)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-11-29 11:22:40 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"e0XHQZxf8tslHhjP8kzHjx+1sD09P9H3uZ1t5jo4/cmq/Oq8GhoNrn/QBBGGIpnaawWrAXg3BS1/Sl564ufePA=="}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 144], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 16ms (ActiveRecord: 1.2ms | Allocations: 3358)
+
+
+Started GET "/" for ::1 at 2021-11-29 11:22:40 +0000
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (1.0ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:40
+  Rendered bands/index.html.erb within layouts/application (Duration: 15.7ms | Allocations: 3654)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 13.6ms | Allocations: 913)
+  Rendered shared/_flashes.html.erb (Duration: 1.3ms | Allocations: 183)
+  Rendered shared/_footer.html.erb (Duration: 1.2ms | Allocations: 85)
+Completed 200 OK in 71ms (Views: 67.1ms | ActiveRecord: 1.0ms | Allocations: 17268)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-11-29 11:22:47 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 604)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 17.6ms | Allocations: 10142)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 166)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 0.0ms | Allocations: 22553)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-11-29 11:22:58 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"u/FNJyNe93AYZBksLGcPd1jWm+DmR1JaxGp6ejHqcRVQ4fm6wMMBvTRyYb67bxN48BRbX9shvgLsMCkJKrXbmw==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 263ms (ActiveRecord: 0.9ms | Allocations: 4889)
+
+
+Started GET "/" for ::1 at 2021-11-29 11:22:59 +0000
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.8ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:40
+  Rendered bands/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 3273)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:16
+  [1m[36mBand Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  Rendered shared/_navbar.html.erb (Duration: 307.5ms | Allocations: 166523)
+Completed 500 Internal Server Error in 339ms (ActiveRecord: 2.6ms | Allocations: 180467)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `band' for #<#<Class:0x00007f0e300af6a0>:0x000055f320d4b250>
+Did you mean?  and
+               @bands):
+    62:             <% if current_user.photo.attached? %>
+    63:                 <%= cl_image_tag current_user.photo.key, class: "avatar nav-avatar dropdown-toggle m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    64:             <% else  %>
+    65:                 <%= image_tag "#{band.image_url}", class: "avatar band-avatar mx-3" %>
+    66:             <% end %>
+    67:             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+    68:               <%= link_to "Action", "#", class: "dropdown-item" %>
+  
+app/views/shared/_navbar.html.erb:65
+app/views/layouts/application.html.erb:21
+Started GET "/" for ::1 at 2021-11-29 11:25:14 +0000
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.9ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:40
+  Rendered bands/index.html.erb within layouts/application (Duration: 14.1ms | Allocations: 3645)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:16
+  [1m[36mBand Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  Rendered shared/_navbar.html.erb (Duration: 305.9ms | Allocations: 167193)
+Completed 500 Internal Server Error in 341ms (ActiveRecord: 2.6ms | Allocations: 182874)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `band' for #<#<Class:0x00007f0e1c020158>:0x00007f0e1c01c580>
+Did you mean?  and
+               @bands):
+    62:             <% if current_user.photo.attached? %>
+    63:                 <%= cl_image_tag current_user.photo.key, class: "avatar nav-avatar dropdown-toggle m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    64:             <% else  %>
+    65:                 <%= image_tag "#{band.image_url}", class: "avatar band-avatar mx-3" %>
+    66:             <% end %>
+    67:             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+    68:               <%= link_to "Action", "#", class: "dropdown-item" %>
+  
+app/views/shared/_navbar.html.erb:65
+app/views/layouts/application.html.erb:21
+Started GET "/" for ::1 at 2021-11-29 11:25:22 +0000
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.9ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:40
+  Rendered bands/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 3258)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:16
+  [1m[36mBand Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  Rendered shared/_navbar.html.erb (Duration: 252.3ms | Allocations: 166452)
+Completed 500 Internal Server Error in 280ms (ActiveRecord: 2.4ms | Allocations: 180466)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `band' for #<#<Class:0x00007f0e1c020158>:0x000055f321ca52c8>
+Did you mean?  and
+               @bands):
+    62:             <% if current_user.photo.attached? %>
+    63:                 <%= cl_image_tag current_user.photo.key, class: "avatar nav-avatar dropdown-toggle m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    64:             <% else  %>
+    65:                 <%= image_tag "#{band.image_url}", class: "avatar band-avatar mx-3" %>
+    66:             <% end %>
+    67:             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+    68:               <%= link_to "Action", "#", class: "dropdown-item" %>
+  
+app/views/shared/_navbar.html.erb:65
+app/views/layouts/application.html.erb:21
+Started GET "/" for ::1 at 2021-11-29 11:25:29 +0000
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:40
+  Rendered bands/index.html.erb within layouts/application (Duration: 10.9ms | Allocations: 3257)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:16
+  [1m[36mBand Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  Rendered shared/_navbar.html.erb (Duration: 282.3ms | Allocations: 166452)
+Completed 500 Internal Server Error in 326ms (ActiveRecord: 2.3ms | Allocations: 180465)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `band' for #<#<Class:0x00007f0e1c020158>:0x00007f0e3c0d4598>
+Did you mean?  and
+               @bands):
+    62:             <% if current_user.photo.attached? %>
+    63:                 <%= cl_image_tag current_user.photo.key, class: "avatar nav-avatar dropdown-toggle m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    64:             <% else  %>
+    65:                 <%= image_tag "#{band.image_url}", class: "avatar band-avatar mx-3" %>
+    66:             <% end %>
+    67:             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+    68:               <%= link_to "Action", "#", class: "dropdown-item" %>
+  
+app/views/shared/_navbar.html.erb:65
+app/views/layouts/application.html.erb:21
+Started GET "/" for 127.0.0.1 at 2021-11-29 11:25:50 +0000
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.8ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:40
+  Rendered bands/index.html.erb within layouts/application (Duration: 160.5ms | Allocations: 41088)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:16
+  [1m[36mBand Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  Rendered shared/_navbar.html.erb (Duration: 298.7ms | Allocations: 183828)
+Completed 500 Internal Server Error in 498ms (ActiveRecord: 13.5ms | Allocations: 239996)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `band' for #<#<Class:0x000055b7908e4e08>:0x000055b79121b030>
+Did you mean?  and
+               @bands):
+    62:             <% if current_user.photo.attached? %>
+    63:                 <%= cl_image_tag current_user.photo.key, class: "avatar nav-avatar dropdown-toggle m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    64:             <% else  %>
+    65:                 <%= image_tag "#{band.image_url}", class: "avatar band-avatar mx-3" %>
+    66:             <% end %>
+    67:             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+    68:               <%= link_to "Action", "#", class: "dropdown-item" %>
+  
+app/views/shared/_navbar.html.erb:65
+app/views/layouts/application.html.erb:21
+Started GET "/" for ::1 at 2021-11-29 11:27:23 +0000
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:40
+  Rendered bands/index.html.erb within layouts/application (Duration: 14.9ms | Allocations: 3639)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:16
+  [1m[36mBand Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  Rendered shared/_navbar.html.erb (Duration: 12.4ms | Allocations: 3786)
+  Rendered shared/_flashes.html.erb (Duration: 0.8ms | Allocations: 189)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 90)
+Completed 200 OK in 53ms (Views: 48.7ms | ActiveRecord: 2.5ms | Allocations: 20125)
+
+
+Started GET "/bands/44" for ::1 at 2021-11-29 11:27:35 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mBand Load (1.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:7:in `show'
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mBandMember Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 44], ["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:34
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 44], ["is_member", true]]
+  ↳ app/views/shared/_band_display.html.erb:42
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 120], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  Rendered shared/_band_display.html.erb (Duration: 16.9ms | Allocations: 5003)
+  [1m[36mBandMember Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 44], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 44], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  Rendered shared/_auditions_display.html.erb (Duration: 5.7ms | Allocations: 1935)
+  [1m[36mMessage Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 44], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 44]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 3.0ms | Allocations: 1768)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 3.1ms | Allocations: 748)
+  Rendered shared/_chat_display.html.erb (Duration: 31.7ms | Allocations: 14618)
+  Rendered bands/show.html.erb within layouts/application (Duration: 78.5ms | Allocations: 31571)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  Rendered shared/_navbar.html.erb (Duration: 6.8ms | Allocations: 2163)
+  Rendered shared/_flashes.html.erb (Duration: 0.2ms | Allocations: 25)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 158ms (Views: 100.8ms | ActiveRecord: 12.2ms | Allocations: 55235)
+
+
+Started GET "/cable" for ::1 at 2021-11-29 11:27:35 +0000
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-29 11:27:35 +0000
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mBand Load (6.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/channels/band_chat_channel.rb:3:in `subscribed'
+BandChatChannel is transmitting the subscription confirmation
+BandChatChannel is streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNDQ
+Started GET "/bands/44" for ::1 at 2021-11-29 11:28:13 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:7:in `show'
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mUser Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mBandMember Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 44], ["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+  [1m[36mCACHE User Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:34
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 44], ["is_member", true]]
+  ↳ app/views/shared/_band_display.html.erb:42
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 120], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  Rendered shared/_band_display.html.erb (Duration: 20.7ms | Allocations: 4612)
+  [1m[36mBandMember Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 44], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 44], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  Rendered shared/_auditions_display.html.erb (Duration: 12.4ms | Allocations: 1921)
+  [1m[36mMessage Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 44], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 44]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 2.5ms | Allocations: 991)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 1.7ms | Allocations: 748)
+  Rendered shared/_chat_display.html.erb (Duration: 16.8ms | Allocations: 6632)
+  Rendered bands/show.html.erb within layouts/application (Duration: 76.5ms | Allocations: 19913)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  Rendered shared/_navbar.html.erb (Duration: 273.0ms | Allocations: 164305)
+Completed 500 Internal Server Error in 377ms (ActiveRecord: 11.4ms | Allocations: 196768)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `band' for #<#<Class:0x00007f6523b58490>:0x00007f6523b4eb20>
+Did you mean?  @band
+               and):
+    62:             <% if current_user.photo.attached? %>
+    63:                 <%= cl_image_tag current_user.photo.key, class: "avatar nav-avatar dropdown-toggle m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    64:             <% else  %>
+    65:                 <%= image_tag "#{band.image_url}", class: "avatar band-avatar mx-3" %>
+    66:             <% end %>
+    67:             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+    68:               <%= link_to "Action", "#", class: "dropdown-item" %>
+  
+app/views/shared/_navbar.html.erb:65
+app/views/layouts/application.html.erb:21
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-29 11:28:13 +0000
+BandChatChannel stopped streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNDQ
+Started GET "/bands/44" for ::1 at 2021-11-29 11:28:42 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:7:in `show'
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mBandMember Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 44], ["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:34
+  [1m[36mBandMember Load (0.5ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 44], ["is_member", true]]
+  ↳ app/views/shared/_band_display.html.erb:42
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 120], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  Rendered shared/_band_display.html.erb (Duration: 17.7ms | Allocations: 4584)
+  [1m[36mBandMember Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 44], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 44], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  Rendered shared/_auditions_display.html.erb (Duration: 5.5ms | Allocations: 1917)
+  [1m[36mMessage Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 44], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 44]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 2.6ms | Allocations: 991)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 2.6ms | Allocations: 748)
+  Rendered shared/_chat_display.html.erb (Duration: 22.5ms | Allocations: 6641)
+  Rendered bands/show.html.erb within layouts/application (Duration: 68.9ms | Allocations: 19883)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  Rendered shared/_navbar.html.erb (Duration: 7.7ms | Allocations: 2896)
+  Rendered shared/_flashes.html.erb (Duration: 0.5ms | Allocations: 181)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 87)
+Completed 200 OK in 100ms (Views: 88.1ms | ActiveRecord: 8.1ms | Allocations: 36054)
+
+
+Started GET "/cable" for ::1 at 2021-11-29 11:28:42 +0000
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-29 11:28:42 +0000
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/channels/band_chat_channel.rb:3:in `subscribed'
+BandChatChannel is transmitting the subscription confirmation
+BandChatChannel is streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNDQ
+Started GET "/bands/44" for ::1 at 2021-11-29 11:29:19 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:7:in `show'
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mBandMember Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 44], ["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:34
+  [1m[36mBandMember Load (0.8ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 44], ["is_member", true]]
+  ↳ app/views/shared/_band_display.html.erb:42
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 120], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  Rendered shared/_band_display.html.erb (Duration: 26.0ms | Allocations: 4584)
+  [1m[36mBandMember Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 44], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (0.5ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 44], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  Rendered shared/_auditions_display.html.erb (Duration: 9.9ms | Allocations: 1917)
+  [1m[36mMessage Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 44], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 44]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 2.5ms | Allocations: 991)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 2.1ms | Allocations: 748)
+  Rendered shared/_chat_display.html.erb (Duration: 16.6ms | Allocations: 6630)
+  Rendered bands/show.html.erb within layouts/application (Duration: 76.6ms | Allocations: 19853)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  Rendered shared/_navbar.html.erb (Duration: 10.6ms | Allocations: 2934)
+  Rendered shared/_flashes.html.erb (Duration: 0.4ms | Allocations: 177)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 85)
+Completed 200 OK in 113ms (Views: 97.9ms | ActiveRecord: 11.6ms | Allocations: 35907)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-29 11:29:19 +0000
+BandChatChannel stopped streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNDQ
+Started GET "/cable" for ::1 at 2021-11-29 11:29:19 +0000
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-29 11:29:19 +0000
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mBand Load (1.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/channels/band_chat_channel.rb:3:in `subscribed'
+BandChatChannel is transmitting the subscription confirmation
+BandChatChannel is streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNDQ
+Started GET "/bands/44" for ::1 at 2021-11-29 11:36:08 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:7:in `show'
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mBandMember Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 44], ["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:34
+  [1m[36mBandMember Load (0.9ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 44], ["is_member", true]]
+  ↳ app/views/shared/_band_display.html.erb:42
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 120], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  Rendered shared/_band_display.html.erb (Duration: 18.8ms | Allocations: 5078)
+  [1m[36mBandMember Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 44], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (0.6ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 44], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  Rendered shared/_auditions_display.html.erb (Duration: 7.5ms | Allocations: 1530)
+  [1m[36mMessage Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 44], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 44]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 2.8ms | Allocations: 1512)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 2.9ms | Allocations: 748)
+  Rendered shared/_chat_display.html.erb (Duration: 28.3ms | Allocations: 8201)
+  Rendered bands/show.html.erb within layouts/application (Duration: 99.1ms | Allocations: 30194)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  Rendered shared/_navbar.html.erb (Duration: 13.9ms | Allocations: 4153)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 183ms (Views: 126.5ms | ActiveRecord: 11.0ms | Allocations: 62654)
+
+
+Started GET "/cable" for ::1 at 2021-11-29 11:36:09 +0000
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-29 11:36:09 +0000
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/channels/band_chat_channel.rb:3:in `subscribed'
+BandChatChannel is transmitting the subscription confirmation
+BandChatChannel is streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNDQ
+Started GET "/" for ::1 at 2021-11-29 11:36:33 +0000
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:40
+  Rendered bands/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 3635)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:16
+  [1m[36mBand Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  Rendered shared/_navbar.html.erb (Duration: 9.8ms | Allocations: 4384)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.8ms | Allocations: 18742)
+
+
+  
+ActionView::Template::Error (undefined method `image_url' for nil:NilClass):
+    62:             <% if current_user.photo.attached? %>
+    63:                 <%= cl_image_tag current_user.photo.key, class: "avatar nav-avatar dropdown-toggle m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    64:             <% else  %>
+    65:                 <%= image_tag "#{@band.image_url}", class: "avatar nav-avatar dropdown-toggle m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    66:             <% end %>
+    67:             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+    68:               <%= link_to "Action", "#", class: "dropdown-item" %>
+  
+app/views/shared/_navbar.html.erb:65
+app/views/layouts/application.html.erb:21
+Unsubscribing from channel: {"channel":"BandChatChannel","id":44}
+BandChatChannel stopped streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNDQ
+Started GET "/bands/44" for ::1 at 2021-11-29 11:36:36 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:7:in `show'
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mBandMember Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 44], ["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:34
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 44], ["is_member", true]]
+  ↳ app/views/shared/_band_display.html.erb:42
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 120], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  Rendered shared/_band_display.html.erb (Duration: 19.0ms | Allocations: 4240)
+  [1m[36mBandMember Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 44], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (0.9ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 44], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  Rendered shared/_auditions_display.html.erb (Duration: 6.5ms | Allocations: 1526)
+  [1m[36mMessage Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 44], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 44]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 1.7ms | Allocations: 748)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 2.5ms | Allocations: 748)
+  Rendered shared/_chat_display.html.erb (Duration: 15.7ms | Allocations: 5978)
+  Rendered bands/show.html.erb within layouts/application (Duration: 65.4ms | Allocations: 17595)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  Rendered shared/_navbar.html.erb (Duration: 9.6ms | Allocations: 2214)
+  Rendered shared/_flashes.html.erb (Duration: 0.2ms | Allocations: 25)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 96ms (Views: 82.8ms | ActiveRecord: 9.0ms | Allocations: 31327)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-29 11:36:36 +0000
+Started GET "/cable" for ::1 at 2021-11-29 11:36:36 +0000
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-29 11:36:36 +0000
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/channels/band_chat_channel.rb:3:in `subscribed'
+BandChatChannel is transmitting the subscription confirmation
+BandChatChannel is streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNDQ
+Started GET "/bands/44" for ::1 at 2021-11-29 11:38:18 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:7:in `show'
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mBandMember Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 44], ["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:34
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 44], ["is_member", true]]
+  ↳ app/views/shared/_band_display.html.erb:42
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 120], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  Rendered shared/_band_display.html.erb (Duration: 17.4ms | Allocations: 5403)
+  [1m[36mBandMember Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 44], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (0.8ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 44], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  Rendered shared/_auditions_display.html.erb (Duration: 6.7ms | Allocations: 1918)
+  [1m[36mMessage Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 44], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 44]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 3.6ms | Allocations: 1755)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 3.3ms | Allocations: 748)
+  Rendered shared/_chat_display.html.erb (Duration: 23.6ms | Allocations: 8855)
+  Rendered bands/show.html.erb within layouts/application (Duration: 97.1ms | Allocations: 32782)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  Rendered shared/_navbar.html.erb (Duration: 18.3ms | Allocations: 8468)
+Completed 500 Internal Server Error in 190ms (ActiveRecord: 25.5ms | Allocations: 70838)
+
+
+  
+ActionView::Template::Error (undefined method `photo' for #<Band:0x000055b792e84578>
+Did you mean?  photos
+               photos=):
+    62:             <% if current_user.photo.attached? %>
+    63:                 <%= cl_image_tag current_user.photo.key, class: "avatar nav-avatar dropdown-toggle m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    64:             <% else  %>
+    65:                 <%= image_tag "#{@band.photo.key}", class: "avatar nav-avatar dropdown-toggle m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    66:             <% end %>
+    67:             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+    68:               <%= link_to "Action", "#", class: "dropdown-item" %>
+  
+app/views/shared/_navbar.html.erb:65
+app/views/layouts/application.html.erb:21
+Started GET "/bands/44" for ::1 at 2021-11-29 11:38:42 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mBand Load (0.8ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:7:in `show'
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mBandMember Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 44], ["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+  [1m[36mCACHE User Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:34
+  [1m[36mBandMember Load (0.5ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 44], ["is_member", true]]
+  ↳ app/views/shared/_band_display.html.erb:42
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 120], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  Rendered shared/_band_display.html.erb (Duration: 16.7ms | Allocations: 4585)
+  [1m[36mBandMember Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 44], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 44], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  Rendered shared/_auditions_display.html.erb (Duration: 6.2ms | Allocations: 1917)
+  [1m[36mMessage Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 44], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 44]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 4.5ms | Allocations: 991)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 1.9ms | Allocations: 748)
+  Rendered shared/_chat_display.html.erb (Duration: 22.5ms | Allocations: 6636)
+  Rendered bands/show.html.erb within layouts/application (Duration: 66.2ms | Allocations: 19867)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  Rendered shared/_navbar.html.erb (Duration: 8.0ms | Allocations: 2936)
+  Rendered shared/_flashes.html.erb (Duration: 0.5ms | Allocations: 177)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 85)
+Completed 200 OK in 100ms (Views: 88.2ms | ActiveRecord: 7.8ms | Allocations: 36244)
+
+
+Started GET "/cable" for ::1 at 2021-11-29 11:38:42 +0000
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-29 11:38:42 +0000
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mBand Load (2.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/channels/band_chat_channel.rb:3:in `subscribed'
+BandChatChannel is transmitting the subscription confirmation
+BandChatChannel is streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNDQ
+Started GET "/bands/44" for ::1 at 2021-11-29 11:51:44 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mBand Load (0.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:7:in `show'
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mBandMember Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 44], ["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:34
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 44], ["is_member", true]]
+  ↳ app/views/shared/_band_display.html.erb:42
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 120], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  Rendered shared/_band_display.html.erb (Duration: 21.8ms | Allocations: 4270)
+  [1m[36mBandMember Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 44], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (0.6ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 44], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  Rendered shared/_auditions_display.html.erb (Duration: 5.9ms | Allocations: 1529)
+  [1m[36mMessage Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 44], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 44]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 3.1ms | Allocations: 748)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 3.6ms | Allocations: 748)
+  Rendered shared/_chat_display.html.erb (Duration: 22.0ms | Allocations: 5980)
+  Rendered bands/show.html.erb within layouts/application (Duration: 70.6ms | Allocations: 17658)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  Rendered shared/_navbar.html.erb (Duration: 9.5ms | Allocations: 2219)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 109ms (Views: 89.7ms | ActiveRecord: 10.9ms | Allocations: 31539)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-29 11:51:44 +0000
+BandChatChannel stopped streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNDQ
+Started GET "/cable" for ::1 at 2021-11-29 11:51:44 +0000
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-29 11:51:44 +0000
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mBand Load (1.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/channels/band_chat_channel.rb:3:in `subscribed'
+BandChatChannel is transmitting the subscription confirmation
+BandChatChannel is streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNDQ
+Started GET "/bands/44" for ::1 at 2021-11-29 11:56:36 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mBand Load (0.9ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:7:in `show'
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mBandMember Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 44], ["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:34
+  [1m[36mBandMember Load (0.5ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 44], ["is_member", true]]
+  ↳ app/views/shared/_band_display.html.erb:42
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 120], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  Rendered shared/_band_display.html.erb (Duration: 21.5ms | Allocations: 4584)
+  [1m[36mBandMember Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 44], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (0.7ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 44], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  Rendered shared/_auditions_display.html.erb (Duration: 7.5ms | Allocations: 1917)
+  [1m[36mMessage Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 44], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 44]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 2.6ms | Allocations: 992)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 2.4ms | Allocations: 748)
+  Rendered shared/_chat_display.html.erb (Duration: 20.2ms | Allocations: 6631)
+  Rendered bands/show.html.erb within layouts/application (Duration: 71.6ms | Allocations: 19856)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  Rendered shared/_navbar.html.erb (Duration: 15.5ms | Allocations: 6367)
+Completed 500 Internal Server Error in 114ms (ActiveRecord: 9.7ms | Allocations: 38825)
+
+
+  
+ActionView::Template::Error (undefined method `photo' for #<Band:0x00007f6523c0e510>
+Did you mean?  photos
+               photos=):
+    62:             <% if current_user.photo.attached? %>
+    63:                 <%= cl_image_tag current_user.photo.key, class: "avatar nav-avatar dropdown-toggle m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    64:             <% else  %>
+    65:                 <%= image_tag "#{@band.photo.key}", class: "avatar nav-avatar dropdown-toggle m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    66:             <% end %>
+    67:             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+    68:               <%= link_to "Action", "#", class: "dropdown-item" %>
+  
+app/views/shared/_navbar.html.erb:65
+app/views/layouts/application.html.erb:21
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-29 11:56:36 +0000
+BandChatChannel stopped streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNDQ
+Started GET "/bands/44" for ::1 at 2021-11-29 12:07:15 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:7:in `show'
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mBandMember Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 44], ["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:34
+  [1m[36mBandMember Load (0.3ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 44], ["is_member", true]]
+  ↳ app/views/shared/_band_display.html.erb:42
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 120], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  Rendered shared/_band_display.html.erb (Duration: 17.4ms | Allocations: 5419)
+  [1m[36mBandMember Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 44], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (0.3ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 44], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  Rendered shared/_auditions_display.html.erb (Duration: 5.0ms | Allocations: 1921)
+  [1m[36mMessage Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 44], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 44]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 2.8ms | Allocations: 1755)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 1.8ms | Allocations: 748)
+  Rendered shared/_chat_display.html.erb (Duration: 20.6ms | Allocations: 8858)
+  Rendered bands/show.html.erb within layouts/application (Duration: 83.6ms | Allocations: 32464)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 44], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:65
+  Rendered shared/_navbar.html.erb (Duration: 16.5ms | Allocations: 7452)
+Completed 500 Internal Server Error in 154ms (ActiveRecord: 9.2ms | Allocations: 68481)
+
+
+  
+ActionView::Template::Error (key delegated to attachment, but attachment is nil):
+    62:             <% if current_user.photo.attached? %>
+    63:                 <%= cl_image_tag current_user.photo.key, class: "avatar nav-avatar dropdown-toggle m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    64:             <% else  %>
+    65:                 <%= image_tag "#{@band.photo.key}", class: "avatar nav-avatar dropdown-toggle m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    66:             <% end %>
+    67:             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+    68:               <%= link_to "Action", "#", class: "dropdown-item" %>
+  
+app/views/shared/_navbar.html.erb:65
+app/views/layouts/application.html.erb:21
+Started GET "/bands/44" for ::1 at 2021-11-29 12:09:12 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:7:in `show'
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mUser Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mBandMember Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 44], ["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:34
+  [1m[36mBandMember Load (0.8ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 44], ["is_member", true]]
+  ↳ app/views/shared/_band_display.html.erb:42
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 120], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  Rendered shared/_band_display.html.erb (Duration: 15.6ms | Allocations: 4585)
+  [1m[36mBandMember Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 44], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 44], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  Rendered shared/_auditions_display.html.erb (Duration: 5.5ms | Allocations: 1917)
+  [1m[36mMessage Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 44], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 44]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 2.9ms | Allocations: 991)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 2.8ms | Allocations: 748)
+  Rendered shared/_chat_display.html.erb (Duration: 19.2ms | Allocations: 6637)
+  Rendered bands/show.html.erb within layouts/application (Duration: 65.2ms | Allocations: 19868)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  Rendered shared/_navbar.html.erb (Duration: 24.4ms | Allocations: 7076)
+  Rendered shared/_flashes.html.erb (Duration: 0.5ms | Allocations: 180)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 85)
+Completed 200 OK in 119ms (Views: 106.2ms | ActiveRecord: 9.0ms | Allocations: 40228)
+
+
+Started GET "/cable" for ::1 at 2021-11-29 12:09:12 +0000
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-29 12:09:12 +0000
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mBand Load (3.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/channels/band_chat_channel.rb:3:in `subscribed'
+BandChatChannel is transmitting the subscription confirmation
+BandChatChannel is streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNDQ
+Started GET "/bands/44" for ::1 at 2021-11-29 12:10:23 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mBand Load (2.8ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:7:in `show'
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mBandMember Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 44], ["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:34
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 44], ["is_member", true]]
+  ↳ app/views/shared/_band_display.html.erb:42
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 120], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  Rendered shared/_band_display.html.erb (Duration: 18.1ms | Allocations: 4584)
+  [1m[36mBandMember Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 44], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (0.5ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 44], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  Rendered shared/_auditions_display.html.erb (Duration: 13.3ms | Allocations: 1917)
+  [1m[36mMessage Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 44], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 44]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 2.9ms | Allocations: 991)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 2.0ms | Allocations: 748)
+  Rendered shared/_chat_display.html.erb (Duration: 17.9ms | Allocations: 6636)
+  Rendered bands/show.html.erb within layouts/application (Duration: 70.9ms | Allocations: 19863)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  Rendered shared/_navbar.html.erb (Duration: 8.1ms | Allocations: 2856)
+  Rendered shared/_flashes.html.erb (Duration: 0.7ms | Allocations: 177)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 85)
+Completed 200 OK in 119ms (Views: 101.4ms | ActiveRecord: 10.1ms | Allocations: 35837)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-29 12:10:23 +0000
+BandChatChannel stopped streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNDQ
+Started GET "/cable" for ::1 at 2021-11-29 12:10:24 +0000
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-29 12:10:24 +0000
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mBand Load (3.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/channels/band_chat_channel.rb:3:in `subscribed'
+BandChatChannel is transmitting the subscription confirmation
+BandChatChannel is streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNDQ
+Started GET "/bands/44" for ::1 at 2021-11-29 12:10:57 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:7:in `show'
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mBandMember Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 44], ["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:34
+  [1m[36mBandMember Load (0.6ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 44], ["is_member", true]]
+  ↳ app/views/shared/_band_display.html.erb:42
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 120], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  Rendered shared/_band_display.html.erb (Duration: 21.0ms | Allocations: 4584)
+  [1m[36mBandMember Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 44], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (0.5ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 44], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  Rendered shared/_auditions_display.html.erb (Duration: 7.1ms | Allocations: 1917)
+  [1m[36mMessage Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 44], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 44]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 3.8ms | Allocations: 991)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 3.2ms | Allocations: 748)
+  Rendered shared/_chat_display.html.erb (Duration: 20.1ms | Allocations: 6636)
+  Rendered bands/show.html.erb within layouts/application (Duration: 73.9ms | Allocations: 19867)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 44], ["record_type", "Band"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:65
+  Rendered shared/_navbar.html.erb (Duration: 10.7ms | Allocations: 5068)
+Completed 500 Internal Server Error in 106ms (ActiveRecord: 9.3ms | Allocations: 37508)
+
+
+  
+ActionView::Template::Error (key delegated to attachment, but attachment is nil):
+    62:             <% if current_user.photo.attached? %>
+    63:                 <%= cl_image_tag current_user.photo.key, class: "avatar nav-avatar dropdown-toggle m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    64:             <% else  %>
+    65:                 <%= cl_image_tag "#{@band.photo.key}", class: "avatar nav-avatar dropdown-toggle m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    66:             <% end %>
+    67:             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+    68:               <%= link_to "Action", "#", class: "dropdown-item" %>
+  
+app/views/shared/_navbar.html.erb:65
+app/views/layouts/application.html.erb:21
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-29 12:10:57 +0000
+BandChatChannel stopped streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNDQ
+Started GET "/bands/44" for ::1 at 2021-11-29 12:11:09 +0000
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:7:in `show'
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:7
+  [1m[36mBandMember Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2 LIMIT $3[0m  [["band_id", 44], ["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/bands/show.html.erb:15
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "band_members" ON "users"."id" = "band_members"."user_id" WHERE "band_members"."band_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["band_id", 44], ["id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:34
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_member" = $2[0m  [["band_id", 44], ["is_member", true]]
+  ↳ app/views/shared/_band_display.html.erb:42
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 120], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/shared/_band_display.html.erb:43
+  Rendered shared/_band_display.html.erb (Duration: 19.1ms | Allocations: 4609)
+  [1m[36mBandMember Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2 LIMIT $3[0m  [["band_id", 44], ["is_audition", true], ["LIMIT", 1]]
+  ↳ app/views/shared/_auditions_display.html.erb:7
+  [1m[36mBandMember Load (0.6ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."is_audition" = $2[0m  [["band_id", 44], ["is_audition", true]]
+  ↳ app/views/shared/_auditions_display.html.erb:11
+  Rendered shared/_auditions_display.html.erb (Duration: 5.9ms | Allocations: 1917)
+  [1m[36mMessage Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."band_id" = $1 LIMIT $2[0m  [["band_id", 44], ["LIMIT", 1]]
+  ↳ app/views/shared/_chat_display.html.erb:13
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."band_id" = $1[0m  [["band_id", 44]]
+  ↳ app/views/shared/_chat_display.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 2.5ms | Allocations: 991)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered messages/_message.html.erb (Duration: 1.9ms | Allocations: 748)
+  Rendered shared/_chat_display.html.erb (Duration: 22.0ms | Allocations: 6641)
+  Rendered bands/show.html.erb within layouts/application (Duration: 66.7ms | Allocations: 19901)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mBand Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 141], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 141], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  Rendered shared/_navbar.html.erb (Duration: 7.5ms | Allocations: 3051)
+  Rendered shared/_flashes.html.erb (Duration: 0.6ms | Allocations: 177)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 85)
+Completed 200 OK in 100ms (Views: 88.1ms | ActiveRecord: 8.1ms | Allocations: 36201)
+
+
+Started GET "/cable" for ::1 at 2021-11-29 12:11:10 +0000
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-29 12:11:10 +0000
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mBand Load (0.8ms)[0m  [1m[34mSELECT "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/channels/band_chat_channel.rb:3:in `subscribed'
+BandChatChannel is transmitting the subscription confirmation
+BandChatChannel is streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNDQ
+Started DELETE "/users/sign_out" for ::1 at 2021-11-29 12:19:19 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7Q0UlgXs2wvU8Rmg3E6YdvYzVvTcn8mlCoOcb9/X50pv+LVwQ5dcYGolUykGNNDstghDihGa4eSPU9lLT5PJ7A=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 20ms (ActiveRecord: 0.9ms | Allocations: 3373)
+
+
+Started GET "/" for ::1 at 2021-11-29 12:19:19 +0000
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (1.1ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:40
+  Rendered bands/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 3656)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 6.2ms | Allocations: 919)
+  Rendered shared/_flashes.html.erb (Duration: 0.5ms | Allocations: 183)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 85)
+Completed 200 OK in 45ms (Views: 42.2ms | ActiveRecord: 1.1ms | Allocations: 17079)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-29 12:19:19 +0000
+BandChatChannel stopped streaming from band_chat:Z2lkOi8vdGhlLXJlaGVhcnNhbC1yb29tL0JhbmQvNDQ
+Started GET "/users/sign_in" for ::1 at 2021-11-29 12:19:22 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 604)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 28.8ms | Allocations: 10162)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 166)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 54ms (Views: 51.2ms | ActiveRecord: 0.0ms | Allocations: 22383)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-11-29 12:19:52 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"0cHqGGwGAN52t9+gk0FyB8HX9Fm41auFnJuipe87NDoRpYdPiX09AMkIv9UgjqVAPJKvpjOXWaVaIIFJLmeWtg==", "user"=>{"email"=>"bill@bill.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bill@bill.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 279ms (ActiveRecord: 0.9ms | Allocations: 6608)
+
+
+Started GET "/" for ::1 at 2021-11-29 12:19:52 +0000
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:40
+  Rendered bands/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 3632)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:16
+  [1m[36mBand Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 121], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1[0m  [["user_id", 121]]
+  ↳ app/views/shared/_navbar.html.erb:24
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 44], ["user_id", 121]]
+  ↳ app/views/shared/_navbar.html.erb:25
+  [1m[36mCACHE BandMember Load (0.0ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 44], ["user_id", 121]]
+  ↳ app/views/shared/_navbar.html.erb:46
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 121], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  Rendered shared/_navbar.html.erb (Duration: 23.2ms | Allocations: 7904)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 3.5ms | Allocations: 23464)
+
+
+  
+ActionView::Template::Error (undefined method `photo' for nil:NilClass):
+    62:             <% if current_user.photo.attached? %>
+    63:                 <%= cl_image_tag current_user.photo.key, class: "avatar nav-avatar dropdown-toggle m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    64:             <% else  %>
+    65:                 <%= cl_image_tag "#{@band.photo}", class: "avatar nav-avatar dropdown-toggle m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    66:             <% end %>
+    67:             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+    68:               <%= link_to "Action", "#", class: "dropdown-item" %>
+  
+app/views/shared/_navbar.html.erb:65
+app/views/layouts/application.html.erb:21
+Started GET "/" for ::1 at 2021-11-29 12:25:34 +0000
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:40
+  Rendered bands/index.html.erb within layouts/application (Duration: 11.8ms | Allocations: 3629)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:16
+  [1m[36mBand Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 121], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1[0m  [["user_id", 121]]
+  ↳ app/views/shared/_navbar.html.erb:24
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 44], ["user_id", 121]]
+  ↳ app/views/shared/_navbar.html.erb:25
+  [1m[36mCACHE BandMember Load (0.0ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 44], ["user_id", 121]]
+  ↳ app/views/shared/_navbar.html.erb:46
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 121], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  Rendered shared/_navbar.html.erb (Duration: 441.0ms | Allocations: 169678)
+Completed 500 Internal Server Error in 474ms (ActiveRecord: 4.3ms | Allocations: 185274)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `band' for #<#<Class:0x00007f6520533310>:0x00007f6520522df8>
+Did you mean?  and
+               @bands):
+    62:             <% if current_user.photo.attached? %>
+    63:                 <%= cl_image_tag current_user.photo.key, class: "avatar nav-avatar dropdown-toggle m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    64:             <% else  %>
+    65:                 <%= image_tag "#{band.photo}", class: "avatar band-avatar mx-3" %>
+    66:             <% end %>
+    67:             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+    68:               <%= link_to "Action", "#", class: "dropdown-item" %>
+  
+app/views/shared/_navbar.html.erb:65
+app/views/layouts/application.html.erb:21
+Started GET "/" for ::1 at 2021-11-29 12:30:46 +0000
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:40
+  Rendered bands/index.html.erb within layouts/application (Duration: 71.9ms | Allocations: 8826)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:16
+  [1m[36mBand Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 121], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1[0m  [["user_id", 121]]
+  ↳ app/views/shared/_navbar.html.erb:24
+  [1m[36mBandMember Load (1.1ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 44], ["user_id", 121]]
+  ↳ app/views/shared/_navbar.html.erb:25
+  Rendered shared/_navbar.html.erb (Duration: 71.3ms | Allocations: 24616)
+Completed 500 Internal Server Error in 168ms (ActiveRecord: 56.0ms | Allocations: 48137)
+
+
+  
+ActionView::Template::Error (The asset "" is not present in the asset pipeline.
+):
+    25:                 <% if band.band_members.where(user: current_user)[0].is_member %>
+    26:                   <%= link_to band_path(band), class: "card-links" do %>
+    27:                     <div class="band-item">
+    28:                       <%= image_tag "#{band.photo}", class: "avatar band-avatar mx-3" %>
+    29: 
+    30:                       <div class="audition-details white-font">
+    31:                         <div class="mr-3"><%= band.name %></div>
+  
+app/views/shared/_navbar.html.erb:28
+app/views/shared/_navbar.html.erb:26
+app/views/shared/_navbar.html.erb:24
+app/views/layouts/application.html.erb:21
+Started GET "/" for ::1 at 2021-11-29 12:32:06 +0000
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:40
+  Rendered bands/index.html.erb within layouts/application (Duration: 23.7ms | Allocations: 8717)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:16
+  [1m[36mBand Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1 LIMIT $2[0m  [["user_id", 121], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:17
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands" INNER JOIN "band_members" ON "bands"."id" = "band_members"."band_id" WHERE "band_members"."user_id" = $1[0m  [["user_id", 121]]
+  ↳ app/views/shared/_navbar.html.erb:24
+  [1m[36mBandMember Load (0.4ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 44], ["user_id", 121]]
+  ↳ app/views/shared/_navbar.html.erb:25
+  [1m[36mCACHE BandMember Load (0.0ms)[0m  [1m[34mSELECT "band_members".* FROM "band_members" WHERE "band_members"."band_id" = $1 AND "band_members"."user_id" = $2[0m  [["band_id", 44], ["user_id", 121]]
+  ↳ app/views/shared/_navbar.html.erb:46
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 121], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:62
+  Rendered shared/_navbar.html.erb (Duration: 318.6ms | Allocations: 186697)
+Completed 500 Internal Server Error in 367ms (ActiveRecord: 13.7ms | Allocations: 210109)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `band' for #<#<Class:0x00007f6523ae4540>:0x00007f6523ae2790>
+Did you mean?  and
+               @bands):
+    62:             <% if current_user.photo.attached? %>
+    63:                 <%= cl_image_tag current_user.photo.key, class: "avatar nav-avatar dropdown-toggle m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    64:             <% else  %>
+    65:                 <%= image_tag "#{band.image_url}", class: "avatar band-avatar mx-3" %>
+    66:             <% end %>
+    67:             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+    68:               <%= link_to "Action", "#", class: "dropdown-item" %>
+  
+app/views/shared/_navbar.html.erb:65
+app/views/layouts/application.html.erb:21
