@@ -30,17 +30,6 @@ class BandMembersController < ApplicationController
   end
 
   def update
-
-<<<<<<< HEAD
-    if params[:commit] == "Accept"
-      audition.is_audition = false
-      audition.is_member = true
-      audition.is_admin = false
-      audition.save!
-      redirect_to band_path(params[:user_id])
-=======
-
-    raise
     if params[:band_member][:type] == 'audition'
       audition = BandMember.find(params[:id])
       if params[:commit] == "Accept"
@@ -50,7 +39,6 @@ class BandMembersController < ApplicationController
         audition.save!
         redirect_to band_path(params[:band_id])
       end
->>>>>>> 1f20e012f778c74bcc74a7a677196ad1e34d0be0
     end
 
 
