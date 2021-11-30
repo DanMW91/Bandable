@@ -11,7 +11,7 @@
       <div class="mesgs">
         <div class="msg_history" data-controller="band-chat-subscription" data-band-chat-subscription-band-chat-id-value="<%= @band.id %>">
           <% if !@band.messages.empty? %>
-            <% @band.messages.each do |message| %>
+            <% @band.messages.sort_by{ |message| message.created_at }.each do |message| %>
               <%= render "messages/message", message: message %>
             <% end %>
           <% end %>
@@ -20,11 +20,6 @@
               <%= f.input_field :content, class: "msger-input", placeholder: 'Enter your message...',  label: false %>
               <%= f.submit "Send", class: "msger-send-btn", id: 'submit-chat-btn' %>
             <% end %>
-          <%# <form class="msger-inputarea">
-            <input type="text" class="msger-input" placeholder="Enter your message...">
-            <button type="submit" class="msger-send-btn">Send</button>
-          </form> %>
-
       </div>
 
     </div>

@@ -5,7 +5,7 @@ class BandsController < ApplicationController
     # if params[:query].present?
     #   @bands = @bands.where('title ILIKE ?', "%#{params[:query]}%")
     # end
-    # raise
+    
     if params[:query].present?
       if params[:result_type] == "bands"
         @results = Band.global_search(params[:query])
@@ -32,6 +32,8 @@ class BandsController < ApplicationController
     @band = Band.find(params[:id])
     @band_member = BandMember.new
     @message = Message.new
+    @song = Song.new
+    @song_file = SongFile.new
   end
 
   def new

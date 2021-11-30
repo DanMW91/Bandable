@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'song_files/create'
+  get 'songs/create'
   get 'messages/create'
   get 'band_members/create'
   get 'bands/index'
@@ -14,6 +16,9 @@ Rails.application.routes.draw do
     delete '/auditions/:id', to: 'band_members#destroy'
 
     resources :messages, only: [:index, :create]
+    resources :songs, only: [:index, :create] do
+      resources :song_files, only: [:create]
+    end
   end
 
   resources :users, only: [:show, :index], as: 'musician', path: 'musicians' do

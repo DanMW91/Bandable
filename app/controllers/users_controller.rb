@@ -5,5 +5,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @band_member = BandMember.new
   end
 end

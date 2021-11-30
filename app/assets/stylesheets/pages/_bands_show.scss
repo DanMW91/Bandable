@@ -64,3 +64,9 @@
 .list-inline i:hover {
   color: $accent;
 }
+
+.looking-for-toggle {
+  &:hover {
+    cursor: pointer;
+  }
+}
