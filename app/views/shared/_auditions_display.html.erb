@@ -20,6 +20,7 @@
             <div class="audition-buttons">
               <%= simple_form_for audition, url: band_update_audition_path(@band, audition) do |f| %>
                 <%= f.hidden_field :is_member, value: true %>
+                <%= f.hidden_field :type, value: 'audition'  %>
                 <%= f.submit 'Accept', class: 'btn btn-success mr-3' %>
               <% end %>
               <%= simple_form_for audition, url: band_update_audition_path(@band, audition)  do |f| %>
