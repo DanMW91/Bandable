@@ -4,12 +4,11 @@
     <div class="container">
       <h1 class="band-main-title"><strong> <%= @user.first_name %> </strong></h1>
       <p class="white-font"> <%= @user.location%></p>
-      <%# <p>Heavy Rocking Since 1999</p> %>
-       <%# <% if @user.band_member?(current_user) %>
+      <% if !current_user.bands.all? { |band| band.user_is_member?(@user) } %>
         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
           Send Invitation
         </button>
-      <%# <% end %>
+      <% end %>
     </div>
 
 </div>
@@ -33,7 +32,7 @@
     </div>
   </div>
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content modal-invitation">
       <div class="modal-header">
