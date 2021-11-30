@@ -24,7 +24,7 @@ import { bandShowTabsHandler } from './band_show_tabs'
 import { searchScroll} from './search_scroll'
 import { songsListTabs } from './songs_list'
 import { rehearsalDropdownHandler } from './rehearsal_dropdown'
-
+import { submitChatMessageHandler } from './chat'
 document.addEventListener('turbolinks:load', () => {
   navButtonsHandler()
   bandShowTabsHandler()
@@ -32,4 +32,5 @@ document.addEventListener('turbolinks:load', () => {
   searchScroll()
   songsListTabs()
   rehearsalDropdownHandler()
+  submitChatMessageHandler()
 });
