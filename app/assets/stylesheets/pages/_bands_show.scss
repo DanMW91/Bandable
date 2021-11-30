@@ -63,3 +63,8 @@
   color: $accent;
 }
 
+.looking-for-toggle {
+  &:hover {
+    cursor: pointer;
+  }
+}

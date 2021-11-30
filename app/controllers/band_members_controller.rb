@@ -31,8 +31,6 @@ class BandMembersController < ApplicationController
 
   def update
 
-
-    raise
     if params[:band_member][:type] == 'audition'
       audition = BandMember.find(params[:id])
       if params[:commit] == "Accept"
