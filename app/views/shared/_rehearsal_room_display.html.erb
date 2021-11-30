@@ -1,0 +1,55 @@
+<div class="rehearsal-main-container">
+  <div class="rehearsal-container">
+    <h1 class="d-flex justify-content-center white-font border-bottom">
+      The Rehearsal Room
+    </h1>
+    <div class="song-container">
+        <div class="songs">
+          <h2 class="songs-title">Songs:</h2>
+          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#songModal">
+            + New Song
+          </button>
+          <div class="song-list">
+            <% @band.songs.each do |song| %>
+              <div class="song-item">
+                <%= song.name %>
+              </div>
+            <% end %>
+          </div>
+          <div class='buffer'></div>
+        </div>
+      <div class="song-content-container">
+        <% @band.songs.each do |song| %>
+          <div class="song-content hidden" id="<%= song.name.split(" ").join('-') %>-song">
+            <%= render "shared/song_display", song: song, band: @band %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="songModal" tabindex="-1" role="dialog" aria-labelledby="songModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content modal-audition ">
+      <div class="modal-header">
+        <h5 class="modal-title" id="songModalLabel">Creating new song for <%= @band.name %> </h5>
+        <button type="button" class="close close-modal-audition" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for([@band, @song]) do|f| %>
+        <%= f.input :name,  label: 'Song Title:' %>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= f.submit "Create Song", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

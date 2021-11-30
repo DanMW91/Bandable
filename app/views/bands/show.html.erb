@@ -1,5 +1,5 @@
 <%# bands will be able to upload a background image that can be used as a banner %>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @band.image_url %> ); background-position: top;">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path(@band.photo.key) %> ); background-position: top;">
   <div class="container">
     <h1 class="band-main-title"><strong> <%= @band.name %> </strong></h1>
     <p class="white-font"> <%= @band.location%></p>
@@ -44,31 +44,30 @@
   </div>
 
   <div id="The Rehearsal Room" class="tabcontent">
-    <h3>The Rehearsal Room</h3>
-    <p>content</p>
+    <%= render "shared/rehearsal_room_display", locals: { band: @band, songs: @band.songs } %>
   </div>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content modal-audition ">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Sending Audition to <%= @band.name %> </h5>
-        <button type="button" class="close close-modal-audition" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= simple_form_for ([@band, @band_member]), url: band_auditions_path(@band) do|f| %>
-        <%= f.input :invitation_text,  label: 'Why do you want to join?:' %>
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <%= f.submit "Submit Audition", class: "btn btn-primary" %>
-          <% end %>
+<% if @is_band_member == false %>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content modal-audition">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Sending Audition to <%= @band.name %> </h5>
+          <button type="button" class="close close-modal-audition" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for ([@band, @band_member]), url: band_auditions_path(@band) do|f| %>
+          <%= f.input :invitation_text,  label: 'Why do you want to join?:' %>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <%= f.submit "Submit Audition", class: "btn btn-primary" %>
+            <% end %>
+          </div>
         </div>
       </div>
-
     </div>
   </div>
-</div>
+<% end %>

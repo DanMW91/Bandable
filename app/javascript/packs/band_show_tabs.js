@@ -62,7 +62,8 @@ export const bandShowTabsHandler = () => {
       messageHistory.scrollTop = messageHistory.scrollHeight;;
     }).observe(messageHistory, { childList: true });
 
-    chatForm.addEventListener('submit', () => {
+    chatForm.addEventListener('submit', (e) => {
+      e.preventDefault()
        // set scroll window position of user on submission of chat message
       scrollY = window.scrollY;
     })
@@ -86,6 +87,11 @@ export const bandShowTabsHandler = () => {
     if (window.location.href.indexOf('#auditions') >= 1) {
     auditionsTab.classList.add('active')
     auditionsTabContent.style.display = "block";
+    }
+    if (window.location.href.indexOf('#the%2520rehearsal%2520room') >= 1 || window.location.href.indexOf('#the%20rehearsal%20room') >= 1) {
+
+    rehearsalRoomTab.classList.add('active')
+    rehearsalRoomTabContent.style.display = "block";
     }
     if (window.location.href.indexOf('#') === -1 || window.location.href.indexOf('#band') >= 1) {
     bandTab.classList.add('active')

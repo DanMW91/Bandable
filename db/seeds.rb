@@ -1,8 +1,10 @@
 
+Song.destroy_all
 Message.destroy_all
 BandMember.destroy_all
 Band.destroy_all
 User.destroy_all
+
 
 
 
