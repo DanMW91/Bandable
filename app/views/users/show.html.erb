@@ -5,8 +5,13 @@
       <h1 class="band-main-title"><strong> <%= @user.first_name %> </strong></h1>
       <p class="white-font"> <%= @user.location%></p>
       <%# <p>Heavy Rocking Since 1999</p> %>
+       <%# <% if @user.band_member?(current_user) %>
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+          Send Invitation
+        </button>
+      <%# <% end %>
     </div>
-  
+
 </div>
 
 <div class="m-5"></div>
@@ -27,3 +32,27 @@
       </div>
     </div>
   </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content modal-invitation">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Sending Invitation to <%= @user.first_name %> </h5>
+        <button type="button" class="close close-modal-audition" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for ([@user, @band_member]), url: musician_invitations_path(@user) do|f| %>
+        <%= f.input :invitation_text,  label: 'Do you want to join our band?' %>
+        <%= f.input :band, as: :select, collection: current_user.bands, prompt: 'Select Band', label: false %>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= f.submit "Submit Invitation", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
