@@ -18,7 +18,6 @@ class BandMembersController < ApplicationController
       @band_member.is_member = false
       @band_member.user = User.find(musician_id)
       @band_member.band = Band.find(params[:band_member][:band])
-      raise
       if @band_member.save
         redirect_to musician_path(musician_id)
       else
@@ -35,7 +34,7 @@ class BandMembersController < ApplicationController
       audition.is_member = true
       audition.is_admin = false
       audition.save!
-      redirect_to musician_path(params[:user_id])
+      redirect_to band_path(params[:user_id])
     end
 
     @band_member = BandMember.find(params[:id])
