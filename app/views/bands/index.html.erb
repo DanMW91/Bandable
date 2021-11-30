@@ -44,18 +44,42 @@
 
 <div class="index-card-container white-font">
   <div class="card-container-header w-100">
-    <h1>Recommended Bands:</h1>
+    <div class="card-cont d-flex justify-content-between align-items-center">
+      <div class="card-container-title">
+        <h1>Recommended Bands:</h1>
+      </div>
+      <% if params[:query].present? %>
+        <%= form_tag bands_path, method: :get, class: 'form-inline' do %>
+          <div class="form-group d-flex">
+            <%= text_field_tag :query, params[:query], class: "d-none", placeholder: "Find a band or musician"
+            %>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="customRadioInline1" name="result_type" value="all" <%= 'checked=true' if !params[:result_type].present? || params[:result_type] == 'all' %> onchange="this.form.submit()" class="custom-control-input">
+              <label class="custom-control-label" for="customRadioInline1">All</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="customRadioInline2" name="result_type" value="bands" <%= 'checked=true' if params[:result_type] == 'bands' %> onchange="this.form.submit()" class="custom-control-input">
+              <label class="custom-control-label" for="customRadioInline2">Bands</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="customRadioInline3" name="result_type" value="musicians" <%= 'checked=true' if params[:result_type] == 'musicians' %> onchange="this.form.submit()" class="custom-control-input">
+              <label class="custom-control-label" for="customRadioInline3">musicians</label>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
-  <% if @bands.empty? %>
+  <% if @results.empty? %>
   <h2 class="py-5 my-5">No results found. Please search again!</h2>
   <% else %>
-  <% @bands.each do |band| %>
+  <% @results.each do |band| %>
     <figure class="image-block">
       <%= cl_image_tag band.photo.key %>
 
       <figcaption>
         <h3>
-        <%= band.name.upcase %>
+        <%= band.class == Band ? band.name.upcase : band.first_name.upcase %>
         </h3>
         <p> <%= band.bio[0..150].gsub(/\s\w+\s*$/, '...') %></p>
         <p><%= band.location %></p>
