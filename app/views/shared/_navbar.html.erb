@@ -69,28 +69,37 @@
                     <% end %>
                   <% end %>
                 <% end %>
-              </div>
-
-              <% current_user.bands.each do |band| %>
-                <%# <% if band.band_members.where(user: current_user)[0].is_audition %>
-                <% if current_user.band_members.where(user: current_user)[0].invitation_text.nil? %>
-                  <%= link_to band_path(band), class: "card-links" do %>
-                    <div class="audition-list">
-                      <p class='border-bottom'>My Invitation</p>
-                    </div>
-                    <div class="band-item">
-                      <%= cl_image_tag "#{band.photo.key}", class: "avatar band-avatar mx-3" %>
-                      <div class="audition-details white-font">
-                        <div class="mr-3"><%= band.name %></div>
-                      </div>
-                    </div>
-                  <% end %>
-                <% end %>
+                <div class="audition-list">
+                  <p class='border-bottom'>My Invitation</p>
+                </div>
+                <% current_user.bands.each do |band| %>
+                  <% if current_user.band_members.where(user: current_user)[0].invitation_text.nil? %>
+                    <%= link_to band_path(band), class: "card-links" do %>
+                      <div class="band-item">
+                        <%= cl_image_tag "#{band.photo.key}", class: "avatar band-avatar mx-3" %>
+                        <div class="audition-details white-font">
+                          <div class="mr-3"><%= band.name %></div>
+                        </div>
+              <div class="audition-buttons">
+              <%= simple_form_for band, url: musician_update_audition_path(@band, band) do |f| %>
+                <%= f.hidden_field :is_member, value: true %>
+                <%= f.hidden_field :type, value: 'invitation'  %>
+                <%= f.submit 'Accept', class: 'btn btn-success btn-sm mr-1' %>
+              <% end %>
+              <%= simple_form_for band, url: musician_update_audition_path(@band, band)  do |f| %>
+                <%= f.hidden_field :is_member, value: false  %>
+                <%= f.submit 'Reject', class: 'btn btn-danger btn-sm mr-1' %>
               <% end %>
               </div>
-          <%# </div> %>
+
+                      </div>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              </div>
+          </div>
         <% end %>
-<%# </div> %>
+
         <ul class="navbar-nav mr-auto">
           <li class="nav-item nav-word dropdown">
             <%= cl_image_tag "#{current_user.photo.key}", class: "avatar nav-avatar dropdown-toggle m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -100,16 +109,16 @@
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
-        <% else %>
-          <div class="nav-reg">
+      <% else %>
+        <div class="nav-reg">
           <li class="nav-item">
             <strong><em><%= link_to "Log in", new_user_session_path, class: "nav-link" %></strong></em>
           </li>
           <li>
             <strong><em><%= link_to "Sign up", new_user_registration_path, class: "nav-link" %></strong></em>
           </li>
-          </div>
-        <% end %>
-    </ul>
+        </div>
+      <% end %>
+        </ul>
   </div>
 </div>
