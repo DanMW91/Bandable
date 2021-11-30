@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_29_161042) do
+ActiveRecord::Schema.define(version: 2021_11_30_101001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,11 +59,7 @@ ActiveRecord::Schema.define(version: 2021_11_29_161042) do
     t.string "genre"
     t.string "image_url"
     t.string "spotify_embed_url"
-<<<<<<< HEAD
-=======
     t.string "looking_for_instrument"
-    t.boolean "looking_for_member"
->>>>>>> 4845b7254dd41004eaa57db89eb335aa8a545a61
   end
 
   create_table "messages", force: :cascade do |t|
