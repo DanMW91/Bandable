@@ -2,8 +2,9 @@
 <%= simple_form_for([@band, song, @song_file]) do |f| %>
   <%= f.input :song_document, label: "Select File" %>
   <%= f.input :text_content %>
-  <%= f.submit "Send documents" %>
+  <%= f.submit "Post" %>
 <% end %>
+
 
 <% song.song_files.each do |song_file|  %>
   <%= cl_video_tag song_file.song_document.key,:source_types => [:mp3],:controls => true,:poster => false %>
