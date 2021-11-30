@@ -6,6 +6,5 @@
 <% end %>
 
 <% song.song_files.each do |song_file|  %>
- <% puts song_file %>
-  <%= cl_video_tag song_file.song_document.key,:source_types => [:mp3],:controls => true,:poster => false, class: "track-play play-track", id: "play-track" %>
+  <%= cl_video_tag song_file.song_document.key,:source_types => [:mp3],:controls => true,:poster => false %>
 <% end %>
