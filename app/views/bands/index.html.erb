@@ -84,10 +84,18 @@
         <p> <%= band.bio[0..150].gsub(/\s\w+\s*$/, '...') %></p>
         <p><%= band.location %></p>
         <p><%= band.genre %></p>
-        <%= link_to band_path(band) do %>
-          <button>
-            More Info
-          </button>
+        <% if band.class == Band %>
+          <%= link_to band_path(band) do %>
+            <button>
+              More Info
+            </button>
+          <% end %>
+        <% else %>
+          <%= link_to musician_path(band) do%>
+            <button>
+              More Info
+            </button>
+          <% end %>
         <% end %>
       </figcaption>
     </figure>
