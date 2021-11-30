@@ -27,6 +27,9 @@ class Band < ApplicationRecord
   include PgSearch::Model
   pg_search_scope :global_search,
     against: [ :name, :location, :genre ],
+    associated_against: {
+      users: [:first_name, :last_name]
+    },
     using: {
       tsearch: { prefix: true }
     }
