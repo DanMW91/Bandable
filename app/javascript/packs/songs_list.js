@@ -17,7 +17,8 @@ export const songsListTabs = () => {
 
     songItems.forEach((song)=> {
       song.addEventListener('click', (e)=> {
-          const tabName = e.target.innerText.split(' ').join('-');
+
+          const tabName = e.currentTarget.firstElementChild.innerText.split(' ').join('-');
           openSong(tabName)
       })
     })

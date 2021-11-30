@@ -23,6 +23,7 @@ import { navButtonsHandler } from './nav_buttons'
 import { bandShowTabsHandler } from './band_show_tabs'
 import { searchScroll} from './search_scroll'
 import { songsListTabs } from './songs_list'
+import { rehearsalDropdownHandler } from './rehearsal_dropdown'
 
 document.addEventListener('turbolinks:load', () => {
   navButtonsHandler()
@@ -30,5 +31,5 @@ document.addEventListener('turbolinks:load', () => {
   navFadeHandler()
   searchScroll()
   songsListTabs()
-
+  rehearsalDropdownHandler()
 });

@@ -12,7 +12,12 @@
           <div class="song-list">
             <% @band.songs.each do |song| %>
               <div class="song-item">
-                <%= song.name %>
+                <div class="py-1">
+                  <%= song.name %>
+                </div>
+                <div>
+                  <i>- created by <%= song.user.first_name %></i>
+                </div>
               </div>
             <% end %>
           </div>
