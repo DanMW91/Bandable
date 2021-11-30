@@ -11,17 +11,16 @@
   <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div data-controller="refresh-list" class="hidden nav-search d-flex">
-    <%= form_tag bands_path, method: :get, data: { refresh_list_target: 'form' } do |f| %>
+  <div <%= user_signed_in? ? "style='margin-right: 50px;'" : "" %> class="hidden nav-search d-flex">
+    <%= form_tag bands_path, method: :get, data: { refresh_list_target: 'form' } do %>
       <div class="search-inputs">
       <%#= submit_tag "Let's Go", class: "search-form-input btn btn-danger" %>
-      <%= f.text_field_tag :query,
+      <%= text_field_tag :query,
       params[:query],
       class: "form-control",
-      placeholder: "search...",
-      data: { refresh_list_target: 'searchInput', action: "keyup->refresh-list#update"}
+      placeholder: "search..."
       %>
-      </div data="refresh_list_target">
+      </div>
     <% end %>
   </div>
 

@@ -42,10 +42,13 @@
 
 
 
-<div class="index-card-container">
+<div class="index-card-container white-font">
   <div class="card-container-header w-100">
     <h1>Recommended Bands:</h1>
   </div>
+  <% if @bands.empty? %>
+  <h2 class="py-5 my-5">No results found. Please search again!</h2>
+  <% else %>
   <% @bands.each do |band| %>
     <figure class="image-block">
       <%= cl_image_tag band.photo.key %>
@@ -64,5 +67,6 @@
         <% end %>
       </figcaption>
     </figure>
+  <% end %>
   <% end %>
 </div>
