@@ -6,6 +6,7 @@ class BandsController < ApplicationController
     #   @bands = @bands.where('title ILIKE ?', "%#{params[:query]}%")
     # end
 
+
     if params[:query].present?
       @bands = Band.global_search(params[:query])
     else
