@@ -11,8 +11,8 @@
   <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="hidden nav-search d-flex">
-    <%= form_tag bands_path, method: :get do %>
+  <div <%= user_signed_in? ? "style='margin-right: 50px;'" : "" %> class="hidden nav-search d-flex">
+    <%= form_tag bands_path, method: :get, data: { refresh_list_target: 'form' } do %>
       <div class="search-inputs">
       <%#= submit_tag "Let's Go", class: "search-form-input btn btn-danger" %>
       <%= text_field_tag :query,
