@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_11_30_101001) do
+=======
+ActiveRecord::Schema.define(version: 2021_11_30_105441) do
+>>>>>>> ceeb950985bc7838d6331d8a7deb287585ab55fb
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,7 +63,11 @@ ActiveRecord::Schema.define(version: 2021_11_30_101001) do
     t.string "genre"
     t.string "image_url"
     t.string "spotify_embed_url"
+<<<<<<< HEAD
     t.string "looking_for_instrument"
+=======
+    t.boolean "looking_for_member"
+>>>>>>> ceeb950985bc7838d6331d8a7deb287585ab55fb
   end
 
   create_table "messages", force: :cascade do |t|
@@ -87,7 +95,13 @@ ActiveRecord::Schema.define(version: 2021_11_30_101001) do
     t.bigint "band_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+<<<<<<< HEAD
     t.index ["band_id"], name: "index_songs_on_band_id"
+=======
+    t.bigint "user_id", null: false
+    t.index ["band_id"], name: "index_songs_on_band_id"
+    t.index ["user_id"], name: "index_songs_on_user_id"
+>>>>>>> ceeb950985bc7838d6331d8a7deb287585ab55fb
   end
 
   create_table "users", force: :cascade do |t|
@@ -105,6 +119,7 @@ ActiveRecord::Schema.define(version: 2021_11_30_101001) do
     t.string "genre"
     t.string "avatar_url"
     t.string "instrument"
+    t.boolean "looking_for_band", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -117,4 +132,8 @@ ActiveRecord::Schema.define(version: 2021_11_30_101001) do
   add_foreign_key "song_files", "songs"
   add_foreign_key "song_files", "users"
   add_foreign_key "songs", "bands"
+<<<<<<< HEAD
+=======
+  add_foreign_key "songs", "users"
+>>>>>>> ceeb950985bc7838d6331d8a7deb287585ab55fb
 end
