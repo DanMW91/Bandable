@@ -59,3 +59,19 @@
 .band-image-main {
   // box-shadow: 2px 2px 5px black;
 }
+
+.band-header {
+  position: relative;
+
+}
+
+.band-toggle {
+  position: absolute;
+  top: -5px;
+  right: 40px;
+  background: $accent;
+  width: 250px;
+  padding: 10px;
+  padding-left: 50px;
+  border-radius: 15px;
+}

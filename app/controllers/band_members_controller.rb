@@ -24,27 +24,45 @@ class BandMembersController < ApplicationController
         render "users#show"
       end
     end
+
+
+
   end
 
   def update
-    audition = BandMember.find(params[:id])
 
+<<<<<<< HEAD
     if params[:commit] == "Accept"
       audition.is_audition = false
       audition.is_member = true
       audition.is_admin = false
       audition.save!
       redirect_to band_path(params[:user_id])
+=======
+
+    raise
+    if params[:band_member][:type] == 'audition'
+      audition = BandMember.find(params[:id])
+      if params[:commit] == "Accept"
+        audition.is_audition = false
+        audition.is_member = true
+        audition.is_admin = false
+        audition.save!
+        redirect_to band_path(params[:band_id])
+      end
+>>>>>>> 1f20e012f778c74bcc74a7a677196ad1e34d0be0
     end
 
-    @band_member = BandMember.find(params[:id])
 
-    if params[:commit] == "Accept"
-      @band_member.is_audition = false
-      @band_member.is_member = true
-      @band_member.is_admin = false
-      @band_member.save!
-      redirect_to musician_path(params[:user_id])
+    if params[:band_member][:type] == 'invitation'
+      invitation = BandMember.find(params[:id])
+      if params[:commit] == "Accept"
+        invitation.is_audition = false
+        invitation.is_member = true
+        invitation.is_admin = false
+        invitation.save!
+        redirect_to musician_path(params[:user_id])
+      end
     end
   end
 

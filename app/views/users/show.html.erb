@@ -1,14 +1,9 @@
 <%# bands will be able to upload a background image that can be used as a banner %>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @user.avatar_url %> ); background-position: top;">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path(@user.photo.key) %> ); background-position: top;">
 
     <div class="container">
       <h1 class="band-main-title"><strong> <%= @user.first_name %> </strong></h1>
       <p class="white-font"> <%= @user.location%></p>
-      <% if !current_user.bands.all? { |band| band.user_is_member?(@user) } %>
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-          Send Invitation
-        </button>
-      <% end %>
     </div>
 
 </div>
@@ -26,24 +21,33 @@
           </div>
           <div class="right-whole-container my-3">
             <p><%= @user.bio %></p>
+            <div class="text-center">
+              <% if !current_user.bands.all? { |band| band.user_is_member?(@user) } %>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                  Send Invitation
+                </button>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content modal-invitation">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Sending Invitation to <%= @user.first_name %> </h5>
-        <button type="button" class="close close-modal-audition" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close close-modal-invitation" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <%= simple_form_for ([@user, @band_member]), url: musician_invitations_path(@user) do|f| %>
         <%= f.input :invitation_text,  label: 'Do you want to join our band?' %>
+        <%= f.hidden_field :type, value: 'invitation'  %>
         <%= f.input :band, as: :select, collection: current_user.bands, prompt: 'Select Band', label: false %>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -51,7 +55,6 @@
           <% end %>
         </div>
       </div>
-
     </div>
   </div>
 </div>

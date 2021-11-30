@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_29_103002) do
+ActiveRecord::Schema.define(version: 2021_11_29_161042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,24 @@ ActiveRecord::Schema.define(version: 2021_11_29_103002) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "song_files", force: :cascade do |t|
+    t.string "text_content"
+    t.bigint "song_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["song_id"], name: "index_song_files_on_song_id"
+    t.index ["user_id"], name: "index_song_files_on_user_id"
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.string "name"
+    t.bigint "band_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["band_id"], name: "index_songs_on_band_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -95,4 +113,7 @@ ActiveRecord::Schema.define(version: 2021_11_29_103002) do
   add_foreign_key "band_members", "users"
   add_foreign_key "messages", "bands"
   add_foreign_key "messages", "users"
+  add_foreign_key "song_files", "songs"
+  add_foreign_key "song_files", "users"
+  add_foreign_key "songs", "bands"
 end
