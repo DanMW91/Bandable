@@ -36,3 +36,4 @@ yarn-debug.log*
 .DS_Store
 >>>>>>> 7f6de2e1e61c6e791e9cd28c5a8c2dadd3e17a26
 .env*
+.env*

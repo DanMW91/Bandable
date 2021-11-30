@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2021_11_30_105441) do
     t.string "genre"
     t.string "image_url"
     t.string "spotify_embed_url"
+    t.string "looking_for_instrument"
     t.boolean "looking_for_member"
   end
 
