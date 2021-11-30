@@ -84,10 +84,12 @@
         <p> <%= band.bio[0..150].gsub(/\s\w+\s*$/, '...') %></p>
         <p><%= band.location %></p>
         <p><%= band.genre %></p>
-        <% if band.looking_for_instrument.blank? %>
-          <br><%=  %>
-        <% else %>
-          <p> Looking for: <%= band.looking_for_instrument %></p>
+        <% if band.class == Band %>
+          <% if band.looking_for_instrument.blank? %>
+            <br><%=  %>
+          <% else %>
+            <div> Looking for: <%= band.looking_for_instrument %></div>
+          <% end %>
         <% end %>
         <% if band.class == Band %>
           <%= link_to band_path(band) do %>

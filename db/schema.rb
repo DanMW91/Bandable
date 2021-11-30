@@ -60,6 +60,10 @@ ActiveRecord::Schema.define(version: 2021_11_30_101001) do
     t.string "image_url"
     t.string "spotify_embed_url"
     t.string "looking_for_instrument"
+<<<<<<< HEAD
+=======
+    t.boolean "looking_for_member"
+>>>>>>> d0303937afd7518bf35fe219f2c107bafaeb3d8a
   end
 
   create_table "messages", force: :cascade do |t|
