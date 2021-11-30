@@ -49,15 +49,18 @@
           </div>
           <div class="audition-dropdown-container">
             <div class="btn-audition-dropdown dropdown-button">
-              My Auditions
+              Inbox
               <i class="fa fa-caret-down ml-3"></i>
             </div>
             <div class="audition-dropdown-list dropdown-list hidden">
+              <div class="audition-list">
+                <p class='border-bottom'>My Audition</p>
+              </div>
               <% current_user.bands.each do |band| %>
                 <% if band.band_members.where(user: current_user)[0].is_audition %>
                   <%= link_to band_path(band), class: "card-links" do %>
                     <div class="band-item">
-                      <%= cl_image_tag "#{@band.photo.key}", class: "avatar band-avatar mx-3" %>
+                      <%= cl_image_tag "#{band.photo.key}", class: "avatar band-avatar mx-3" %>
                       <div class="audition-details white-font">
                         <div class="mr-3"><%= band.name %></div>
                       </div>
@@ -66,6 +69,25 @@
                 <% end %>
               <% end %>
             </div>
+            <div class="audition-dropdown-list dropdown-list hidden">
+              <% current_user.bands.each do |band| %>
+                <% if band.band_members.where(user: current_user)[0].is_audition %>
+                    <div class="audition-list">
+                      <p class='border-bottom'>My Invitation</p>
+                    </div>
+                  <%= link_to band_path(band), class: "card-links" do %>
+                    <div class="band-item">
+                      <%= cl_image_tag "#{band.photo.key}", class: "avatar band-avatar mx-3" %>
+                      <div class="audition-details white-font">
+                        <div class="mr-3"><%= band.name %></div>
+                      </div>
+                    </div>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </div>
+
+
           </div>
         <% end %>
         <ul class="navbar-nav mr-auto">
