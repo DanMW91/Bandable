@@ -10,13 +10,12 @@ export const rehearsalDropdownHandler = () => {
       const targetId = e.target.dataset.dropdownId
       document.querySelector(`#${targetId}`).classList.toggle('hidden')
       // rehearsalDropdownList.classList.toggle('hidden')
-    })
+      })
     })
 
 
     window.addEventListener('click', (e) => {
     if (!e.target.matches('.btn-rehearsal-dropdown') && !e.target.classList.contains('rehearsal-form-element')) {
-      console.log(e.target.parents)
       rehearsalDropdownLists.forEach((list) => {
         if (!list.classList.contains('hidden')) {
           list.classList.add('hidden')
