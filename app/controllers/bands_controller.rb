@@ -5,12 +5,20 @@ class BandsController < ApplicationController
     # if params[:query].present?
     #   @bands = @bands.where('title ILIKE ?', "%#{params[:query]}%")
     # end
-
-
+    
     if params[:query].present?
-      @bands = Band.global_search(params[:query])
+      if params[:result_type] == "bands"
+        @results = Band.global_search(params[:query])
+      elsif params[:result_type] == "musicians"
+        @results = User.global_search(params[:query])
+      else
+        @bands = Band.global_search(params[:query])
+        @users = User.global_search(params[:query])
+        @results = @bands + @users
+      end
     else
-      @bands = Band.all
+      @results = Band.all
+      @users = User.all
     end
 
     # respond_to do |format|
