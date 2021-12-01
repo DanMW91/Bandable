@@ -53,13 +53,14 @@
               Inbox
               <i class="fa fa-caret-down ml-3"></i>
             </div>
-              <div class="audition-dropdown-list dropdown-list hidden">
-
-                <% current_user.bands.each do |band| %>
-                  <% if band.band_members.where(user: current_user)[0].is_audition %>
+              <div class="audition-dropdown-list right-dropdown-list hidden">
+                <% if current_user.band_members.where(is_audition: true).any? %>
                   <div class="audition-list">
                     <p class='border-bottom'>My Audition</p>
                   </div>
+                <% end %>
+                <% current_user.bands.each do |band| %>
+                  <% if band.band_members.where(user: current_user)[0].is_audition %>
                     <%= link_to band_path(band), class: "card-links" do %>
                       <div class="band-item">
                         <%= cl_image_tag "#{band.photo.key}", class: "avatar band-avatar mx-3" %>
@@ -70,12 +71,12 @@
                     <% end %>
                   <% end %>
                 <% end %>
-                <div class="inbox-dropdown-list">
+                <div class="inbox-dropdown-list right-dropdown-list">
+                    <div class="audition-list">
+                      <p class='border-bottom'>My Invitation</p>
+                    </div>
                   <% current_user.band_members.each do |member_record| %>
                     <% if member_record.is_audition == false && member_record.is_member == false %>
-                      <div class="audition-list">
-                        <p class='border-bottom'>My Invitation</p>
-                      </div>
                       <%= link_to band_path(member_record.band), class: "card-links" do %>
                         <div class="band-item">
                           <div class="d-flex">
