@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_30_105441) do
+ActiveRecord::Schema.define(version: 2021_11_30_101001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(version: 2021_11_30_105441) do
     t.string "genre"
     t.string "image_url"
     t.string "spotify_embed_url"
-    t.boolean "looking_for_member"
     t.string "looking_for_instrument"
   end
 
@@ -86,9 +85,9 @@ ActiveRecord::Schema.define(version: 2021_11_30_105441) do
   create_table "songs", force: :cascade do |t|
     t.string "name"
     t.bigint "band_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
     t.index ["band_id"], name: "index_songs_on_band_id"
     t.index ["user_id"], name: "index_songs_on_user_id"
   end
@@ -107,10 +106,9 @@ ActiveRecord::Schema.define(version: 2021_11_30_105441) do
     t.string "bio"
     t.string "genre"
     t.string "avatar_url"
-    t.string "instrument"
-    t.boolean "looking_for_band", default: false
     t.string "provider"
     t.string "uid"
+    t.string "instrument"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
