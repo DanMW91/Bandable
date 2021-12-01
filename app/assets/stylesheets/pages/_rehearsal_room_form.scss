@@ -1,0 +1,21 @@
+.rehearsal-form-dropdown {
+  position:absolute;
+  z-index: 500;
+  width: 400px;
+  height: auto;
+  background-color: $light-background;
+  // background-color: #232a4d;
+  border-radius: 5%;
+
+  padding: 28px;
+  border: 1px solid $accent;
+  background: linear-gradient(19deg, black, $main);
+}
+
+.rehearsal-form-container {
+  position:relative;
+}
+
+.btn-rehearsal-dropdown {
+
+}

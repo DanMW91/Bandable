@@ -30,7 +30,6 @@ class BandMembersController < ApplicationController
   end
 
   def update
-
     if params[:band_member][:type] == 'audition'
       audition = BandMember.find(params[:id])
       if params[:commit] == "Accept"
@@ -50,7 +49,7 @@ class BandMembersController < ApplicationController
         invitation.is_member = true
         invitation.is_admin = false
         invitation.save!
-        redirect_to musician_path(params[:user_id])
+        redirect_to band_path(params[:band_id])
       end
     end
   end

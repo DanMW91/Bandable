@@ -12,7 +12,12 @@
           <div class="song-list">
             <% @band.songs.each do |song| %>
               <div class="song-item">
-                <%= song.name %>
+                <div class="py-1">
+                  <h5><%= song.name %></h5>
+                </div>
+                <div>
+                  <i>- created by <%= song.user.first_name %></i>
+                </div>
               </div>
             <% end %>
           </div>
@@ -42,14 +47,19 @@
       <div class="modal-body">
         <%= simple_form_for([@band, @song]) do|f| %>
         <%= f.input :name,  label: 'Song Title:' %>
-
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <%= f.submit "Create Song", class: "btn btn-primary" %>
           <% end %>
         </div>
       </div>
-
     </div>
   </div>
 </div>
+
+<div class="hidden file-display song-file-modal image-video-display">
+</div>
+
+<div class="hidden file-display song-file-modal audio-display">
+</div>
+<div class="song-file-modal-backdrop hidden"></div>

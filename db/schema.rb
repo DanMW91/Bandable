@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2021_11_30_105441) do
     t.string "image_url"
     t.string "spotify_embed_url"
     t.boolean "looking_for_member"
+    t.string "looking_for_instrument"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -108,6 +109,8 @@ ActiveRecord::Schema.define(version: 2021_11_30_105441) do
     t.string "avatar_url"
     t.string "instrument"
     t.boolean "looking_for_band", default: false
+    t.string "provider"
+    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
