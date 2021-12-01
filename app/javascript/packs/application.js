@@ -34,6 +34,6 @@ document.addEventListener('turbolinks:load', () => {
   searchScroll()
   songsListTabs()
   rehearsalDropdownHandler()
-  submitChatMessageHandler()
+  // submitChatMessageHandler()
   fileDisplay()
 });
