@@ -3,8 +3,8 @@
   <%= video_tag "homepage_vid.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "header-video" %>
 </div>
   <div class="titles">
-    <h1 class="main-title white-font">Connect - Compose - Perform</h1>
-    <div class="sub-title white-font">Central creativity hub for musicians around the world</div>
+    <h1 class="main-title white-font">Connect - Compose - Collab</h1>
+    <div class="sub-title white-font">Where will the music take you?</div>
     <%= form_tag bands_path, method: :get, class: 'form-inline mt-5' do %>
       <div class="form-group mr-2">
         <%= submit_tag "Search", class: "btn btn-danger" %>
@@ -13,7 +13,7 @@
         <%= text_field_tag :query,
         params[:query],
         class: "form-control w-50",
-        placeholder: "Find a band or musician"
+        placeholder: "Find bands/musicians"
         %>
       </div>
     <% end %>
@@ -30,7 +30,7 @@
     <div class="card">
       <%= image_tag "meet.png" %>
       <h4>Meet</h4>
-      <p>Collaborate with your new team anywhere in the world.</p>
+      <p>Whether virtual or in-person, collaborate with your new team anywhere in the world.</p>
     </div>
     <div class="card">
       <%= image_tag "note.png" %>
@@ -63,7 +63,7 @@
             </div>
             <div class="custom-control custom-radio custom-control-inline">
               <input type="radio" id="customRadioInline3" name="result_type" value="musicians" <%= 'checked=true' if params[:result_type] == 'musicians' %> onchange="this.form.submit()" class="custom-control-input">
-              <label class="custom-control-label" for="customRadioInline3">musicians</label>
+              <label class="custom-control-label" for="customRadioInline3">Musicians</label>
             </div>
           </div>
         <% end %>
@@ -71,7 +71,7 @@
     </div>
   </div>
   <% if @results.empty? %>
-  <h2 class="py-5 my-5">No results found. Please search again!</h2>
+  <h2 class="py-5 my-5">No results found. Search again?</h2>
   <% else %>
   <% @results.each do |band| %>
     <figure class="image-block">
