@@ -4,3 +4,10 @@
 .bio-box {
   min-height: 200px;
 }
+
+.hover-accent {
+  &:hover {
+    color: green;
+    text-decoration: none;
+  }
+}
