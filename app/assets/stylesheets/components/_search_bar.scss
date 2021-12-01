@@ -1,0 +1,16 @@
+// .search-inputs {
+//   display: flex;
+//   align-items: center;
+// }
+
+.hidden {
+  display: none !important;
+}
+
+.nav-search {
+// margin-right: 100px;
+width: 200px;
+padding: 0px;
+position: absolute;
+left: calc(50vw - 100px);
+}

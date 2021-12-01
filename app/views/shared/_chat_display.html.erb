@@ -1,0 +1,31 @@
+
+<div class="chat-main-container">
+  <div class="chat-container">
+    <h1 class="d-flex justify-content-center white-font border-bottom">
+      Chat
+    </h1>
+
+    <div class="container">
+
+    <div class="messaging">
+      <div class="mesgs">
+        <div class="msg_history" data-controller="band-chat-subscription" data-band-chat-subscription-band-chat-id-value="<%= @band.id %>">
+          <% if !@band.messages.empty? %>
+            <% @band.messages.sort_by{ |message| message.created_at }.each do |message| %>
+              <%= render "messages/message", message: message %>
+            <% end %>
+          <% end %>
+        </div>
+            <%= simple_form_for ([@band, @message]), html: { class: 'msger-inputarea' }, remote: true do|f| %>
+              <%= f.input_field :content, class: "msger-input", placeholder: 'Enter your message...',  label: false %>
+              <%= f.submit "Send", class: "msger-send-btn", id: 'submit-chat-btn' %>
+            <% end %>
+      </div>
+
+    </div>
+
+
+
+    </div>
+  </div>
+</div>

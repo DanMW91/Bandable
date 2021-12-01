@@ -1,0 +1,135 @@
+.rehearsal-main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+.rehearsal-container {
+  filter: drop-shadow(0px 0px 5px black);
+  width: 90%;
+  height: 600px;
+
+  background-color: $light-background;
+  // background-color: #232a4d;
+  border-radius: 5%;
+  opacity: 0.8;
+  padding: 28px;
+  border: 1px solid $accent;
+  background: linear-gradient(19deg, black, transparent);
+  background-color: $main;
+}
+
+.rehearsal-list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.song-container {
+  width: 100%;
+  height: 90%;
+  margin-top: 10px;
+  display: flex;
+}
+
+.songs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  height: 100%;
+  background: rgba(146, 108, 108, 0);
+  border-radius: 15px;
+  border: 1px solid $accent;
+}
+
+.songs-title {
+  height: 10%;
+  width:100%;
+  text-align: center;
+  color: white;
+  border-bottom: 1px solid white;
+  margin: 10px;
+}
+
+.song-list {
+  height: 85%;
+  width: 100%;
+  overflow-y: scroll;
+  padding: 10px 0px;
+
+}
+
+.song-item {
+  text-align: center;;
+  color: white;
+  margin: 8px;
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(19deg, black, $light-background);
+  filter: drop-shadow(0px 0px 4px #000000);
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    box-shadow: 0px 0px 5px $accent;
+  }
+}
+.buffer {
+  height: 12px;
+}
+
+.song-content-container {
+  width: 75%;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color:white;
+}
+
+.song-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.inspiration-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 98%;
+  height: 100%;
+  margin-left:2%;
+  border: 1px solid white;
+}
+
+
+.inspiration-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 10px;
+  width: 98%;
+  height: 70px;
+  background: linear-gradient(19deg, black, $light-background);
+  // border: 1px solid $accent;
+  filter: drop-shadow(0px 0px 4px #000000);
+  transition: all .2s ease-in-out;
+  margin: 3px;
+
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: 0px 0px 5px $accent;
+  }
+}
+
+.inspiration-icon {
+  font-size: 30px;
+}

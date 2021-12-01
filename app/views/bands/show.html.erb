@@ -1,45 +1,73 @@
 <%# bands will be able to upload a background image that can be used as a banner %>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/9009574/pexels-photo-9009574.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path(@band.photo.key) %> ); background-position: top;">
   <div class="container">
     <h1 class="band-main-title"><strong> <%= @band.name %> </strong></h1>
-    <p>Heavy Rocking Since 1999</p>
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-      Audition
-    </button>
+    <p class="white-font"> <%= @band.location%></p>
+    <%# <p>Heavy Rocking Since 1999</p> %>
+    <% if !@band.users.include?(current_user) %>
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+        Audition
+      </button>
+    <% end %>
+  </div>
+</div>
+<% @is_band_member = false %>
+  <% if !@band.band_members.where(user: current_user).empty? %>
+    <% @band_member_record = @band.band_members.where(user: current_user)[0] %>
+    <% @is_band_member = @band_member_record.is_member %>
+  <% end %>
+<!-- Tab links -->
+  <% if !@is_band_member%>
+    <div class="m-5"></div>
+  <% end %>
 
+
+  <div class="tab" <% if !@is_band_member %>style="display:none;"<% end %>>
+    <button class="tablinks">Band</button>
+    <button class="tablinks">Auditions</button>
+    <button class="tablinks">Chat</button>
+    <button class="tablinks">The Rehearsal Room</button>
+  </div>
+
+<!-- Tab content -->
+<div class="band-container">
+  <div id="Band" class="tabcontent">
+    <%= render "shared/band_display", locals: { band: @band } %>
+  </div>
+
+  <div id="Auditions" class="tabcontent">
+    <%= render "shared/auditions_display", locals: { songs: @band } %>
+  </div>
+
+  <div id="Chat" class="tabcontent">
+    <%= render "shared/chat_display", locals: { songs: @band, message: @message } %>
+  </div>
+
+  <div id="The Rehearsal Room" class="tabcontent">
+    <%= render "shared/rehearsal_room_display", locals: { band: @band, songs: @band.songs } %>
   </div>
 </div>
 
-
-<div class="band-container">
-</div>
-
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content modal-audition ">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Sending Audition to <%= @band.name %> </h5>
-        <button type="button" class="close close-modal-audition" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= simple_form_for ([@band, @band_member]), url: band_auditions_path(@band) do|f| %>
-        <%= f.input :invitation_text,  label: 'Why do you want to join?:' %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <%= f.submit "Submit Audition", class: "btn btn-primary" %>
-        <% end %>
+<% if @is_band_member == false %>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content modal-audition">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Sending Audition to <%= @band.name %> </h5>
+          <button type="button" class="close close-modal-audition" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for ([@band, @band_member]), url: band_auditions_path(@band) do|f| %>
+          <%= f.input :invitation_text,  label: 'Why do you want to join?:' %>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <%= f.submit "Submit Audition", class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-
-
-
-          <%# html: { class: "form-id-#{power.id} hidden pt-3" }  %>
-
-<%#= cl_image_tag @power.photo.key, class: 'book-image' %>
+<% end %>
