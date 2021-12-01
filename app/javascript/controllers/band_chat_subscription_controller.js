@@ -10,9 +10,18 @@ export default class extends Controller {
       { received: data => {
 
         const firstReplaceData = data.replace(/outgoing/g, 'incoming');
-        const finalReplaceData= firstReplaceData.replace(/sent/g, 'received')
-        this.element.insertAdjacentHTML("beforeend", finalReplaceData);
-        this.formatReceivedMessage()
+        const finalReplaceData = firstReplaceData.replace(/sent/g, 'received')
+        const wrapper = document.createElement('div');
+        wrapper.innerHTML = finalReplaceData
+
+        const unformattedMessage = wrapper.firstElementChild
+
+
+        const formattedMessage = this.formatReceivedMessage(unformattedMessage)
+        console.log({formattedMessage});
+
+        this.element.insertAdjacentElement("beforeend", formattedMessage);
+
       } }
     )
 
@@ -21,13 +30,13 @@ export default class extends Controller {
   this.channel.unsubscribe()
 }
 
-formatReceivedMessage() {
-  const message = this.element.lastElementChild
+formatReceivedMessage(message) {
   const avatar = message.lastElementChild
   // const removedAvatar = this.element.removeChild(avatar)
 
   const removedAvatar = message.removeChild(avatar)
   message.prepend(removedAvatar)
+  return message
 }
 
 }

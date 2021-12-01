@@ -5,7 +5,6 @@ export const navFadeHandler = () => {
     const cards = document.querySelector('.landing-cards-container');
 
     window.addEventListener('scroll', (e) => {
-      console.log("wearescrolling")
       if (!nav.classList.contains('sticky-nav') && window.scrollY >= 665) {
         search.classList.remove('fade-in');
         nav.classList.remove('fade-in');
