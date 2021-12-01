@@ -4,10 +4,12 @@
     <h1 class="band-main-title"><strong> <%= @band.name %> </strong></h1>
     <p class="white-font"> <%= @band.location%></p>
     <%# <p>Heavy Rocking Since 1999</p> %>
-    <% if !@band.users.include?(current_user) %>
+    <% if !@band.users.include?(current_user) && !user_signed_in? %>
       <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
         Audition
       </button>
+    <% else %>
+    <% link_to new_user_session_path %>
     <% end %>
   </div>
 </div>
