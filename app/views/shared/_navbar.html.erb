@@ -53,12 +53,13 @@
               Inbox
               <i class="fa fa-caret-down ml-3"></i>
             </div>
-              <div class="audition-dropdown-list inbox-dropdown-list hidden">
-                <div class="audition-list">
-                  <p class='border-bottom'>My Audition</p>
-                </div>
+              <div class="audition-dropdown-list dropdown-list hidden">
+
                 <% current_user.bands.each do |band| %>
                   <% if band.band_members.where(user: current_user)[0].is_audition %>
+                  <div class="audition-list">
+                    <p class='border-bottom'>My Audition</p>
+                  </div>
                     <%= link_to band_path(band), class: "card-links" do %>
                       <div class="band-item">
                         <%= cl_image_tag "#{band.photo.key}", class: "avatar band-avatar mx-3" %>
@@ -69,20 +70,21 @@
                     <% end %>
                   <% end %>
                 <% end %>
-                <div class="audition-list">
-                  <p class='border-bottom'>My Invitation</p>
-                </div>
-                <% current_user.band_members.each do |member_record| %>
-                  <% if member_record.is_audition == false && member_record.is_member == false %>
-                    <%= link_to band_path(member_record.band), class: "card-links" do %>
-                      <div class="band-item">
-                        <div class="d-flex">
-                          <%= cl_image_tag "#{member_record.band.photo.key}", class: "avatar band-avatar mx-3" %>
-                          <div class="audition-details white-font">
-                            <div class="mr-2"><%= member_record.band.name %></div>
+                <div class="inbox-dropdown-list">
+                  <% current_user.band_members.each do |member_record| %>
+                    <% if member_record.is_audition == false && member_record.is_member == false %>
+                      <div class="audition-list">
+                        <p class='border-bottom'>My Invitation</p>
+                      </div>
+                      <%= link_to band_path(member_record.band), class: "card-links" do %>
+                        <div class="band-item">
+                          <div class="d-flex">
+                            <%= cl_image_tag "#{member_record.band.photo.key}", class: "avatar band-avatar mx-3" %>
+                            <div class="audition-details white-font">
+                              <div class="mr-3"><%= member_record.band.name %></div>
+                            </div>
                           </div>
-                        </div>
-                    <% end %>
+                      <% end %>
                           <div class="audition-buttons">
                           <%= simple_form_for member_record, url: band_update_audition_path(member_record.band, member_record) do |f| %>
                             <%= f.hidden_field :is_member, value: true %>
@@ -95,8 +97,9 @@
                           <% end %>
                         </div>
                       </div>
+                    <% end %>
                   <% end %>
-                <% end %>
+                </div>
               </div>
           </div>
         <% end %>
