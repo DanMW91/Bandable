@@ -4,12 +4,6 @@
     <div class="container">
       <h1 class="band-main-title"><strong> <%= @user.first_name %> </strong></h1>
       <p class="white-font"> <%= @user.location%></p>
-      <%# <p>Heavy Rocking Since 1999</p> %>
-       <%# <% if @user.band_member?(current_user) %>
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-          Send Invitation
-        </button>
-      <%# <% end %>
     </div>
 
 </div>
@@ -27,6 +21,13 @@
           </div>
           <div class="right-whole-container my-3">
             <p><%= @user.bio %></p>
+            <div class="text-center">
+              <% if user_signed_in? && !current_user.bands.all? { |band| band.user_is_member?(@user) } %>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                  Send Invitation
+                </button>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
