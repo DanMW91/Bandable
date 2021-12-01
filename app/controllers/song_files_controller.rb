@@ -1,6 +1,5 @@
 class SongFilesController < ApplicationController
   def create
-    band_id = params[:band_id]
     song_id = params[:song_id]
     uploaded_song_file = SongFile.new(song_file_params)
     uploaded_song_file.song_id = song_id
