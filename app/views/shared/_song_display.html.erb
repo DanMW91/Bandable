@@ -34,5 +34,18 @@
         <i class="fas fa-images inspiration-icon"></i>
       </div>
     <% end %>
+    <% if song_file.song_document.content_type.include?('video') %>
+      <div class="inspiration-item">
+        <%= cl_image_tag "#{song_file.user.photo.key}", class: "avatar audition-avatar mx-3" %>
+        <i>"<%= song_file.text_content%>"</i>
+        <%# <%= cl_video_tag song_file.song_document.key, :controls => true%>
+        <i class="fas fa-video inspiration-icon"></i>
+      </div>
+    <% end %>
   <% end %>
 </div>
+
+
+
+<%# <%= cl_video_tag song_file.song_document.key,:source_types => [:mp3],:controls => true,:poster => false %>
+<%# <%=cl_video_tagtrack.track.key,:source_types => [:mp3],:controls => true,:poster => false, class:"track-play play-track", id:"play-track"%>
