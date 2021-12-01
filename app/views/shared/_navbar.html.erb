@@ -53,6 +53,7 @@
               Inbox
               <i class="fa fa-caret-down ml-3"></i>
             </div>
+
               <div class="audition-dropdown-list right-dropdown-list hidden">
                 <% if current_user.band_members.where(is_audition: true).any? %>
                   <div class="audition-list">
@@ -67,6 +68,7 @@
                         <div class="audition-details white-font">
                           <div class="mr-3"><%= band.name %></div>
                         </div>
+                        
                       </div>
                     <% end %>
                   <% end %>

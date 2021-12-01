@@ -22,7 +22,7 @@
           <div class="right-whole-container my-3">
             <p><%= @user.bio %></p>
             <div class="text-center">
-              <% if !current_user.bands.all? { |band| band.user_is_member?(@user) } %>
+              <% if user_signed_in? && !current_user.bands.all? { |band| band.user_is_member?(@user) } %>
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
                   Send Invitation
                 </button>
