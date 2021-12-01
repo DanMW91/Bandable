@@ -1,0 +1,51 @@
+.image-video-display {
+  position: fixed; top: 10%; left: 22%;
+  z-index: 500;
+  width: 800px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $light-background;
+  // background-color: #232a4d;
+  border-radius: 5%;
+  padding: 28px;
+  border: 1px solid $accent;
+  background: linear-gradient(19deg, black, $main);
+}
+
+.song-file-modal {
+
+}
+
+.song-file-modal-backdrop {
+  position: fixed; top: 0; left: 0;
+  z-index: 250;
+  width: 100vw;
+  height: 100vw;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+
+}
+
+.audio-display {
+  position: fixed; top: 25%; left: 33%;
+  z-index: 500;
+  width: 500px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $light-background;
+  // background-color: #232a4d;
+  border-radius: 5%;
+  padding: 28px;
+  border: 1px solid $accent;
+  background: linear-gradient(19deg, black, $main);
+}
+
+.video-player {
+  width: 600px;
+}
+.song-file-image {
+  width: 600px;
+}

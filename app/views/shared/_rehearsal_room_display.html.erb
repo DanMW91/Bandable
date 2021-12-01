@@ -13,7 +13,7 @@
             <% @band.songs.each do |song| %>
               <div class="song-item">
                 <div class="py-1">
-                  <%= song.name %>
+                  <h5><%= song.name %></h5>
                 </div>
                 <div>
                   <i>- created by <%= song.user.first_name %></i>
@@ -56,3 +56,10 @@
     </div>
   </div>
 </div>
+
+<div class="hidden file-display song-file-modal image-video-display">
+</div>
+
+<div class="hidden file-display song-file-modal audio-display">
+</div>
+<div class="song-file-modal-backdrop hidden"></div>

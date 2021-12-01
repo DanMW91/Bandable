@@ -1,8 +1,8 @@
-<div class="d-flex border-bottom">
+<div class="song-title-header">
   <h2>
     <%= song.name %>
   </h2>
-  <button class="btn btn-danger btn-rehearsal-dropdown h-50" data-dropdown-id="<%= song.name.split(" ").join('-')%>">
+  <button class="btn btn-danger btn-rehearsal-dropdown" data-dropdown-id="<%= song.name.split(" ").join('-')%>">
     + Add Inspiration
   </button>
 </div>
@@ -22,28 +22,47 @@
   <% song.song_files.each do |song_file|  %>
     <% if song_file.song_document.content_type.include?('audio') %>
       <div class="inspiration-item">
+        <div class="user-avatar hidden">
+          <%= cl_image_path song_file.user.photo.key %>
+        </div>
         <%= cl_image_tag "#{song_file.user.photo.key}", class: "avatar audition-avatar mx-3" %>
         <i>"<%= song_file.text_content%>"</i>
+          <div class="hidden file-path audio-file-path">
+            <%= cl_video_path song_file.song_document.key,:source_types => [:mp3] %>
+          </div>
         <i class="fas fa-volume-up inspiration-icon"></i>
       </div>
     <% end %>
     <% if song_file.song_document.content_type.include?('image') %>
       <div class="inspiration-item">
+        <div class="user-avatar hidden">
+          <%= cl_image_path song_file.user.photo.key %>
+        </div>
         <%= cl_image_tag "#{song_file.user.photo.key}", class: "avatar audition-avatar mx-3" %>
         <i>"<%= song_file.text_content%>"</i>
+        <div class="hidden file-path photo-file-path">
+          <%= cl_image_path song_file.song_document.key%>
+        </div>
         <i class="fas fa-images inspiration-icon"></i>
       </div>
     <% end %>
     <% if song_file.song_document.content_type.include?('video') %>
       <div class="inspiration-item">
+        <div class="user-avatar-path hidden">
+          <%= cl_image_path song_file.user.photo.key %>
+        </div>
         <%= cl_image_tag "#{song_file.user.photo.key}", class: "avatar audition-avatar mx-3" %>
         <i>"<%= song_file.text_content%>"</i>
-        <%# <%= cl_video_tag song_file.song_document.key, :controls => true%>
+        <div class="hidden file-path video-file-path">
+            <%= cl_video_path song_file.song_document.key,:source_types => [:mp3] %>
+        </div>
+        <%# <%= cl_video_path song_file.song_document.key, :controls => true %>
         <i class="fas fa-video inspiration-icon"></i>
       </div>
     <% end %>
   <% end %>
 </div>
+
 
 
 
