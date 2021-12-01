@@ -76,7 +76,6 @@
 .band-dropdown-list {
   position:absolute;
   z-index: 500;
-
 }
 
 .audition-list {
@@ -133,6 +132,16 @@
 
 .dropdown-list {
   top: 66px;
+}
+
+.inbox-dropdown-list {
+  top: 66px;
+  right: 1px;
+}
+
+.dropdown-list-inbox {
+  top: 66px;
+  right: 1px;
 }
 
 .audition-dropdown-list {
