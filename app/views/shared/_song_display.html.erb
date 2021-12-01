@@ -1,11 +1,51 @@
-<h1> <%= song.name %></h1>
-<%= simple_form_for([@band, song, @song_file]) do |f| %>
-  <%= f.input :song_document, label: "Select File" %>
-  <%= f.input :text_content %>
-  <%= f.submit "Post" %>
-<% end %>
+<div class="d-flex border-bottom">
+  <h2>
+    <%= song.name %>
+  </h2>
+  <button class="btn btn-danger btn-rehearsal-dropdown h-50" data-dropdown-id="<%= song.name.split(" ").join('-')%>">
+    + Add Inspiration
+  </button>
+</div>
+
+<div class="rehearsal-form-container">
+  <div class="rehearsal-form-dropdown rehearsal-form-element hidden" id="<%= song.name.split(" ").join('-')%>">
+  <%= simple_form_for([@band, song, @song_file], :defaults => { :input_html => { :class => "rehearsal-form-element" } }, html: { class: 'rehearsal-form-element'}) do |f| %>
+    <%= f.input :song_document, wrapper_html: { class: 'rehearsal-form-element' }, :label_html => { :class => 'rehearsal-form-element' }, class: "rehearsal-form-element", label: "Select File" %>
+    <%= f.input :text_content, wrapper_html: { class: 'rehearsal-form-element' }, :label_html => { :class => 'rehearsal-form-element' }, class: "rehearsal-form-element" %>
+    <%= f.submit "Send documents" %>
+  <% end %>
+  </div>
+</div>
 
 
-<% song.song_files.each do |song_file|  %>
-  <%= cl_video_tag song_file.song_document.key,:source_types => [:mp3],:controls => true,:poster => false %>
-<% end %>
+<div class="inspiration-container">
+  <% song.song_files.each do |song_file|  %>
+    <% if song_file.song_document.content_type.include?('audio') %>
+      <div class="inspiration-item">
+        <%= cl_image_tag "#{song_file.user.photo.key}", class: "avatar audition-avatar mx-3" %>
+        <i>"<%= song_file.text_content%>"</i>
+        <i class="fas fa-volume-up inspiration-icon"></i>
+      </div>
+    <% end %>
+    <% if song_file.song_document.content_type.include?('image') %>
+      <div class="inspiration-item">
+        <%= cl_image_tag "#{song_file.user.photo.key}", class: "avatar audition-avatar mx-3" %>
+        <i>"<%= song_file.text_content%>"</i>
+        <i class="fas fa-images inspiration-icon"></i>
+      </div>
+    <% end %>
+    <% if song_file.song_document.content_type.include?('video') %>
+      <div class="inspiration-item">
+        <%= cl_image_tag "#{song_file.user.photo.key}", class: "avatar audition-avatar mx-3" %>
+        <i>"<%= song_file.text_content%>"</i>
+        <%# <%= cl_video_tag song_file.song_document.key, :controls => true%>
+        <i class="fas fa-video inspiration-icon"></i>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+
+
+<%# <%= cl_video_tag song_file.song_document.key,:source_types => [:mp3],:controls => true,:poster => false %>
+<%# <%=cl_video_tagtrack.track.key,:source_types => [:mp3],:controls => true,:poster => false, class:"track-play play-track", id:"play-track"%>

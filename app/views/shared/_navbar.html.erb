@@ -57,7 +57,7 @@
                 <% if band.band_members.where(user: current_user)[0].is_audition %>
                   <%= link_to band_path(band), class: "card-links" do %>
                     <div class="band-item">
-                      <%= cl_image_tag "#{@band.photo.key}", class: "avatar band-avatar mx-3" %>
+                      <%= cl_image_tag "#{band.photo.key}", class: "avatar band-avatar mx-3" %>
                       <div class="audition-details white-font">
                         <div class="mr-3"><%= band.name %></div>
                       </div>
@@ -83,7 +83,7 @@
             <strong><em><%= link_to "Log in", new_user_session_path, class: "nav-link" %></strong></em>
           </li>
           <li>
-            <strong><em><%= link_to "Sign up", new_user_session_path, class: "nav-link" %></strong></em>
+            <strong><em><%= link_to "Sign up", new_user_registration_path, class: "nav-link" %></strong></em>
           </li>
           </div>
         <% end %>

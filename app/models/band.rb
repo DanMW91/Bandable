@@ -27,7 +27,7 @@ class Band < ApplicationRecord
   # pg search
   include PgSearch::Model
   pg_search_scope :global_search,
-    against: [ :name, :location, :genre ],
+    against: [ :name, :location, :genre, :looking_for_instrument ],
     associated_against: {
       users: [:first_name, :last_name]
     },
