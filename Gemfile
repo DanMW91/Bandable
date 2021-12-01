@@ -23,7 +23,7 @@ gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth-spotify'
 gem 'omniauth', '~> 1.9'
-gem 'rspotify'
+# gem 'rspotify'
 # gem "omniauth-rails_csrf_protection", "~> 1.0"
 
 # Use Active Storage variant
