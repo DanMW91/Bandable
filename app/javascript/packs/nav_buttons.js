@@ -3,6 +3,7 @@ export const navButtonsHandler = () => {
   const bandDropdownList = document.querySelector('.band-dropdown-list')
 
   window.addEventListener('click', (e) => {
+    console.log('why')
     if (!e.target.matches('.btn-audition-dropdown')) {
       if (!auditionDropdownList.classList.contains('hidden')) {
         auditionDropdownList.classList.add('hidden')

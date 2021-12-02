@@ -59,4 +59,6 @@ class BandMembersController < ApplicationController
   def audition_params
     params.require(:band_member).permit(:invitation_text)
   end
+
+
 end
