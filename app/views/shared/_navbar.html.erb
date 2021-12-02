@@ -63,7 +63,7 @@
               <div class="audition-dropdown-list right-dropdown-list hidden">
                 <% if current_user.band_members.where(is_audition: true).any? %>
                   <div class="audition-list">
-                    <p class='border-bottom'>My Audition</p>
+                    <p class='border-bottom'>My Auditions</p>
                   </div>
                 <% end %>
                 <% current_user.bands.each do |band| %>
@@ -81,7 +81,7 @@
                 <% end %>
                 <div class="inbox-dropdown-list right-dropdown-list">
                     <div class="audition-list">
-                      <p class='border-bottom'>My Invitation</p>
+                      <p class='border-bottom'>My Invitations</p>
                     </div>
                   <% current_user.band_members.each do |member_record| %>
                     <% if member_record.is_audition == false && member_record.is_member == false %>
