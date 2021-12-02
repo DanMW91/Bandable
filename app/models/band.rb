@@ -24,6 +24,12 @@ class Band < ApplicationRecord
     band_members.find_by(user: user).is_member? ? "member" : "auditioning"
   end
 
+  def auditions?
+    !band_members.where(is_audition: true).empty?
+  end
+
+
+
   # pg search
   include PgSearch::Model
   pg_search_scope :global_search,

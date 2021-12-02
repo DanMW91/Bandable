@@ -24,7 +24,12 @@
 
   <div class="tab" <% if !@is_band_member %>style="display:none;"<% end %>>
     <button class="tablinks">Band</button>
-    <button class="tablinks">Auditions</button>
+    <button class="tablinks" style="position:relative;">
+      <% if @band.auditions? %>
+        <i class="fas notification-nav fa-dot-circle" style="position: absolute;color: red;font-size: 11px;right: 85px;top: 6px;"></i>
+      <% end %>
+        Auditions
+    </button>
     <button class="tablinks">Chat</button>
     <button class="tablinks">The Rehearsal Room</button>
   </div>

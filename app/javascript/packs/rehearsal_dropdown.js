@@ -8,7 +8,9 @@ export const rehearsalDropdownHandler = () => {
     rehearsalFileListButtons.forEach((button) => {
       button.addEventListener('click', (e) => {
       const targetId = e.target.dataset.dropdownId
-      document.querySelector(`#${targetId}`).classList.toggle('hidden')
+      const form = document.querySelector(`#${targetId}`)
+      form.classList.toggle('hidden')
+
       // rehearsalDropdownList.classList.toggle('hidden')
       })
     })
@@ -19,6 +21,7 @@ export const rehearsalDropdownHandler = () => {
       rehearsalDropdownLists.forEach((list) => {
         if (!list.classList.contains('hidden')) {
           list.classList.add('hidden')
+
       }
       })
 

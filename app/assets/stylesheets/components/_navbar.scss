@@ -68,7 +68,7 @@
 }
 
 .band-dropdown-container {
-  width: 150px;
+  width: 161px;
   height: 100%;
 
 }
@@ -96,6 +96,7 @@
 }
 
 .band-item {
+  position:relative;
   display: flex;
   align-items: center;
   width: 100%;

@@ -7,4 +7,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @band_member = BandMember.new
   end
+
+
 end

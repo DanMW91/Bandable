@@ -43,4 +43,21 @@ class User < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+  def invitations?
+    invitation_check_arr = band_members.map do |member_record|
+      member_record.is_audition == false && member_record.is_member == false
+    end
+    invitation_check_arr.any? { |bool| bool == true }
+  end
+
+  def bands_have_auditions?
+
+    member_records = bands.map do |band|
+      band.band_members.where(user: self)[0].is_member && band.auditions?
+    end
+    # raise
+
+    member_records.any? { |bool| bool == true }
+  end
 end

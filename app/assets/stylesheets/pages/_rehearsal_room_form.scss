@@ -19,3 +19,37 @@
 .btn-rehearsal-dropdown {
 
 }
+
+.fast-fade-in {
+	opacity: 1;
+	animation-name: fadeInFastOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: .3s;
+}
+
+@keyframes fadeInFastOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.fast-fade-out {
+	opacity: 0;
+	animation-name: fadeOutFastOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: .3s;
+}
+
+@keyframes fadeOutFastOpacity {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
