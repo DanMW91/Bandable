@@ -116,10 +116,16 @@
   display: flex;
   padding: 0px 20px;
   justify-content: space-between;
-  align-items: center;
+
   h2 {
     margin: 0;
   }
+}
+
+.inspiration-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .inspiration-item {
