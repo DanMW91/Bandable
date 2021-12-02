@@ -11,7 +11,7 @@
   <div class="rehearsal-form-dropdown rehearsal-form-element hidden" id="<%= song.name.downcase.split(" ").join('-')%>">
   <%= simple_form_for([@band, song, @song_file], :defaults => { :input_html => { :class => "rehearsal-form-element" } }, html: { class: 'rehearsal-form-element'}) do |f| %>
     <%= f.input :song_document, wrapper_html: { class: 'rehearsal-form-element' }, :label_html => { :class => 'rehearsal-form-element' }, class: "rehearsal-form-element", label: "Select File" %>
-    <%= f.input :text_content, wrapper_html: { class: 'rehearsal-form-element' }, :label_html => { :class => 'rehearsal-form-element' }, class: "rehearsal-form-element" %>
+    <%= f.input :text_content, wrapper_html: { class: 'rehearsal-form-element' }, :label_html => { :class => 'rehearsal-form-element' }, class: "rehearsal-form-element", label: "Message" %>
     <%= f.submit "Send" %>
   <% end %>
   </div>
