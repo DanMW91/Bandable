@@ -25,7 +25,7 @@
         </div>
       <div class="song-content-container">
         <% @band.songs.each do |song| %>
-          <div class="song-content hidden" id="<%= song.name.split(" ").join('-') %>-song">
+          <div class="song-content hidden" id="<%= song.name.downcase.split(" ").join('-') %>-song">
             <%= render "shared/song_display", song: song, band: @band %>
           </div>
         <% end %>

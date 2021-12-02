@@ -2,7 +2,7 @@
   <h2>
     <%= song.name %>
   </h2>
-  <button class="btn btn-danger inspiration-button btn-rehearsal-dropdown" data-dropdown-id="<%= song.name.split(" ").join('-')%>">
+  <button class="btn btn-danger inspiration-button btn-rehearsal-dropdown" data-dropdown-id="<%= song.name.downcase.split(" ").join('-')%>">
     + Add Inspiration
   </button>
 </div>
