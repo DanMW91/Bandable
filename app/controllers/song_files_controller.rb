@@ -5,8 +5,7 @@ class SongFilesController < ApplicationController
     uploaded_song_file.song_id = song_id
     uploaded_song_file.user = current_user
     uploaded_song_file.save
-
-    redirect_to band_path(params[:band_id], anchor: "the%20rehearsal%20room")
+    redirect_to band_path(params[:band_id], anchor: "#{uploaded_song_file.song.name.split.join('-')}-song")
   end
 
   def song_file_params

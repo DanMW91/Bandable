@@ -20,12 +20,14 @@ export const bandShowTabsHandler = () => {
         }
 
     const tabs = document.querySelectorAll('.tablinks');
+
     tabs.forEach((tab)=> {
       tab.addEventListener('click', (e)=> {
           const tabName = e.target.innerText
           openTab(e, tabName)
       })
     })
+
 
 
     const allTabContent = document.querySelectorAll('.tabcontent');
@@ -52,6 +54,8 @@ export const bandShowTabsHandler = () => {
         window.location.hash = e.target.innerText.toLowerCase()
       })
     })
+
+
 
     chatTab.addEventListener('click', () => {
       //scroll to most recent chat messages
