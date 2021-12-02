@@ -57,7 +57,6 @@ class User < ApplicationRecord
       band.band_members.where(user: self)[0].is_member && band.auditions?
     end
     # raise
-
     member_records.any? { |bool| bool == true }
   end
 end

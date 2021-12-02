@@ -29,9 +29,8 @@
         <% if !current_user.bands.empty? %>
           <div class="band-dropdown-container" style="width: 161px;">
             <div class="btn-band-dropdown dropdown-button">
-
               <i class="fas fa-users" style="margin-right: 10px;<%= current_user.bands_have_auditions? ? 'color:red;' : ''%> > "></i>
-              My Bands
+                My Bands
               <i class="fa fa-caret-down ml-3"></i>
             </div>
             <div class="band-dropdown-list dropdown-list hidden" style="min-width:  161px;">
@@ -40,7 +39,7 @@
                   <%= link_to band_path(band), class: "card-links" do %>
                     <div class="band-item">
                       <% if band.auditions? %>
-                        <i class="fas fa-dot-circle" style="position: absolute;color: red;font-size: 11px; right: 178px; top: 8px;"></i>
+                        <i class="fas fa-dot-circle" style="position: absolute;color: red;font-size: 11px; right: 139px; top: 8px;"></i>
                       <% end %>
                       <%= cl_image_tag "#{band.photo.key}", class: "avatar band-avatar mx-3" %>
                       <div class="audition-details white-font">
@@ -55,7 +54,7 @@
 
           <div class="audition-dropdown-container">
             <div class="btn-audition-dropdown dropdown-button">
-              <i class="fas fa-envelope mr-3" style="<% current_user.invitations? ? 'color:red;' : '' %>" ></i>
+              <i class="fas fa-envelope mr-3" style="<%= current_user.invitations? ? 'color:red;' : '' %> " ></i>
               Inbox
               <i class="fa fa-caret-down ml-3"></i>
             </div>

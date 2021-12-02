@@ -4,7 +4,7 @@
         <h1 class="d-flex justify-content-center white-font ">
           <%= @band.name %>
         </h1>
-        <% if @band.users.include?(current_user) %>
+        <% if @band.user_is_member?(current_user) %>
           <div class="custom-control custom-switch looking-for-toggle band-toggle">
             <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
             <label class="custom-control-label looking-for-toggle" for="customSwitch1">Looking for Members</label>

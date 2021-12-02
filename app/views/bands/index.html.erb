@@ -6,15 +6,15 @@
     <h1 class="main-title white-font">Connect - Compose - Collab</h1>
     <div class="sub-title white-font">Where will the music take you?</div>
     <%= form_tag bands_path, method: :get, class: 'form-inline mt-5' do %>
-      <div class="form-group mr-2">
-        <%= submit_tag "Search", class: "btn btn-danger" %>
-      </div>
-      <div class="form-group w-50">
+      <div class="form-group mr-1 w-30">
         <%= text_field_tag :query,
         params[:query],
-        class: "form-control w-50",
+        class: "form-control w-100",
         placeholder: "Find bands/musicians"
         %>
+      </div>
+      <div class="form-group mr-2">
+        <%= submit_tag "Search", class: "btn btn-danger" %>
       </div>
     <% end %>
   </div>
@@ -78,9 +78,11 @@
       <%= cl_image_tag band.photo.key %>
 
       <figcaption>
-        <h3>
-        <%= band.class == Band ? band.name.upcase : band.first_name.upcase %>
-        </h3>
+          <h3 class="position-relative">
+            <%= band.class == Band ? band.name.upcase : band.first_name.upcase %>
+            <i class='fas card-icon <%= band.class == Band ? "fa-users" : "fa-user"%>'></i>
+          </h3>
+
         <p> <%= band.bio[0..150].gsub(/\s\w+\s*$/, '...') %></p>
         <p><%= band.location %></p>
         <p><%= band.genre %></p>
