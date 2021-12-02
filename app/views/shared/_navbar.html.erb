@@ -39,7 +39,7 @@
                   <%= link_to band_path(band), class: "card-links" do %>
                     <div class="band-item">
                       <% if band.auditions? %>
-                        <i class="fas fa-dot-circle" style="position: absolute;color: red;font-size: 11px; right: 139px; top: 8px;"></i>
+                        <i class="fas fa-dot-circle" style="position: absolute;color: red;font-size: 11px; left: 12px; top: 8px;"></i>
                       <% end %>
                       <%= cl_image_tag "#{band.photo.key}", class: "avatar band-avatar mx-3" %>
                       <div class="audition-details white-font">
