@@ -1,5 +1,6 @@
 # Description:
-A platform for musicians to find bands or band members and collaborate online. Created as a final 2-week project in Le Wagon bootcamp.
+[Bandable](www.bandable.co.uk),
+a platform for musicians to find bands or band members and collaborate online. Created as a final 2-week project in Le Wagon bootcamp.
 
 # Features:
 
