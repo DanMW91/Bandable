@@ -9,11 +9,11 @@
 
     <div class="messaging">
       <div class="mesgs">
-        <div 
-          class="msg_history" 
-          data-controller="band-chat-subscription" 
+        <div
+          class="msg_history"
+          data-controller="band-chat-subscription"
           data-band-chat-subscription-band-chat-id-value="<%= @band.id %>"
-          data-band-chat-subscription-current-user-id-value="<%= current_user.id %>"
+          data-band-chat-subscription-current-user-id-value="<%= user_signed_in? ? current_user.id : '' %>"
         >
           <% if !@band.messages.empty? %>
             <% @band.messages.sort_by{ |message| message.created_at }.each do |message| %>
